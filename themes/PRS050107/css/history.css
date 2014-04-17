@@ -1,0 +1,65 @@
+#history #center_column h1{margin-top:20px}
+#history #center_column h4{
+	 background: none repeat scroll 0 0 #EEEEEE;
+    margin: 20px 0;
+    padding: 10px 20px;
+}
+#history #center_column h4 input {
+	position: relative;
+   top: -4px;
+	float:right;
+}
+
+.info-order {
+	margin-bottom:20px;
+}
+.info-order p {padding-bottom:10px}
+.info-order p .icon {
+	position:relative;
+	top:2px;
+	left:0
+}
+
+#order-list {
+	margin-bottom:20px;
+	width:100%;
+	border:1px solid #eee;
+
+}
+#order-list  th {
+	padding:14px 12px;
+	color:#000;
+	text-transform:none;
+	background-color:#f5f5f5;
+	
+}
+#order-list tr.alternate_item {background-color: #f6f6f6}
+#order-list  td {
+	padding:12px;
+	border-right:1px solid #EEE;
+	border-bottom:1px solid #EEE;
+	font-weight:normal;
+	font-size:12px;
+	vertical-align:top
+}
+#order-list  td.history_detail {border-right:none;}
+
+.adresses_bloc {margin-bottom:20px}
+.adresses_bloc  .item {margin-right:60px}
+
+.detail_step_by_step {width:100%}
+
+#order-detail-content table {width:100%}
+#order-detail-content table .order_qte_input {display:none}
+#order-detail-content table tr:nth-child(even) {background:#f3f3f3;}
+
+#sendOrderMessage {margin-bottom:20px}
+#sendOrderMessage p {padding-bottom:10px}
+
+#returnOrderMessage .textarea textarea,
+#sendOrderMessage .textarea textarea {
+	width:99%;
+	border:1px solid #DDD;
+}
+.history_detail .color-myaccount,.history_detail .Reorder	
+{float:left;}

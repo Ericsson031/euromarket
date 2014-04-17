@@ -1,0 +1,56 @@
+/* prestalove-easyfooter.css version 1.0.0 by prestalove.com*/
+.block-prestalove-easyfooter {
+  float: left;
+  width: 100%;
+  padding: 20px 0;
+}
+#footer .block-prestalove-easyfooter-inner {
+  background: url(images/background.jpg);
+  border-radius:5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  overflow:hidden;
+  padding: 10px 0;
+  color: #fff;
+}
+.block-custom-html h2.block-title {
+  margin-bottom: 10px;
+  padding: 0;
+  background: none;
+  color: #fff;  
+}
+.block-custom-html a {
+  color: #fff;
+  text-decoration: none;
+}
+.block-custom-html p {
+  margin-bottom: 15px;
+}
+
+.block-custom-html.block-list ul {
+  margin: 0;
+  padding: 0;
+}
+.block-list .block-custom-html ul li {
+  margin: 0;
+  list-style: none;
+  padding: 3px 0 3px 15px;
+  background: url(images/footer-bullet.png) 0 7px no-repeat;
+}
+
+.block-left {
+  float: left;
+}
+.block-right {
+  float: right;
+}
+.block-center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.block-clear {
+  clear: both;
+}
+
+

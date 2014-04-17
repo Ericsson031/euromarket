@@ -1,0 +1,11 @@
+#datepicker_container {
+    margin-bottom: 20px;
+}
+#shipping_date {
+	width: 300px;
+}
+
+#datepicker_container select {
+    width: 300px;
+    font-size: 18px;
+}

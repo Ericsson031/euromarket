@@ -1,0 +1,24 @@
+.container {
+	margin-top: 30px;
+}
+
+.panel-heading h3 {
+	font-family: 'Berkshire Swash', cursive;
+}
+
+a:focus {
+	outline: none;
+}
+
+.ui-tabs-panel {
+	margin-top: 20px;
+}
+
+.parsley-error {
+	color: #B94A48 !important;
+	background-color: #F2DEDE !important;
+	border: 1px solid #EED3D7 !important;
+}
+.parsley-error-list {
+    display: none !important;
+}

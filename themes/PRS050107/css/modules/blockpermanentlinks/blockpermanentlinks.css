@@ -1,0 +1,56 @@
+/* block top links */
+ul#header_links {
+	display: inline;
+    float: right;
+    height: 15px;
+    list-style-type: none;
+    margin-top: 0;
+    position: absolute;
+    right: 15px;
+    text-align: right;
+    top: 125px;
+    width: 100%;
+    z-index: 10;  
+}
+#header_links li {
+	display: inline;
+   padding: 0 5px 0 6px;
+	float:right;
+	background:url("../../../img/pipe2.gif") no-repeat scroll left center transparent;
+	font-size:12px;
+	color:#76AA26;
+	font-weight:bold;    
+}
+#header_links li:first-child {border:none;}
+#header_links a {text-decoration: none; color:#312A22; font-size:12px; font-weight:normal; text-transform:capitalize;}
+#header_links a:hover {color:#76AA26 !important; text-decoration:none;}
+#header_links li:last-child {border:none;background:none;}
+
+/*block permanent links right and left columns*/
+.permanent_links_block li {border-bottom: 1px dotted #eee}
+.permanent_links_block li a {
+	display: block;
+	padding: 7px 11px 5px 22px;
+	color: #333;
+	background:url(img/arrow_right_2.png) no-repeat 10px 10px;
+ 
+}
+
+/* block footer links */
+ul#footer_links{
+	clear:both;
+	text-align: center;
+	padding-bottom:6px
+}
+ul#footer_links li{
+	display: inline;
+	padding:0 10px
+}
+
+.myaccount_home {
+    margin: 2px 0 !important;
+    padding-left: 4px !important;
+}
+.myaccount_home a img {
+    margin-right: 5px;
+}

@@ -1,0 +1,85 @@
+/* block top user information */
+
+#header_user {
+    float: right;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 42px;
+	margin-right:40px;
+}
+
+#header_nav {
+	  /*background: url("../../../img/cart_rightbg.gif") no-repeat scroll right center transparent;*/
+    float: right;
+    /*height: 51px;*/
+    margin-right: 0;
+    padding-right: 9px;
+	list-style:none;
+}
+
+/* cart */
+#shopping_cart 
+{ 	
+	background: url("../../../img/cart_leftbg.gif") no-repeat scroll left center transparent;
+    float: right;
+    height: 51px;
+    padding-left: 48px;
+	padding-right:8px;
+	width:auto;
+}
+
+#shopping_cart a{
+	padding:0px;
+	text-transform:none;
+	 background: none repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding-left: 0;
+	text-align:left;
+	color:#302921;
+	line-height:normal;
+}
+.cart_content	{ font-size:12px;}
+#shopping_cart a SPAN	{ font-weight:normal;}
+#shopping_cart a:hover{text-decoration:none; color:#5F9D00;}	
+#shopping_cart a:hover span{text-decoration: none}
+#shopping_cart .ajax_cart_quantity { font-weight:bold; font-size:12px }
+#shopping_cart .ajax_cart_total { display:none !important; }
+
+
+/* account */
+#header_user #your_account {display:none;}
+#header_user #your_account a { background-image: url('img/icon/my-account.gif') }
+
+/* user infos */ 
+#header_user_info {
+	
+	float:right;
+
+	padding:0;
+	font-size:12px
+}
+#header_user_info a {
+	display:inline-block;
+	margin:0px;
+	padding-left:6px;
+	line-height: 11px;
+	background:url("img/icon/pipe1.gif") no-repeat scroll left center transparent;
+	
+}
+#header_user_info a.account {
+	border: none;
+	display: inline;
+	margin: 0;
+	padding: 0 3px;
+	background:none;
+}
+*:first-child+html #header_user_info a {line-height:14px;}
+#header_user_info a.login {background:none;}
+#header_user_info a.logout {}
+#header_user_info{background:none!important;}

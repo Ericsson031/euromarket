@@ -1,0 +1,58 @@
+h1 {display:none;}
+
+.resumecat {
+	background: none repeat scroll 0 0 transparent;
+    color: #000000;
+    font-size: 11px;
+    font-weight: normal;
+    margin: 0 0 0 5px;
+    padding: 0;
+	text-transform:none;
+}
+
+.content_scene_cat {
+	padding:5px;
+	border:1px solid #e4e4e4;
+}
+
+.cat_desc {
+	font-size:12px;
+	line-height:18px;
+}
+.cat_desc p {padding:0 10px 5px 10px}
+.cat_desc .lnk_more {
+   padding:0 10px;
+   color:#000;
+	background:url(../img/arrow_right_1.png) no-repeat 100% 4px transparent;
+}
+
+.ajax_block_product h3{
+	padding-bottom:0px;
+}
+
+/*************************************************************************************************
+SUB CATEGORIES
+************************************************************************************************ */
+.inline_list {
+list-style-type: none;
+margin-top: 1em;
+overflow: hidden;
+}
+body#category #subcategories li {padding: 0 5px;border-right:2px solid #CCCCCC;}
+body#category #subcategories {clear: both;}
+.inline_list li {float: left;text-align: center;}
+.inline_list img {display: block;}
+.inline_list li .img { margin-right:15px;}
+.inline_list li .cat_name { font-weight:bold; font-size:13px;}
+#category #center_column h1
+{
+	   background: none repeat scroll 0 0 transparent;
+    color: #444444;
+    display: block;
+    font-size: 16px;
+    height: 15px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    padding: 5px 0;
+    text-transform: uppercase;
+}

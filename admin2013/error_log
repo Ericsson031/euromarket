@@ -1,0 +1,62 @@
+[08-Apr-2014 22:37:25 Europe/Amsterdam] PHP Fatal error:  Uncaught Link to database cannot be established: SQLSTATE[42000] [1044] Access denied for user 'eurobalk_testing'@'localhost' to database 'eurobalk_prestashop'
+  thrown in /home/eurobalk/testing/classes/db/DbPDO.php on line 57
+[08-Apr-2014 22:37:33 Europe/Amsterdam] PHP Fatal error:  Uncaught Link to database cannot be established: SQLSTATE[42000] [1044] Access denied for user 'eurobalk_testing'@'localhost' to database 'eurobalk_prestashop'
+  thrown in /home/eurobalk/testing/classes/db/DbPDO.php on line 57
+[09-Apr-2014 01:04:31 Asia/Dubai] PHP Warning:  Illegal offset type in /home/eurobalk/testing/modules/dashgoals/dashgoals.php on line 211
+[09-Apr-2014 01:04:31 Asia/Dubai] PHP Warning:  Illegal offset type in /home/eurobalk/testing/modules/dashgoals/dashgoals.php on line 211
+[09-Apr-2014 01:04:31 Asia/Dubai] PHP Warning:  Illegal offset type in /home/eurobalk/testing/modules/dashgoals/dashgoals.php on line 211
+[09-Apr-2014 01:04:31 Asia/Dubai] PHP Warning:  Illegal offset type in /home/eurobalk/testing/modules/dashgoals/dashgoals.php on line 211
+[09-Apr-2014 01:13:28 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:13:32 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:19:24 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:19:27 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:21:04 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:21:07 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:21:26 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:21:29 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:23:29 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:23:32 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:24:49 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:24:52 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:12 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:13 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:15 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:16 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:16 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:19 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:20 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:21 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:22 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:24 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:29 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:30 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:32 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:33 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:33 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:36 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:36 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:38 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:39 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:41 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:42 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:45 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:45 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:48 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:49 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:51 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:25:59 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:02 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:06 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:08 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:09 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:10 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:10 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:13 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:19 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:20 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:22 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:26:23 Asia/Dubai] PHP Warning:  Invalid argument supplied for foreach() in /home/eurobalk/testing/controllers/admin/AdminModulesController.php on line 1224
+[09-Apr-2014 01:31:48 Asia/Dubai] PHP Warning:  Illegal offset type in /home/eurobalk/testing/modules/dashgoals/dashgoals.php on line 211
+[09-Apr-2014 01:31:48 Asia/Dubai] PHP Warning:  Illegal offset type in /home/eurobalk/testing/modules/dashgoals/dashgoals.php on line 211
+[09-Apr-2014 01:31:48 Asia/Dubai] PHP Warning:  Illegal offset type in /home/eurobalk/testing/modules/dashgoals/dashgoals.php on line 211
+[09-Apr-2014 01:31:48 Asia/Dubai] PHP Warning:  Illegal offset type in /home/eurobalk/testing/modules/dashgoals/dashgoals.php on line 211
