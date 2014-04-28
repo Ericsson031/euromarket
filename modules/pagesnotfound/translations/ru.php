@@ -4,8 +4,12 @@ global $_MODULE;
 $_MODULE = array();
 
 $_MODULE['<{pagesnotfound}prestashop>pagesnotfound_251295238bdf7693252f2804c8d3707e'] = 'Страница не найдена';
+$_MODULE['<{pagesnotfound}prestashop>pagesnotfound_6353f9c04f50a4ce1c730eda9c73fab2'] = 'Отображает страницу 404.';
+$_MODULE['<{pagesnotfound}prestashop>pagesnotfound_dc3a3db6b98723bf91f924537a630600'] = 'Не найденные страницы очищены.';
 $_MODULE['<{pagesnotfound}prestashop>pagesnotfound_23dbe39a97cb7e4e528f25f5795d317f'] = 'Ненайденные страницы удалены.';
+$_MODULE['<{pagesnotfound}prestashop>pagesnotfound_6602bbeb2956c035fb4cb5e844a4861b'] = 'Руководство';
 $_MODULE['<{pagesnotfound}prestashop>pagesnotfound_3604249130acf7fda296e16edc996e5b'] = 'Ошибки 404';
+$_MODULE['<{pagesnotfound}prestashop>pagesnotfound_fe97abda321a77b6bb20922ffd8a7b78'] = 'Ошибка 404 это код ошибки HTTP, который означает, что страница по запросу пользователя не может быть найдена. В вашем случае это означает, что один из ваших посетителей ввели неправильный URL в адресной строке, или что вы или другой веб-сайт имеет неработающую ссылку. ';
 $_MODULE['<{pagesnotfound}prestashop>pagesnotfound_a90083861c168ef985bf70763980aa60'] = 'Как поймать эти ошибки?';
 $_MODULE['<{pagesnotfound}prestashop>pagesnotfound_f0698625adc9935b9a8d40eb128922c2'] = 'Если ваш хостинг поддерживает файлы .htaccess, вы можете создать его в корневой директории магазина и поместить в него следующие строки:';
 $_MODULE['<{pagesnotfound}prestashop>pagesnotfound_54c5be2cbf4d4a829069fd28903507b0'] = 'Пользователь запрашивающий страницу, которая не существует, будет перенаправлен на страницу.';

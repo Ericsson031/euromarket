@@ -1,21 +1,21 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname},
+Здравствуйе, {firstname} {lastname},
 
-Thank you for shopping with {shop_name}! 
+Благодарим вас за покупки в {shop_name}! 
 
-ORDER: {order_name} Placed on {date}
+ЗАКАЗ: {order_name} Оформлен {date}
 
-PAYMENT: {payment} 		 
+ОПЛАТА: {payment} 		 
 
 АРТИКУЛ
 
-PRODUCT
+ТОВАР
 
 ЦЕНА ЗА ЕДИНИЦУ
 
-QUANTITY
+КОЛИЧЕСТВО
 
 ИТОГО
 
@@ -23,7 +23,7 @@ QUANTITY
 
 {discounts} 
 
-PRODUCTS 
+ТОВАРЫ 
 
 {total_products} 
 
@@ -31,15 +31,15 @@ PRODUCTS
 
 {total_discounts} 
 
-GIFT-WRAPPING 
+ПОДАРОЧНАЯ УПАКОВКА 
 
 {total_wrapping} 
 
-SHIPPING 
+ДОСТАВКА 
 
 {total_shipping} 
 
-TOTAL TAX PAID 
+ВСЕГО НАЛОГОВ ОПЛАЧЕНО 
 
 {total_tax_paid} 
 
@@ -49,7 +49,7 @@ TOTAL TAX PAID
 
 СПОСОБ ДОСТАВКИ {carrier}
 
-PAYMENT: {payment} 		 
+ОПЛАТА: {payment} 		 
 
 {delivery_block_html} 
 
@@ -62,11 +62,12 @@ PAYMENT: {payment}
 запись" [{my_account_url}] в нашем
 магазине. 
 
-If you have a guest account, you can follow your order via the
-"Guest Tracking"
-[{guest_tracking_url}?id_order={order_name}]
-section on our shop. 
+Если у вас гостевая учетная запись,
+вы можете следить за заказом через
+"Гостевое отслеживание"
+[{guest_tracking_url}?id_order={order_name}] в
+нашем магазине. 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

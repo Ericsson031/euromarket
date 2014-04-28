@@ -1,12 +1,12 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
-We have updated the progress on your return #{id_order_return}, the
-new status is: "{state_order_return}"
+Мы обновили прогресс по возвращении
+#{id_order_return}, новый статус: "{state_order_return}"
 
-MESSAGE: {message} 		 
+СООБЩЕНИЕ: {message} 		 
 
 Вы можете просмотреть ваш заказ и
 скачать вашу накладную из раздела
@@ -15,6 +15,6 @@ MESSAGE: {message}
 запись" [{my_account_url}] в нашем
 магазине. 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

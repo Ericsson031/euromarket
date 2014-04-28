@@ -33,7 +33,7 @@ class Editorial extends Module
 	{
 		$this->name = 'editorial';
 		$this->tab = 'front_office_features';
-		$this->version = '2.4';
+		$this->version = '2.5.3';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 0;
 		$this->bootstrap = true;
@@ -42,7 +42,6 @@ class Editorial extends Module
 
 		$this->displayName = $this->l('Home text editor');
 		$this->description = $this->l('A text-edit module for your homepage.');
-		$this->ps_versions_compliancy = array('min' => '1.5.6.1', 'max' => _PS_VERSION_);
 		$path = dirname(__FILE__);
 		if (strpos(__FILE__, 'Module.php') !== false)
 			$path .= '/../modules/'.$this->name;
@@ -107,7 +106,7 @@ class Editorial extends Module
 		$res = Db::getInstance()->execute('DROP TABLE IF EXISTS `'._DB_PREFIX_.'editorial`');
 		$res &= Db::getInstance()->execute('DROP TABLE IF EXISTS `'._DB_PREFIX_.'editorial_lang`');
 
-		if (!$res || !parent::uninstall())
+		if ($res == 0 || !parent::uninstall())
 			return false;
 
 		return true;
@@ -133,8 +132,8 @@ class Editorial extends Module
 		$helper->title = $this->displayName;
 		$helper->submit_action = 'submitUpdateEditorial';
 
-		$file = dirname(__FILE__).'/homepage_logo_'.(int)$this->context->shop->id.'.jpg';
-		$logo = (file_exists($file) ? '<img src="'.$this->_path.'homepage_logo_'.(int)$this->context->shop->id.'.jpg">' : '');
+		$file = dirname(__FILE__).'/img/homepage_logo_'.(int)$this->context->shop->id.'.jpg';
+		$logo = (file_exists($file) ? '<img src="'.$this->_path.'img/homepage_logo_'.(int)$this->context->shop->id.'.jpg">' : '');
 
 		$this->fields_form[0]['form'] = array(
 			'tinymce' => true,
@@ -229,8 +228,8 @@ class Editorial extends Module
 				$helper->fields_value[$input['name']] = $editorial->{$input['name']};
 		}
 
-		$file = dirname(__FILE__).'/homepage_logo_'.(int)$id_shop.'.jpg';
-		$helper->fields_value['body_homepage_logo']['image'] = (file_exists($file) ? '<img src="'.$this->_path.'homepage_logo_'.(int)$id_shop.'.jpg">' : '');
+		$file = dirname(__FILE__).'/img/homepage_logo_'.(int)$id_shop.'.jpg';
+		$helper->fields_value['body_homepage_logo']['image'] = (file_exists($file) ? '<img src="'.$this->_path.'img/homepage_logo_'.(int)$id_shop.'.jpg">' : '');
 		if ($helper->fields_value['body_homepage_logo'] && file_exists($file))
 			$helper->fields_value['body_homepage_logo']['size'] = filesize($file) / 1000;
 
@@ -246,11 +245,11 @@ class Editorial extends Module
 		// Delete logo image retrocompat 1.5
 		if (Tools::isSubmit('deleteLogoImage') || Tools::isSubmit('deleteImage'))
 		{
-			if (!file_exists(dirname(__FILE__).'/homepage_logo_'.(int)$id_shop.'.jpg'))
+			if (!file_exists(dirname(__FILE__).'/img/homepage_logo_'.(int)$id_shop.'.jpg'))
 				$errors .= $this->displayError($this->l('This action cannot be made.'));
 			else
 			{
-				unlink(dirname(__FILE__).'/homepage_logo_'.(int)$id_shop.'.jpg');
+				unlink(dirname(__FILE__).'/img/homepage_logo_'.(int)$id_shop.'.jpg');
 				Configuration::updateValue('EDITORIAL_IMAGE_DISABLE', 1);
 				$this->_clearCache('editorial.tpl');
 				Tools::redirectAdmin('index.php?tab=AdminModules&configure='.$this->name.'&token='.Tools::getAdminToken('AdminModules'.(int)Tab::getIdFromClassName('AdminModules').(int)$this->context->employee->id));
@@ -271,21 +270,21 @@ class Editorial extends Module
 			if (isset($_FILES['body_homepage_logo']) && isset($_FILES['body_homepage_logo']['tmp_name']) && !empty($_FILES['body_homepage_logo']['tmp_name']))
 			{
 				Configuration::set('PS_IMAGE_GENERATION_METHOD', 1);
-				if (file_exists(dirname(__FILE__).'/homepage_logo_'.(int)$id_shop.'.jpg'))
-					unlink(dirname(__FILE__).'/homepage_logo_'.(int)$id_shop.'.jpg');
+				if (file_exists(dirname(__FILE__).'/img/homepage_logo_'.(int)$id_shop.'.jpg'))
+					unlink(dirname(__FILE__).'/img/homepage_logo_'.(int)$id_shop.'.jpg');
 				if ($error = ImageManager::validateUpload($_FILES['body_homepage_logo']))
 					$errors .= $error;
 				elseif (!($tmp_name = tempnam(_PS_TMP_IMG_DIR_, 'PS')) || !move_uploaded_file($_FILES['body_homepage_logo']['tmp_name'], $tmp_name))
 					return false;
-				elseif (!ImageManager::resize($tmp_name, dirname(__FILE__).'/homepage_logo_'.(int)$id_shop.'.jpg'))
+				elseif (!ImageManager::resize($tmp_name, dirname(__FILE__).'/img/homepage_logo_'.(int)$id_shop.'.jpg'))
 					$errors .= $this->displayError($this->l('An error occurred while attempting to upload the image.'));
 				if (isset($tmp_name))
 					unlink($tmp_name);
 			}
 			$this->_html .= $errors == '' ? $this->displayConfirmation($this->l('Settings updated successfully.')) : $errors;
-			if (file_exists(dirname(__FILE__).'/homepage_logo_'.(int)$id_shop.'.jpg'))
+			if (file_exists(dirname(__FILE__).'/img/homepage_logo_'.(int)$id_shop.'.jpg'))
 			{
-				list($width, $height, $type, $attr) = getimagesize(dirname(__FILE__).'/homepage_logo_'.(int)$id_shop.'.jpg');
+				list($width, $height, $type, $attr) = getimagesize(dirname(__FILE__).'/img/homepage_logo_'.(int)$id_shop.'.jpg');
 				Configuration::updateValue('EDITORIAL_IMAGE_WIDTH', (int)round($width));
 				Configuration::updateValue('EDITORIAL_IMAGE_HEIGHT', (int)round($height));
 				Configuration::updateValue('EDITORIAL_IMAGE_DISABLE', 0);
@@ -315,8 +314,8 @@ class Editorial extends Module
 					'image_width' => Configuration::get('EDITORIAL_IMAGE_WIDTH'),
 					'image_height' => Configuration::get('EDITORIAL_IMAGE_HEIGHT'),
 					'id_lang' => $this->context->language->id,
-					'homepage_logo' => !Configuration::get('EDITORIAL_IMAGE_DISABLE') && file_exists('modules/editorial/homepage_logo_'.(int)$id_shop.'.jpg'),
-					'image_path' => $this->_path.'homepage_logo_'.(int)$id_shop.'.jpg'
+					'homepage_logo' => !Configuration::get('EDITORIAL_IMAGE_DISABLE') && file_exists('modules/editorial/img/homepage_logo_'.(int)$id_shop.'.jpg'),
+					'image_path' => $this->_path.'img/homepage_logo_'.(int)$id_shop.'.jpg'
 				)
 			);
 		}
@@ -324,8 +323,17 @@ class Editorial extends Module
 		return $this->display(__FILE__, 'editorial.tpl', $this->getCacheId());
 	}
 
+	public function hookdisplayTopColumn($params)
+	{
+		if (!isset($this->context->controller->php_self) || $this->context->controller->php_self != 'index')
+			return;
+		return $this->hookDisplayHome($params);
+	}
+
 	public function hookDisplayHeader()
 	{
+		if (!isset($this->context->controller->php_self) || $this->context->controller->php_self != 'index')
+			return;
 		$this->context->controller->addCSS(($this->_path).'css/editorial.css', 'all');
 	}
 }

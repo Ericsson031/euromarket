@@ -1,16 +1,20 @@
 
 [{shop_url}] 
 
-Hi, 
+Здравствуйте, 
 
-The remaining stock is now less than the specified minimum of
-{last_qty}.
+Оставшееся количество меньше
+указанного минимума {last_qty}.
 
-REMAINING STOCK: {qty}
+ОСТАВШИЕСЯ ТОВАРЫ: {qty}
 
-You are advised to open the product's admin Product Page in order to
-replenish your inventory. 		 
+Рекомендуется, чтобы открыть
+продукта администратора страницу
+продукта, Для пополнения своего
+инвентаря рекомендуем открывать
+страницу продуктов через Страницу
+продукта администратора. 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

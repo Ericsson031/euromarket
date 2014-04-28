@@ -1,6 +1,6 @@
 <?php
 /*
-* 2007-2012 PrestaShop
+* 2007-2014 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -19,13 +19,15 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2012 PrestaShop SA
+*  @copyright  2007-2014 PrestaShop SA
 *  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
 class OrderDetailControllerCore extends FrontController
 {
+	public $php_self = 'order-detail';
+	
 	public $auth = true;
 	public $authRedirection = 'history';
 	public $ssl = true;
@@ -53,11 +55,11 @@ class OrderDetailControllerCore extends FrontController
 			$msgText = Tools::getValue('msgText');
 
 			if (!$idOrder || !Validate::isUnsignedId($idOrder))
-				$this->errors[] = Tools::displayError('Order is no longer valid');
+				$this->errors[] = Tools::displayError('The order is no longer valid.');
 			elseif (empty($msgText))
-				$this->errors[] = Tools::displayError('Message cannot be blank');
+				$this->errors[] = Tools::displayError('The message cannot be blank.');
 			elseif (!Validate::isMessage($msgText))
-				$this->errors[] = Tools::displayError('Message is invalid (HTML is not allowed)');
+				$this->errors[] = Tools::displayError('This message is invalid (HTML is not allowed).');
 			if (!count($this->errors))
 			{
 				$order = new Order($idOrder);
@@ -73,7 +75,7 @@ class OrderDetailControllerCore extends FrontController
 						$ct->id_contact = 0;
 						$ct->id_customer = (int)$order->id_customer;
 						$ct->id_shop = (int)$this->context->shop->id;
-						if ($id_product = (int)Tools::getValue('id_product') && $order->orderContainProduct((int)$id_product))
+						if (($id_product = (int)Tools::getValue('id_product')) && $order->orderContainProduct((int)$id_product))
 							$ct->id_product = $id_product;
 						$ct->id_order = (int)$order->id;
 						$ct->id_lang = (int)$this->context->language->id;
@@ -114,6 +116,7 @@ class OrderDetailControllerCore extends FrontController
 					if (Tools::getValue('ajax') != 'true')
 						Tools::redirect('index.php?controller=order-detail&id_order='.(int)$idOrder);
 
+					$this->context->smarty->assign('message_confirmation', true);
 				}
 				else
 					$this->errors[] = Tools::displayError('Order not found');
@@ -167,9 +170,9 @@ class OrderDetailControllerCore extends FrontController
 				$this->context->smarty->assign(array(
 					'shop_name' => strval(Configuration::get('PS_SHOP_NAME')),
 					'order' => $order,
-					'return_allowed' => (int)($order->isReturnable()),
+					'return_allowed' => (int)$order->isReturnable(),
 					'currency' => new Currency($order->id_currency),
-					'order_state' => (int)($id_order_state),
+					'order_state' => (int)$id_order_state,
 					'invoiceAllowed' => (int)(Configuration::get('PS_INVOICE')),
 					'invoice' => (OrderState::invoiceAvailable($id_order_state) && count($order->getInvoicesCollection())),
 					'order_history' => $order->getHistory($this->context->language->id, false, true),
@@ -204,7 +207,7 @@ class OrderDetailControllerCore extends FrontController
 				unset($carrier, $addressInvoice, $addressDelivery);
 			}
 			else
-				$this->errors[] = Tools::displayError('Cannot find this order');
+				$this->errors[] = Tools::displayError('This order cannot be found.');
 			unset($order);
 		}
 

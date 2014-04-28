@@ -1,13 +1,15 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
-A new order has been generated on your behalf. 
+Был сформирован новый заказ на ваше
+имя. 
 
-Please go on {order_link} [{order_link}] to
-finalize the payment. 		 
+Перейдите по ссылке {order_link}
+[{order_link}] для завершения
+оплаты. 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

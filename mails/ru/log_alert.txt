@@ -1,13 +1,15 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
-WARNING: you have received a new log alert in your Back Office.
+ВНИМАНИЕ: вы получили новое
+уведомление, войдите в Панель
+управления.
 
-You can check for it in the "TOOLS" > "LOGS" section of your Back
-Office. 		 
+Вы можете проверить его в Панели
+управления "ИНСТРУМЕНТЫ" > "ЖУРНАЛЫ". 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

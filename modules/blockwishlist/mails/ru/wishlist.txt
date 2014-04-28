@@ -1,13 +1,13 @@
 
 [{shop_url}] 
 
-Hi, 
+Здравствуйте, 
 
-{firstname} {lastname} indicated you may want to see his/her
-wishlist: {wishlist}
+{firstname} {lastname}разрешил вам видеть
+его/ее список желаний: {wishlist}
 
 {wishlist} [{message}] 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

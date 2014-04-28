@@ -1,10 +1,11 @@
 
 [{shop_url}] 
 
-Hi, 
+Здравствуйте, 
 
-THANK YOU FOR SUBSCRIBING TO OUR NEWSLETTER. 
+СПАСИБО ЗА ПОДПИСКУ НА НАШУ
+РАССЫЛКУ 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

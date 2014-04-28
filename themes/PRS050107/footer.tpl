@@ -66,6 +66,7 @@
 
 <!-- Footer -->
 
+
 			<div id="footer">
             <div id="footer_colums">
             	<div id="shop_map_location">
@@ -88,11 +89,10 @@
                 <div id="about_us">
                 <h3>About us</h3>
                 <p>
-                EUROBALKAN SHOP was created to bring us closer to some of our most favorouite products from home.
+                {* $content *}
+                EuroBalkan is the first in the Middle East to offer products from the Balkan Region-more specifically products from the former Yugoslav republics including Slovenia, Croatia, Bosnia, Serbia and Macedonia.<!--
 
-With a population of over 20,000 ex-yu citizens in the UAE the demand for a little taste of our own food constantly grew.
-<!--
-There has been no exception that when someone travells back home brings back a full suitcase of their favorite products and nibbles on them as if it were made out of gold – until the next trip. Extra luggage, that could’ve been used for more clothes or even light travel, orders placed constantly whenever someone goes back or visits us here in Dubai, sad faces when commercial shows up on tv, a comment that is made on facebook just resulted in more and more desire for the ex-yu community to have their favorite food products at their doorstep. The suffering is now over!-->
+We work with the largest, most established, reputable food production houses from this region which have existed for over 50 years, responsible for producing high quality food and very popular brands.-->
                 </p>
                 <a href="{$link->getCMSLink('4', 'about-us')}">Read more...</a>
                 </div>

@@ -1,16 +1,16 @@
 
 [{shop_url}] 
 
-Message from a {shop_name} customer 
+Сообщение от покупателя {shop_name} 
 
-CUSTOMER E-MAIL ADDRESS: {email}
+E-MAIL КЛИЕНТА: {email}
 
-CUSTOMER MESSAGE: {message}
+СООБЩЕНИЕ ПОКУПАТЕЛЯ: {message}
 
-ORDER ID: {order_name}
+ID ЗАКАЗА: {order_name}
 
-ATTACHED FILE: {attached_file} 		 
+ПРИКРЕПЛЕННЫЙ ФАЙЛ: {attached_file} 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

@@ -1,10 +1,10 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
 {message} 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

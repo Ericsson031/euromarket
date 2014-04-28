@@ -1,5 +1,5 @@
 {*
-* 2007-2014 PrestaShop
+* 2007-2013 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,21 +18,21 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2013 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-<meta property="og:url" content="{$actual_url}" />
+<link rel="stylesheet" type="text/css" href="{$module_dir}static/css/shop.css" />
 <meta property="og:title" content="{$meta_title|escape:'htmlall':'UTF-8'}" />
 {if $is_product_page}
-<meta property="og:type" content="product" />
+<meta property="og:type" content="addshoppers:product" />
 {if isset($image_url)}
 <meta property="og:image" content="{$image_url}" />
 {/if}
 {else}
-<meta property="og:type" content="website" />
-<meta property="og:image" content="{$logo_url}" />
+<meta property="og:type" content="addshoppers:website" />
+<meta property="og:image" content="{$absolute_base_url}img/logo.jpg" />
 {/if}
 <meta property="og:site_name" content="{$shop_name|escape:'htmlall':'UTF-8'}" />
 <meta property="og:description" content="{$meta_description|escape:html:'UTF-8'}" />
@@ -43,17 +43,17 @@
 // <![CDATA[
 
   var AddShoppersTracking = {
-  {/literal}{if $is_product_page}{literal}
-      name:        '{/literal}{$product_name|unescape:'htmlall'|escape:'quotes':'UTF-8'}{literal}',
-      description: '{/literal}{$product_description|unescape:'htmlall'|escape:'quotes':'UTF-8'|replace:"\r\n":''|replace:"\n":''}{literal}',
-      image:       '{/literal}{if isset($image_url)}{$image_url}{else}{$logo_url}{/if}{literal}',
-      price:       '{/literal}{$price|unescape:'htmlall'|escape:'quotes':'UTF-8'}{literal}',
-      stock:       '{/literal}{$stock}{literal}'
+{/literal}{if $is_product_page}{literal}
+      name: "{/literal}{$product_name|escape:'htmlall':'UTF-8'}{literal}",
+      description: "{/literal}{$product_description|escape:html:'UTF-8'|replace:"\r\n":''|replace:"\n":''}{literal}",
+      image: "{/literal}{if isset($image_url)}{$image_url}{/if}{literal}",
+      price: "{/literal}{$price}{literal}",
+      stock: "{/literal}{$stock}{literal}"
       {/literal}{if isset($instock)},instock: {$instock}{/if}{literal}
   {/literal}{else}{literal}
-      name:        '{/literal}{$meta_title|unescape:'htmlall'|escape:'quotes':'UTF-8'}{literal}',
-      description: '{/literal}{$meta_description|unescape:'htmlall'|escape:'quotes':'UTF-8'}{literal}',
-      image:       '{/literal}{if isset($image_url)}{$image_url}{else}{$logo_url}{/if}{literal}'
+      name: '{/literal}{$meta_title|escape:'htmlall':'UTF-8'}{literal}',
+      description: '{/literal}{$meta_description|escape:html:'UTF-8'}{literal}',
+      image: '{/literal}{$absolute_base_url}img/logo.jpg{literal}'
   {/literal}{/if}{literal}
   };
 
@@ -65,10 +65,27 @@
 {/literal}
 
 <!-- AddShoppers.com Buttons Script -->
-{if $floating_buttons}
-<div class="share-buttons share-buttons-tab" data-buttons="twitter,facebook,email,pinterest" data-style="medium" data-counter="true" data-hover="true" data-promo-callout="true" data-float="left"></div>
-{/if}
-
+<div id="addshoppers_buttons" class="{if !empty($buttons_social)}addshoppers-enabled grid_9 alpha omega{else}addshoppers-disabled{/if}">
+    {if !empty($buttons_opengraph) && !empty($buttons_social) && !$default_account }
+      {if $opengraph && $is_product_page}
+        <div style="float:left">{$buttons_opengraph}</div>
+      {/if}
+      {if $social }
+        {$buttons_social}
+      {/if}
+    {else}
+      {if ($opengraph || $default_account) && $is_product_page }
+        <div style="float:left">
+          <div data-style="standard" class="share-buttons share-buttons-fb-like"></div>
+          <div class="share-buttons share-buttons-og" data-action="want" data-counter="false"></div>
+          <div class="share-buttons share-buttons-og" data-action="own" data-counter="false"></div>
+        </div>
+      {/if}
+      {if $social || $default_account }
+        <div class="share-buttons share-buttons-panel" data-style="medium" data-counter="true" data-oauth="true" data-hover="true" data-buttons="twitter,facebook,pinterest"></div>
+      {/if}
+    {/if}
+</div>
 {literal}
 <script type="text/javascript">
   jQuery(document).ready(function() {

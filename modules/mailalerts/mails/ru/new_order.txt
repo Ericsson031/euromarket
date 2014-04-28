@@ -1,28 +1,29 @@
 
 [{shop_url}] 
 
-Congratulations! 
+Поздравляем! 
 
-A new order was placed on {shop_name} from the following customer:
-{firstname} {lastname} ({email}) 
+Был сформирован новый заказ в {shop_name}
+от следующего клиента: {firstname} {lastname}
+({email}) 
 
-ORDER: {order_name} Placed on {date}
+ЗАКАЗ: {order_name} Оформлен {date}
 
-PAYMENT: {payment} 		 
+ОПЛАТА: {payment} 		 
 
 АРТИКУЛ
 
-PRODUCT
+ТОВАР
 
 ЦЕНА ЗА ЕДИНИЦУ
 
-QUANTITY
+КОЛИЧЕСТВО
 
 ИТОГО
 
 {items} 
 
-PRODUCTS 
+ТОВАРЫ 
 
 {total_products} 
 
@@ -30,15 +31,15 @@ PRODUCTS
 
 {total_discounts} 
 
-GIFT-WRAPPING 
+ПОДАРОЧНАЯ УПАКОВКА 
 
 {total_wrapping} 
 
-SHIPPING 
+ДОСТАВКА 
 
 {total_shipping} 
 
-TOTAL TAX PAID 
+ВСЕГО НАЛОГОВ ОПЛАЧЕНО 
 
 {total_tax_paid} 
 
@@ -54,6 +55,6 @@ TOTAL TAX PAID
 
 {message} 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

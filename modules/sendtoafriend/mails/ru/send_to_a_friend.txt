@@ -1,13 +1,14 @@
 
 [{shop_url}] 
 
-Hi {name},
+Здравствуйте {name},
 
-Thank you for creating a customer account at {shop_name}. 
+Спасибо за создание
+пользовательского аккаунта в {shop_name}. 
 
-Click here to view this item: {product}
+Для просмотра товара нажмите: {product}
 [{product_link}] 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

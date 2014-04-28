@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
 	<name>cheque</name>
-	<displayName><![CDATA[Payments by check]]></displayName>
-	<version><![CDATA[2.3]]></version>
+	<displayName><![CDATA[Payment by check]]></displayName>
+	<version><![CDATA[2.4]]></version>
 	<description><![CDATA[This module allows you to accept payments by check.]]></description>
 	<author><![CDATA[PrestaShop]]></author>
 	<tab><![CDATA[payments_gateways]]></tab>

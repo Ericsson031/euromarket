@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-04-09 01:33:52
+<?php /* Smarty version Smarty-3.1.14, created on 2014-04-29 00:22:50
          compiled from "/home/eurobalk/testing/admin2013/themes/default/template/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:189291168353446b400cef64-45130283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1099285369535eb89a498274-20241776%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '13b76ed6ee18f064cb0cabc1cc0d313829fb215a' => 
     array (
       0 => '/home/eurobalk/testing/admin2013/themes/default/template/header.tpl',
-      1 => 1396990889,
+      1 => 1398696458,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '189291168353446b400cef64-45130283',
+  'nocache_hash' => '1099285369535eb89a498274-20241776',
   'function' => 
   array (
   ),
@@ -60,9 +60,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_53446b40394205_49389473',
+  'unifunc' => 'content_535eb89a794971_17795893',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53446b40394205_49389473')) {function content_53446b40394205_49389473($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_535eb89a794971_17795893')) {function content_535eb89a794971_17795893($_smarty_tpl) {?>
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 lt-ie6 " lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
@@ -375,7 +375,7 @@ $_smarty_tpl->tpl_vars['quick']->_loop = true;
 </a></li>
 							<li class="divider"></li>
 							<li><a id="header_logout" href="<?php echo $_smarty_tpl->tpl_vars['default_tab_link']->value;?>
-&amp;logout"><i class="icon-signout"></i> <?php echo smartyTranslate(array('s'=>'Log out'),$_smarty_tpl);?>
+&amp;logout"><i class="icon-signout"></i> <?php echo smartyTranslate(array('s'=>'Sign out'),$_smarty_tpl);?>
 </a></li>
 						</ul>
 					</li>

@@ -1,20 +1,22 @@
 
 [{shop_url}] 
 
-Your message to {shop_name} Customer Service 
+Сообщение службу поддержки
+клиентов {shop_name} 
 
-Your message has been sent successfully.
+Ваше сообщение было успешно
+отправлено.
 
-MESSAGE: {message}
+СООБЩЕНИЕ: {message}
 
-ORDER ID: {order_name}
+ID ЗАКАЗА: {order_name}
 
-PRODUCT: {product_name}
+ТОВАР: {product_name}
 
-ATTACHED FILE: {attached_file} 		 
+ПРИКРЕПЛЕННЫЙ ФАЙЛ: {attached_file} 		 
 
-We will answer as soon as possible. 
+Мы ответим как можно быстрее. 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

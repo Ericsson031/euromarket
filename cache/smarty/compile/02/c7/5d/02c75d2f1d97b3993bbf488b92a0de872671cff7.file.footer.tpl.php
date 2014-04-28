@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-04-09 01:33:52
+<?php /* Smarty version Smarty-3.1.14, created on 2014-04-29 00:22:50
          compiled from "/home/eurobalk/testing/admin2013/themes/default/template/footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:213088437353446b404b9a08-84554687%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:246089351535eb89a8ffa79-07470052%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '02c75d2f1d97b3993bbf488b92a0de872671cff7' => 
     array (
       0 => '/home/eurobalk/testing/admin2013/themes/default/template/footer.tpl',
-      1 => 1396990889,
+      1 => 1398696457,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '213088437353446b404b9a08-84554687',
+  'nocache_hash' => '246089351535eb89a8ffa79-07470052',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_53446b404fe171_27682272',
+  'unifunc' => 'content_535eb89a948b53_93019874',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53446b404fe171_27682272')) {function content_53446b404fe171_27682272($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_535eb89a948b53_93019874')) {function content_535eb89a948b53_93019874($_smarty_tpl) {?>
 
 	</div>
 </div>
@@ -81,6 +81,12 @@ s</span>
 				<?php echo smartyTranslate(array('s'=>'Addons'),$_smarty_tpl);?>
 
 			</a>
+			/&nbsp;
+			<a href="http://www.prestashop.com/en/training-prestashop?utm_source=backoffice_footer" target="_blank" class="footer_link">
+				<i class="icon-book"></i>
+				<?php echo smartyTranslate(array('s'=>'Training'),$_smarty_tpl);?>
+
+			</a>
 		</p>
 		<?php if ($_smarty_tpl->tpl_vars['iso_is_fr']->value){?>
 		<p>Questions • Renseignements • Formations : 
@@ -100,4 +106,5 @@ s</span>
 
 <?php }?>
 </body>
-</html><?php }} ?>
+</html>
+<?php }} ?>

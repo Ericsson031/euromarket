@@ -52,9 +52,11 @@
 
 			<h3><a  title="{$product.name|escape:'htmlall':'UTF-8'}" details="{$product.link|escape:'htmlall':'UTF-8'}">{$product.name|escape:'htmlall':'UTF-8'|truncate:30:'...'}</a></h3>
 			<div class="bottom_block">
-				<div class="bottom_block_left">
-                
-                
+				<div class="bottom_block_left">               
+                  {if $smarty.server.HTTP_HOST|strstr:"myeuromarket"}
+                  <p id="product_reference" {$product.ean13|truncate:35:'...'|escape:'htmlall':'UTF-8'}style="display: block;"><label for="product_reference">{l s='EAN :'} </label><span class="editable">{$product.ean13|truncate:35:'...'|escape:'htmlall':'UTF-8'}</span></p>
+                  {/if}
+                 
                  {* if isset($product.on_sale) && $product.on_sale && isset($product.show_price) && $product.show_price && !$PS_CATALOG_MODE}<span class="on_sale">{l s='On sale!'}</span>
 				{elseif isset($product.reduction) && $product.reduction && isset($product.show_price) && $product.show_price && !$PS_CATALOG_MODE}<!--<span class="discount">{l s='Reduced price!'}</span>-->{/if}
 				{if (!$PS_CATALOG_MODE AND ((isset($product.show_price) && $product.show_price) || (isset($product.available_for_order) && $product.available_for_order))) *}

@@ -1,15 +1,17 @@
 
 [{shop_url}] 
 
-Hi, 
+Здравствуйте, 
 
-This item is once again in-stock.
+Этот товар опять на складе.
 
-You can access the product page by clicking on the link: {product}
+Вы можете получить доступ к странице
+товара, нажав на ссылку: {product}
 [{product_link}]
 
-You can order it right now from our online shop. 		 
+Вы можете заказать это прямо сейчас в
+нашем интернет-магазине. 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

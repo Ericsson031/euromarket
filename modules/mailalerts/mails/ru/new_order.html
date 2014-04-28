@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-		<title>Message from {shop_name}</title>
+		<title>Сообщение от {shop_name}</title>
 		
 
 		<style>	@media only screen and (max-width: 300px){ 
@@ -70,14 +70,14 @@
 <tr>
 	<td align="center" class="titleblock" style="padding:7px 0">
 		<font size="2" face="Open-sans, sans-serif" color="#555454">
-			<span class="title" style="font-weight:500;font-size:28px;text-transform:uppercase;line-height:33px">Congratulations!</span>
+			<span class="title" style="font-weight:500;font-size:28px;text-transform:uppercase;line-height:33px">Поздравляем!</span>
 		</font>
 	</td>
 </tr>
 <tr>
 	<td class="linkbelow" style="padding:7px 0">
 		<font size="2" face="Open-sans, sans-serif" color="#555454">
-			<span>A new order was placed on {shop_name} from the following customer: {firstname} {lastname} ({email})</span>
+			<span>Был сформирован новый заказ в {shop_name} от следующего клиента: {firstname} {lastname} ({email})</span>
 		</font>
 	</td>
 </tr>
@@ -92,10 +92,10 @@
 				<td style="padding:7px 0">
 					<font size="2" face="Open-sans, sans-serif" color="#555454">
 						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;margin:3px 0 7px;text-transform:uppercase;font-weight:500;font-size:18px;padding-bottom:10px">
-							Order details						</p>
+							Детали заказа						</p>
 						<span style="color:#777">
-							<span style="color:#333"><strong>Order:</strong></span> {order_name} Placed on {date}<br /><br />
-							<span style="color:#333"><strong>Payment:</strong></span> {payment}
+							<span style="color:#333"><strong>Заказ:</strong></span> {order_name} Оформлен {date}<br /><br />
+							<span style="color:#333"><strong>Оплата:</strong></span> {payment}
 						</span>
 					</font>
 				</td>
@@ -111,9 +111,9 @@
 				<thead>
 					<tr>
 						<th style="border:1px solid #D6D4D4;background-color:#fbfbfb;font-family:Arial;color:#333;font-size:13px;padding:10px">Артикул</th>
-						<th style="border:1px solid #D6D4D4;background-color:#fbfbfb;font-family:Arial;color:#333;font-size:13px;padding:10px">Product</th>
+						<th style="border:1px solid #D6D4D4;background-color:#fbfbfb;font-family:Arial;color:#333;font-size:13px;padding:10px">Товар</th>
 						<th style="border:1px solid #D6D4D4;background-color:#fbfbfb;font-family:Arial;color:#333;font-size:13px;padding:10px">Цена за единицу</th>
-						<th style="border:1px solid #D6D4D4;background-color:#fbfbfb;font-family:Arial;color:#333;font-size:13px;padding:10px">Quantity</th>
+						<th style="border:1px solid #D6D4D4;background-color:#fbfbfb;font-family:Arial;color:#333;font-size:13px;padding:10px">Количество</th>
 						<th style="border:1px solid #D6D4D4;background-color:#fbfbfb;font-family:Arial;color:#333;font-size:13px;padding:10px">Итого</th>
 					</tr>
 				</thead>
@@ -130,7 +130,7 @@
 									<td width="10" style="color:#333;padding:0">&nbsp;</td>
 									<td align="right" style="color:#333;padding:0">
 										<font size="2" face="Open-sans, sans-serif" color="#555454">
-											<strong>Products</strong>
+											<strong>Товары</strong>
 										</font>
 									</td>
 									<td width="10" style="color:#333;padding:0">&nbsp;</td>
@@ -186,7 +186,7 @@
 									<td width="10" style="color:#333;padding:0">&nbsp;</td>
 									<td align="right" style="color:#333;padding:0">
 										<font size="2" face="Open-sans, sans-serif" color="#555454">
-											<strong>Gift-wrapping</strong>
+											<strong>Подарочная упаковка</strong>
 										</font>
 									</td>
 									<td width="10" style="color:#333;padding:0">&nbsp;</td>
@@ -214,7 +214,7 @@
 									<td width="10" style="color:#333;padding:0">&nbsp;</td>
 									<td align="right" style="color:#333;padding:0">
 										<font size="2" face="Open-sans, sans-serif" color="#555454">
-											<strong>Shipping</strong>
+											<strong>Доставка</strong>
 										</font>
 									</td>
 									<td width="10" style="color:#333;padding:0">&nbsp;</td>
@@ -242,7 +242,7 @@
 									<td width="10" style="color:#333;padding:0">&nbsp;</td>
 									<td align="right" style="color:#333;padding:0">
 										<font size="2" face="Open-sans, sans-serif" color="#555454">
-											<strong>Total Tax paid</strong>
+											<strong>Всего налогов оплачено</strong>
 										</font>
 									</td>
 									<td width="10" style="color:#333;padding:0">&nbsp;</td>
@@ -347,7 +347,7 @@
 							<td style="padding:7px 0">
 								<font size="2" face="Open-sans, sans-serif" color="#555454">
 									<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;margin:3px 0 7px;text-transform:uppercase;font-weight:500;font-size:18px;padding-bottom:10px">
-										Billing address									</p>
+										Адрес для выставления счета									</p>
 									<span style="color:#777">
 										{invoice_block_html}
 									</span>
@@ -372,7 +372,7 @@
 				<td style="padding:7px 0">
 					<font size="2" face="Open-sans, sans-serif" color="#555454">
 						<p data-html-only="1" style="border-bottom:1px solid #D6D4D4;margin:3px 0 7px;text-transform:uppercase;font-weight:500;font-size:18px;padding-bottom:10px">
-							Customer message:						</p>
+							Сообщение покупателя:						</p>
 						<span style="color:#777">
 							{message}
 						</span>
@@ -389,7 +389,7 @@
 						</tr>
 						<tr>
 							<td class="footer" style="border-top:4px solid #333333;padding:7px 0">
-								<span><a href="{shop_url}" style="color:#337ff1">{shop_name}</a> powered by <a href="http://www.prestashop.com/" style="color:#337ff1">PrestaShop&trade;</a></span>
+								<span><a href="{shop_url}" style="color:#337ff1">{shop_name}</a> работает на <a href="http://www.prestashop.com/" style="color:#337ff1">PrestaShop&trade;</a></span>
 							</td>
 						</tr>
 					</table>

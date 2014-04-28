@@ -1,7 +1,7 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
 {reply} 
 
@@ -12,10 +12,12 @@ Hi {firstname} {lastname},
 запись" [{my_account_url}] в нашем
 магазине. 
 
-If you have a guest account, you can follow your order via the
-"Guest Tracking" [{guest_tracking_url}] section
-on our shop. 
+Если у вас гостевой аккаунт, то вы
+можете следить за заказом по ссылке
+"Гостевое Отслеживание"
+[{guest_tracking_url}] в нашем
+магазине. 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

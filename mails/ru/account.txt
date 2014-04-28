@@ -1,30 +1,36 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname},
+Здравствуйе, {firstname} {lastname},
 
-Thank you for creating a customer account at {shop_name}. 
+Спасибо за создание
+пользовательского аккаунта в {shop_name}. 
 
-Here are your login details:
+Вот ваши данные для входа:
 
-E-MAIL ADDRESS: {email}
+АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ: {email}
 
-PASSWORD: {passwd} 		 
+ПАРОЛЬ: {passwd} 		 
 
-Important Security Tips:
+Важные советы по безопасности:
 
-* Always keep your account details safe.
+* Всегда сохраняйте свои данные в
+безопасности.
 
-* Never disclose your login details to anyone.
+* Никогда никому не разглашать свои
+данные для входа.
 
-* Change your password regularly.
+* Регулярно меняйте пароль.
 
-* Should you suspect someone is using your account illegally, please
-notify us immediately.
+* Если вы подозреваете, что кто-то,
+использует вашу учетную запись
+незаконно, пожалуйста, немедленно
+сообщите нам.
 
-You can now place orders on our shop: {shop_name}
+Теперь вы можете делать заказы в
+нашем магазине: {shop_name}
 [{shop_url}] 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

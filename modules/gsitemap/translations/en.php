@@ -5,7 +5,7 @@ $_MODULE = array();
 
 $_MODULE['<{gsitemap}prestashop>gsitemap_3aaaafde6f9b2701f9e6eb9292e95521'] = 'Google sitemap';
 $_MODULE['<{gsitemap}prestashop>gsitemap_935a6bc13704a117d22333c3155b5dae'] = 'Generate your Google sitemap file';
-$_MODULE['<{gsitemap}prestashop>gsitemap_b52bf50c73995780892b9945ddc98708'] = 'An error occurred while trying to check your file permissions. Please adjust your permissions to allow PrestaShop to write a file in your root directory.';
+$_MODULE['<{gsitemap}prestashop>gsitemap_b52bf50c73995780892b9945ddc98708'] = 'An error occured while trying to check your file permissions. Please adjust your permissions to allow PrestaShop to write a file in your root directory.';
 $_MODULE['<{gsitemap}prestashop>configuration_67ddb0d12fa1963b202d4ac310547709'] = 'Your Sitemaps were successfully created. Please do not forget to setup the URL';
 $_MODULE['<{gsitemap}prestashop>configuration_9d934413d2737c2a15f58de573657ce3'] = 'in your Google Webmaster account.';
 $_MODULE['<{gsitemap}prestashop>configuration_1c95b77d135b55c84429588c11697ea4'] = 'Your Sitemaps';

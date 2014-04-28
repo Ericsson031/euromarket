@@ -1,19 +1,22 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
-Your guest account for {shop_name} has been transformed into a
-customer account. 
+Ваш гостевой аккаунт в {shop_name}
+переведен в статус покупателя. 
 
-E-MAIL ADDRESS: {email}
+АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ: {email}
 
-PASSWORD: {passwd} 		 
+ПАРОЛЬ: {passwd} 		 
 
-Please be careful when sharing these login details with others. 
+Пожалуйста, будьте осторожны при
+совместном использовании этих данных
+для входа с другими лицами. 
 
-You can access your customer account on our shop: {shop_url} 
+Вы можете войти в свой аккаунт в
+нашем магазине: {shop_url} 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

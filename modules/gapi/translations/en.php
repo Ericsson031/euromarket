@@ -34,8 +34,8 @@ $_MODULE['<{gapi}prestashop>gapi_a670b4cdb42644e4b46fa857d3f73d9e'] = 'Google An
 $_MODULE['<{gapi}prestashop>gapi_ce8ae9da5b7cd6c3df2929543a9af92d'] = 'Email';
 $_MODULE['<{gapi}prestashop>gapi_dc647eb65e6711e155375218212b3964'] = 'Password';
 $_MODULE['<{gapi}prestashop>gapi_970a710b7344f8639b6a86d1f081b660'] = 'You can find your profile ID in the address bar of your browser while accessing Analytics report.';
-$_MODULE['<{gapi}prestashop>gapi_13d8a8a0f58ca5c8ffa60b736ec087a3'] = 'For the OLD VERSION analytics page the ID=xxxxxxxx is the following:';
-$_MODULE['<{gapi}prestashop>gapi_cb61eddc775338aaf8e2cd45b0dcf2b1'] = 'For the NEW VERSION analytic page it is the number at the end of the URL starting with p:';
+$_MODULE['<{gapi}prestashop>gapi_e33d3b3409f8a0fcc326596c918c4961'] = 'For the OLD VERSION of Google Analytics, the profile ID is in the URL\'s "id" parameter (see "&id=xxxxxxxx"):';
+$_MODULE['<{gapi}prestashop>gapi_c78fedea48082c7a437773e31b418f96'] = 'For the NEW VERSION of Google Analytics, the profile ID is the number at the end of the URL, starting with p:';
 
 
 return $_MODULE;

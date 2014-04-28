@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-04-09 01:33:52
+<?php /* Smarty version Smarty-3.1.14, created on 2014-04-29 00:22:50
          compiled from "/home/eurobalk/testing/admin2013/themes/default/template/layout.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:202737778553446b40504ca2-99725114%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:480146340535eb89a94e660-16253117%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '379ebf6c38fe69a60ce6ee565796213a8e8b93d2' => 
     array (
       0 => '/home/eurobalk/testing/admin2013/themes/default/template/layout.tpl',
-      1 => 1396990889,
+      1 => 1398696458,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '202737778553446b40504ca2-99725114',
+  'nocache_hash' => '480146340535eb89a94e660-16253117',
   'function' => 
   array (
   ),
@@ -32,9 +32,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_53446b405c67d2_20735175',
+  'unifunc' => 'content_535eb89aa116c6_30772896',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53446b405c67d2_20735175')) {function content_53446b405c67d2_20735175($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_535eb89aa116c6_30772896')) {function content_535eb89aa116c6_30772896($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->tpl_vars['header']->value;?>
 
 
@@ -103,8 +103,8 @@ $_smarty_tpl->tpl_vars['conf']->_loop = true;
 	<div class="alert alert-warning">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
 		<?php if (count($_smarty_tpl->tpl_vars['warnings']->value)>1){?>
-			<strong><?php echo smartyTranslate(array('s'=>'There are %d warnings:','sprintf'=>count($_smarty_tpl->tpl_vars['warnings']->value)),$_smarty_tpl);?>
-</strong>
+			<h4><?php echo smartyTranslate(array('s'=>'There are %d warnings:','sprintf'=>count($_smarty_tpl->tpl_vars['warnings']->value)),$_smarty_tpl);?>
+</h4>
 		<?php }?>
 		<ul class="list-unstyled">
 			<?php  $_smarty_tpl->tpl_vars['warning'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['warning']->_loop = false;

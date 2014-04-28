@@ -1,22 +1,28 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
-You are one of our best customers, however you have not placed an
-order in {days_threshold} days.
+Вы являетесь одним из наших лучших
+клиентов, однако вы не оформляли заказ
+{days_threshold} дней.
 
-Your cart has been saved, you can resume your order by visiting our
-shop: {shop_url} [{shop_url}]
+Ваша корзина была сохранена, можете
+продолжить оформление заказа, посетив
+наш магазин: {shop_url} [{shop_url}]
 
-We wish to thank you for the trust you have placed in us and want to
-give you a discount of {amount}% valid on your next order! This offer
-is valid for {days} days, so do not waste a moment! 		 
+Мы хотели бы поблагодарить Вас за
+доверие, оказанное нам и хотим дать
+вам скидку в {amount}% действующую на
+следующий заказ! Предложение
+действует {days} дней, не упускайте
+момент! 		 
 
-HERE IS YOUR COUPON: {voucher_num}
+ВАШ КУПОН: {voucher_num}
 
-Enter this code in your shopping cart to get your discount. 		 
+Для получения скидки введите данный
+код в корзине. 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

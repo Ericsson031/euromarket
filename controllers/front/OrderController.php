@@ -1,6 +1,6 @@
 <?php
 /*
-* 2007-2012 PrestaShop
+* 2007-2014 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -19,7 +19,7 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2012 PrestaShop SA
+*  @copyright  2007-2014 PrestaShop SA
 *  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
@@ -40,13 +40,13 @@ class OrderControllerCore extends ParentOrderController
 
 		$this->step = (int)(Tools::getValue('step'));
 		if (!$this->nbProducts)
-			$this->step = -1;
+			$this->step = -1;		
 
 		// If some products have disappear
 		if (!$this->context->cart->checkQuantities())
 		{
 			$this->step = 0;
-			$this->errors[] = Tools::displayError('An item in your cart is no longer available in this quantity, you cannot proceed with your order.');
+			$this->errors[] = Tools::displayError('An item in your cart is no longer available in this quantity. You cannot proceed with your order until the quantity is adjusted.');
 		}
 
 		// Check minimal amount
@@ -54,12 +54,12 @@ class OrderControllerCore extends ParentOrderController
 
 		$orderTotal = $this->context->cart->getOrderTotal();
 		$minimal_purchase = Tools::convertPrice((float)Configuration::get('PS_PURCHASE_MINIMUM'), $currency);
-		if ($this->context->cart->getOrderTotal(false, Cart::ONLY_PRODUCTS) < $minimal_purchase && $this->step != -1)
+		if ($this->context->cart->getOrderTotal(false, Cart::ONLY_PRODUCTS) < $minimal_purchase && $this->step > 0)
 		{
 			$this->step = 0;
 			$this->errors[] = sprintf(
-				Tools::displayError('A minimum purchase total of %s is required in order to validate your order.'),
-				Tools::displayPrice($minimal_purchase, $currency)
+				Tools::displayError('A minimum purchase total of %1s (tax excl.) is required in order to validate your order, current purchase total is %2s (tax excl.).'),
+				Tools::displayPrice($minimal_purchase, $currency), Tools::displayPrice($this->context->cart->getOrderTotal(false, Cart::ONLY_PRODUCTS), $currency)
 			);
 		}
 		if (!$this->context->customer->isLogged(true) && in_array($this->step, array(1, 2, 3)))
@@ -94,8 +94,6 @@ class OrderControllerCore extends ParentOrderController
 	 */
 	public function initContent()
 	{
-		global $isVirtualCart;
-
 		parent::initContent();
 
 		if (Tools::isSubmit('ajax') && Tools::getValue('method') == 'updateExtraCarrier')
@@ -117,7 +115,7 @@ class OrderControllerCore extends ParentOrderController
 		}
 
 		if ($this->nbProducts)
-			$this->context->smarty->assign('virtual_cart', $isVirtualCart);
+			$this->context->smarty->assign('virtual_cart', $this->context->cart->isVirtualCart());
 
 		// 4 steps to the order
 		switch ((int)$this->step)
@@ -155,14 +153,18 @@ class OrderControllerCore extends ParentOrderController
 					Tools::redirect('index.php?controller=order&step=2');
 				Context::getContext()->cookie->check_cgv = true;
 
-				// Check the delivery option is setted
+				// Check the delivery option is set
 				if (!$this->context->cart->isVirtualCart())
 				{
 					if (!Tools::getValue('delivery_option') && !Tools::getValue('id_carrier') && !$this->context->cart->delivery_option && !$this->context->cart->id_carrier)
 						Tools::redirect('index.php?controller=order&step=2');
 					elseif (!Tools::getValue('id_carrier') && !$this->context->cart->id_carrier)
 					{
-						foreach (Tools::getValue('delivery_option') as $delivery_option)
+						$deliveries_options = Tools::getValue('delivery_option');
+						if (!$deliveries_options) {
+							$deliveries_options = $this->context->cart->delivery_option;
+						}
+						foreach ($deliveries_options as $delivery_option)
 							if (empty($delivery_option))
 								Tools::redirect('index.php?controller=order&step=2');
 					}
@@ -221,12 +223,11 @@ class OrderControllerCore extends ParentOrderController
 	 */
 	public function autoStep()
 	{
-		global $isVirtualCart;
 
 		if ($this->step >= 2 && (!$this->context->cart->id_address_delivery || !$this->context->cart->id_address_invoice))
 			Tools::redirect('index.php?controller=order&step=1');
 
-		if ($this->step > 2 && !$isVirtualCart && count($this->context->cart->getDeliveryOptionList()) == 0)
+		if ($this->step > 2 && !$this->context->cart->isVirtualCart() && count($this->context->cart->getDeliveryOptionList()) == 0)
 			Tools::redirect('index.php?controller=order&step=2');
 
 		$delivery = new Address((int)$this->context->cart->id_address_delivery);
@@ -249,39 +250,42 @@ class OrderControllerCore extends ParentOrderController
 	{
 		if (!Tools::getValue('multi-shipping'))
 			$this->context->cart->setNoMultishipping();
-			
+		
+		$same = Tools::isSubmit('same');
+		if(!Tools::getValue('id_address_invoice', false) && !$same)
+			$same = true;
+
 		if (!Customer::customerHasAddress($this->context->customer->id, (int)Tools::getValue('id_address_delivery'))
-			|| (Tools::isSubmit('same') && !Customer::customerHasAddress($this->context->customer->id, (int)Tools::getValue('id_address_invoice'))))
-			$this->errors[] = Tools::displayError('Invalid address');
+			|| (!$same && Tools::getValue('id_address_delivery') != Tools::getValue('id_address_invoice')
+				&& !Customer::customerHasAddress($this->context->customer->id, (int)Tools::getValue('id_address_invoice'))))
+			$this->errors[] = Tools::displayError('Invalid address', !Tools::getValue('ajax'));
 		else
 		{
+			$this->context->cart->id_address_delivery = (int)Tools::getValue('id_address_delivery');
+			$this->context->cart->id_address_invoice = $same ? $this->context->cart->id_address_delivery : (int)Tools::getValue('id_address_invoice');
+			
+			CartRule::autoRemoveFromCart($this->context);
+			CartRule::autoAddToCart($this->context);
+			
+			if (!$this->context->cart->update())
+				$this->errors[] = Tools::displayError('An error occurred while updating your cart.', !Tools::getValue('ajax'));
+
+			if (!$this->context->cart->isMultiAddressDelivery())
+				$this->context->cart->setNoMultishipping(); // If there is only one delivery address, set each delivery address lines with the main delivery address
+
+			if (Tools::isSubmit('message'))
+				$this->_updateMessage(Tools::getValue('message'));
+						
 			// Add checking for all addresses
 			$address_without_carriers = $this->context->cart->getDeliveryAddressesWithoutCarriers();
-			if (count($address_without_carriers))
+			if (count($address_without_carriers) && !$this->context->cart->isVirtualCart())
 			{
 				if (count($address_without_carriers) > 1)
-					$this->errors[] = sprintf(Tools::displayError('There are no carriers that deliver to some addresses you selected.'));
+					$this->errors[] = sprintf(Tools::displayError('There are no carriers that deliver to some addresses you selected.', !Tools::getValue('ajax')));
 				elseif ($this->context->cart->isMultiAddressDelivery())
-					$this->errors[] = sprintf(Tools::displayError('There are no carriers that deliver to one of the address you selected.'));
+					$this->errors[] = sprintf(Tools::displayError('There are no carriers that deliver to one of the address you selected.', !Tools::getValue('ajax')));
 				else
-					$this->errors[] = sprintf(Tools::displayError('There are no carriers that deliver to the address you selected.'));
-			}
-			else
-			{
-				$this->context->cart->id_address_delivery = (int)Tools::getValue('id_address_delivery');
-				$this->context->cart->id_address_invoice = Tools::isSubmit('same') ? $this->context->cart->id_address_delivery : (int)Tools::getValue('id_address_invoice');
-				
-				CartRule::autoRemoveFromCart($this->context);
-				CartRule::autoAddToCart($this->context);
-				
-				if (!$this->context->cart->update())
-					$this->errors[] = Tools::displayError('An error occurred while updating your cart.');
-
-				if (!$this->context->cart->isMultiAddressDelivery())
-					$this->context->cart->setNoMultishipping(); // If there is only one delivery address, set each delivery address lines with the main delivery address
-
-				if (Tools::isSubmit('message'))
-					$this->_updateMessage(Tools::getValue('message'));
+					$this->errors[] = sprintf(Tools::displayError('There are no carriers that deliver to the address you selected.', !Tools::getValue('ajax')));
 			}
 		}
 		
@@ -310,8 +314,6 @@ class OrderControllerCore extends ParentOrderController
 			$this->_assignCarrier();
 			$this->step = 2;
 			$this->displayContent();
-			include(dirname(__FILE__).'/../footer.php');
-			exit;
 		}
 		$orderTotal = $this->context->cart->getOrderTotal();
 	}
@@ -341,19 +343,9 @@ class OrderControllerCore extends ParentOrderController
 		parent::_assignCarrier();
 		// Assign wrapping and TOS
 		$this->_assignWrappingAndTOS();
-		
-		// If a rule offer free-shipping, force hidding shipping prices
-		$free_shipping = false;
-		foreach ($this->context->cart->getCartRules() as $rule)
-			if ($rule['free_shipping'])
-			{
-				$free_shipping = true;
-				break;
-			}
-		
+
 		$this->context->smarty->assign(
 			array(
-				'free_shipping' => $free_shipping,
 				'is_guest' => (isset($this->context->customer->is_guest) ? $this->context->customer->is_guest : 0)
 			));
 	}
@@ -377,6 +369,13 @@ class OrderControllerCore extends ParentOrderController
 		$this->context->cart->checkedTOS = '1';
 
 		parent::_assignPayment();
+	}
+
+	public function setMedia()
+	{
+		parent::setMedia();
+		if ($this->step == 2)
+			$this->addJS(_THEME_JS_DIR_.'order-carrier.js');
 	}
 }
 

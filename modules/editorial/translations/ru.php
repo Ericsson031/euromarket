@@ -14,6 +14,7 @@ $_MODULE['<{editorial}prestashop>editorial_617f7661941abbf06f773fcb10031c7a'] = 
 $_MODULE['<{editorial}prestashop>editorial_78587f196180054fcb797d40f4a86f10'] = 'Главный логотип';
 $_MODULE['<{editorial}prestashop>editorial_28d74ee805e3a162047d8f917b74dcb3'] = 'Ссылка изображения на главной странице';
 $_MODULE['<{editorial}prestashop>editorial_98039e8f2a0d93fc0fff503f9166f59b'] = 'Подзаголовок изображения главной страницы';
+$_MODULE['<{editorial}prestashop>editorial_c9cc8cce247e49bae79f15173ce97354'] = 'Сохранить';
 $_MODULE['<{editorial}prestashop>editorial_2563cfff94f1447b53116f3089940125'] = 'Это действие не может быть принято.';
 $_MODULE['<{editorial}prestashop>editorial_5526efd7014a00a73115bcf90883d968'] = 'Во время загрузки картинки произошла ошибка.';
 $_MODULE['<{editorial}prestashop>editorial_8dd2f915acf4ec98006d11c9a4b0945b'] = 'Настройки успешно обновлены';

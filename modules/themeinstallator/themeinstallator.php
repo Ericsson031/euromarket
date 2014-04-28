@@ -1,6 +1,6 @@
 <?php
 /*
-* 2007-2014 PrestaShop
+* 2007-2013 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -19,7 +19,7 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2013 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
@@ -73,7 +73,7 @@ class ThemeInstallator extends Module
 		@ini_set('memory_limit', '2G');
 
 		$this->name = 'themeinstallator';
-		$this->version = '2.8';
+		$this->version = '2.2';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 0;
 		if (version_compare(_PS_VERSION_, 1.4) >= 0)
@@ -83,6 +83,7 @@ class ThemeInstallator extends Module
 		parent::__construct();
 		$this->displayName = $this->l('Import/export a theme');
 		$this->description = $this->l('Export or Install a theme and its modules on your shop.');
+
 
 		if ($this->active && defined('_PS_ADMIN_DIR_'))
 		{
@@ -106,14 +107,6 @@ class ThemeInstallator extends Module
 
 			$this->action_form = $this->current_index.'&configure='.$this->name.'&token='.Tools::htmlentitiesUTF8(Tools::getValue('token'));
 		}
-	}
-	
-	public function install()
-	{
-		if ($this->id)
-			return true;
-		else
-			return parent::install();
 	}
 
 	/* Check status of backward compatibility module*/
@@ -316,39 +309,38 @@ class ThemeInstallator extends Module
 		if (Tools::isSubmit('submitImport1'))
 		{
 			if ($_FILES['themearchive']['error'] || !file_exists($_FILES['themearchive']['tmp_name']))
-				$this->errors[] = sprintf($this->l('An error has occurred during the file upload (%s)'), $_FILES['themearchive']['error']);
+				$this->errors[] = parent::displayError($this->l('An error has occurred during the file upload.'));
 			elseif (substr($_FILES['themearchive']['name'], -4) != '.zip')
-				$this->errors[] = $this->l('Only zip files are allowed');
+				$this->errors[] = parent::displayError($this->l('Only zip files are allowed'));
 			elseif (!rename($_FILES['themearchive']['tmp_name'], ARCHIVE_NAME))
-				$this->errors[] = $this->l('An error has occurred during the file copy.');
+				$this->errors[] = parent::displayError($this->l('An error has occurred during the file copy.'));
 			elseif (Tools::ZipTest(ARCHIVE_NAME))
 				$this->page = 2;
 			else
-				$this->errors[] = $this->l('Zip file seems to be broken');
+				$this->errors[] = parent::displayError($this->l('Zip file seems to be broken'));
 		}
 		elseif (Tools::isSubmit('submitImport2'))
 		{
 			if (!Validate::isModuleUrl($url = Tools::getValue('linkurl'), $this->errors)) // $tmp is not used, because we don't care about the error output of isModuleUrl
-				$this->errors[] = $this->l('Only zip files are allowed');
+				$this->errors[] = parent::displayError($this->l('Only zip files are allowed'));
 			elseif (!copy($url, ARCHIVE_NAME))
-				$this->errors[] = $this->l('Error during the file download');
+				$this->errors[] = parent::displayError($this->l('Error during the file download'));
 			elseif (Tools::ZipTest(ARCHIVE_NAME))
-				$this->page = 2;
+				$this->errors[] = parent::displayError($this->l('Zip file seems to be broken'));
 			else
-				$this->errors[] = $this->l('Zip file seems to be broken');
-
+				$this->page = 2;
 		}
 		elseif (Tools::isSubmit('submitImport3'))
 		{
 			$filename = _IMPORT_FOLDER_.Tools::getValue('ArchiveName');
 			if (substr($filename, -4) != '.zip')
-				$this->errors[] = $this->l('Only zip files are allowed');
+				$this->errors[] = parent::displayError($this->l('Only zip files are allowed'));
 			elseif (!copy($filename, ARCHIVE_NAME))
-				$this->errors[] = $this->l('An error has occurred during the file copy.');
+				$this->errors[] = parent::displayError($this->l('An error has occurred during the file copy.'));
 			elseif (Tools::ZipTest(ARCHIVE_NAME))
 				$this->page = 2;
 			else
-				$this->errors[] = $this->l('Zip file seems to be broken');
+				$this->errors[] = parent::displayError($this->l('Zip file seems to be broken'));
 		}
 		elseif (Tools::isSubmit('prevThemes'))
 			$this->page = 2;
@@ -360,7 +352,7 @@ class ThemeInstallator extends Module
 		{
 			if (!Tools::ZipExtract(ARCHIVE_NAME, _IMPORT_FOLDER_))
 			{
-				$this->errors[] = $this->l('Error during zip extraction');
+				$this->errors[] = parent::displayError($this->l('Error during zip extraction'));
 				$this->page = 1;
 			}
 		}
@@ -370,7 +362,7 @@ class ThemeInstallator extends Module
 		{
 			if (!self::checkXmlFields())
 			{
-				$this->errors[] = $this->l('Bad configuration file');
+				$this->errors[] = parent::displayError($this->l('Bad configuration file'));
 				$this->page = 1;
 			}
 			else
@@ -662,19 +654,10 @@ class ThemeInstallator extends Module
 								$msg .= '<b>'.$this->l('The following modules have been disabled:').'</b><br />';
 
 							// Delete all native module which are in the front office feature category and in selected shops
-							if (_PS_VERSION_ < '1.5')
-							{
-								$sql = 'DELETE FROM `'._DB_PREFIX_.'hook_module` WHERE `id_module` = '.pSQL($obj->id).' AND `id_shop` = '.(int)$id_shop;
-								if (Db::getInstance()->execute($sql))
-									$msg .= '<i>- '.pSQL($row).'</i><br />';
-							}
-							else
-							{
-								$sql = 'DELETE FROM `'._DB_PREFIX_.'module_shop` WHERE `id_module` = '.pSQL($obj->id).' AND `id_shop` = '.(int)$id_shop;
-								$sql1 = 'DELETE FROM `'._DB_PREFIX_.'hook_module` WHERE `id_module` = '.pSQL($obj->id).' AND `id_shop` = '.(int)$id_shop;
-								if (Db::getInstance()->execute($sql) && Db::getInstance()->execute($sql1))
-									$msg .= '<i>- '.pSQL($row).'</i><br />';
-							}
+							$sql = 'DELETE FROM `'._DB_PREFIX_.'module_shop` WHERE `id_module` = '.pSQL($obj->id).' AND `id_shop` = '.(int)$id_shop;
+							$sql1 = 'DELETE FROM `'._DB_PREFIX_.'hook_module` WHERE `id_module` = '.pSQL($obj->id).' AND `id_shop` = '.(int)$id_shop;
+							if (Db::getInstance()->execute($sql) && Db::getInstance()->execute($sql1))
+								$msg .= '<i>- '.pSQL($row).'</i><br />';
 						}
 					}
 
@@ -685,26 +668,15 @@ class ThemeInstallator extends Module
 						$obj = Module::getInstanceByName($row);
 						if (Validate::isLoadedObject($obj))
 						{
-							if (_PS_VERSION_ < '1.5') 
-							{
-								Db::getInstance()->execute('
-									UPDATE `'._DB_PREFIX_.'module`
-									SET `active`= 1
-									WHERE `name` = \''.pSQL($row).'\''
-								);
-							}
-							else 
-							{
-								Db::getInstance()->execute('
-									UPDATE `'._DB_PREFIX_.'module`
-									SET `active`= 1
-									WHERE `name` = \''.pSQL($row).'\''
-								);
-								Db::getInstance()->execute('
-									INSERT IGNORE INTO '._DB_PREFIX_.'module_shop (id_module, id_shop)
-									VALUES('.(int)$obj->id.', '.(int)$id_shop.')
-								');
-							}
+							Db::getInstance()->execute('
+								UPDATE `'._DB_PREFIX_.'module`
+								SET `active`= 1
+								WHERE `name` = \''.pSQL($row).'\''
+							);
+							Db::getInstance()->execute('
+								INSERT IGNORE INTO '._DB_PREFIX_.'module_shop (id_module, id_shop)
+								VALUES('.(int)$obj->id.', '.(int)$id_shop.')
+							');
 						}
 						else if (!is_object($obj) || !$obj->install())
 							continue;
@@ -725,12 +697,12 @@ class ThemeInstallator extends Module
 							{
 								if (_PS_VERSION_ < '1.5')
 									Db::getInstance()->execute('
-										INSERT IGNORE INTO `'._DB_PREFIX_.'hook_module` (`id_module`, `id_hook`, `position`)
+										INSERT INTO `'._DB_PREFIX_.'hook_module` (`id_module`, `id_hook`, `position`)
 										VALUES ('.(int)$obj->id.', '.(int)Hook::get($hook[$count]).', '.(int)$position[$count].')
 									');
 								else
 									Db::getInstance()->execute('
-										INSERT IGNORE INTO `'._DB_PREFIX_.'hook_module` (`id_module`, `id_shop`, `id_hook`, `position`)
+										INSERT INTO `'._DB_PREFIX_.'hook_module` (`id_module`, `id_shop`, `id_hook`, `position`)
 										VALUES ('.(int)$obj->id.', '.(int)$id_shop.', '.(int)Hook::getIdByName($hook[$count]).', '.(int)$position[$count].')
 									');
 
@@ -807,7 +779,7 @@ class ThemeInstallator extends Module
 					continue;
 
 				if ($variation != $theme_directory)
-					$theme_directory = $variation;
+					$theme_directory .= $variation;
 
 				if (empty($theme_directory))
 					$theme_directory = str_replace(' ', '', (string)$this->xml['name']);
@@ -940,7 +912,30 @@ class ThemeInstallator extends Module
 			<input type="submit" class="button" name="prevThemes" value="'.$this->l('Previous').'" />
 			<input type="submit" class="button" name="submitModules" value="'.$this->l('Next').'" />
 		</fieldset>
-		</form>';
+		</form>
+		<script type="text/javascript">
+			$(document).ready(function() {
+					$.ajax({
+						type : "POST",
+						url : "'.str_replace('index', 'ajax-tab', $this->current_index).'",
+						data :	{
+							"theme_list" : '.Tools::jsonEncode(array((string)$this->xml->theme_key)).',
+							"controller" : "AdminModules",
+							"action" : "wsThemeCall",
+							"token" : "'.Tools::getAdminToken('AdminModules'.(int)Tab::getIdFromClassName('AdminModules').(int)$this->context->employee->id).'"
+						},
+						dataType: "json",
+						success: function(json)
+						{
+							//console.log(json);
+						},
+						error: function(xhr, ajaxOptions, thrownError)
+						{
+							//jAlert("TECHNICAL ERROR"+res);
+						}
+					});
+				});
+		</script>';
 	}
 
 	private function displayForm2()
@@ -1441,7 +1436,6 @@ class ThemeInstallator extends Module
 	{
 		// @todo check theme variation pertinence
 		$count = 0;
-		$this->variations[] = Tools::getValue('theme_name').'¤'.Tools::getValue('theme_directory').'¤'.Tools::getValue('compa_from').'¤'.Tools::getValue('compa_to');
 		while (Tools::isSubmit('myvar_'.++$count))
 		{
 			if ((int)Tools::getValue('myvar_'.$count) == -1)

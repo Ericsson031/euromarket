@@ -1,13 +1,13 @@
 
 [{shop_url}] 
 
-Hi, 
+Здравствуйте, 
 
-The stock cover is now less than the specified minimum of:
-{warning_coverage}.
+Покрытие заказов стало меньше
+указанного минимума: {warning_coverage}.
 
-CURRENT STOCK COVER: {current_coverage} 		 
+ТЕКУЩЕЕ ПОКРЫТИЕ ЗАКАЗОВ: {current_coverage} 		
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-04-09 01:33:51
+<?php /* Smarty version Smarty-3.1.14, created on 2014-04-29 00:22:50
          compiled from "/home/eurobalk/testing/admin2013/themes/default/template/page_header_toolbar.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:42747833553446b3fd79b90-04540998%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1659535992535eb89a1b8263-83478493%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '17683bb25562fb3202a8f38ed07316a4fff4f0ed' => 
     array (
       0 => '/home/eurobalk/testing/admin2013/themes/default/template/page_header_toolbar.tpl',
-      1 => 1396990889,
+      1 => 1398696458,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '42747833553446b3fd79b90-04540998',
+  'nocache_hash' => '1659535992535eb89a1b8263-83478493',
   'function' => 
   array (
   ),
@@ -34,9 +34,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_53446b400be655_69635843',
+  'unifunc' => 'content_535eb89a460659_85997895',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53446b400be655_69635843')) {function content_53446b400be655_69635843($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_535eb89a460659_85997895')) {function content_535eb89a460659_85997895($_smarty_tpl) {?>
 
 
 <?php if (!isset($_smarty_tpl->tpl_vars['title']->value)&&isset($_smarty_tpl->tpl_vars['page_header_toolbar_title']->value)){?>
@@ -61,7 +61,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<ul class="breadcrumb page-breadcrumb">
 
 			
-			<?php if ($_smarty_tpl->tpl_vars['is_multishop']->value&&$_smarty_tpl->tpl_vars['shop_list']->value&&($_smarty_tpl->tpl_vars['multishop_context']->value&Shop::CONTEXT_GROUP||$_smarty_tpl->tpl_vars['multishop_context']->value&Shop::CONTEXT_SHOP)){?>
+
+			<?php if (isset($_smarty_tpl->tpl_vars['is_multishop']->value)&&$_smarty_tpl->tpl_vars['is_multishop']->value&&$_smarty_tpl->tpl_vars['shop_list']->value&&(isset($_smarty_tpl->tpl_vars['multishop_context']->value)&&$_smarty_tpl->tpl_vars['multishop_context']->value&Shop::CONTEXT_GROUP||$_smarty_tpl->tpl_vars['multishop_context']->value&Shop::CONTEXT_SHOP)){?>
 				<li class="breadcrumb-multishop">
 					<?php echo $_smarty_tpl->tpl_vars['shop_list']->value;?>
 
@@ -102,7 +103,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		
 		<div class="page-bar toolbarBox">
 			<div class="btn-toolbar">
-				<a href="#" class="toolbar_btn dropdown-toolbar" class="navbar-toggle" data-toggle="collapse" data-target="#toolbar-nav"><i class="process-icon-dropdown"></i><span><?php echo smartyTranslate(array('s'=>'Menu'),$_smarty_tpl);?>
+				<a href="#" class="toolbar_btn dropdown-toolbar navbar-toggle" data-toggle="collapse" data-target="#toolbar-nav"><i class="process-icon-dropdown"></i><span><?php echo smartyTranslate(array('s'=>'Menu'),$_smarty_tpl);?>
 </span></a>
 				<ul id="toolbar-nav" class="nav nav-pills pull-right collapse navbar-collapse">
 					<?php  $_smarty_tpl->tpl_vars['btn'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['btn']->_loop = false;
@@ -162,7 +163,7 @@ $_smarty_tpl->tpl_vars['btn']->_loop = true;
 					<?php }?>
 				</ul>
 
-				<script language="javascript" type="text/javascript">
+				<script type="text/javascript">
 				//<![CDATA[
 					var modules_list_loaded = false;
 

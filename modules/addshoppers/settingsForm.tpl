@@ -1,5 +1,5 @@
 {*
-* 2007-2014 PrestaShop
+* 2007-2013 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,7 +18,7 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2013 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
@@ -28,9 +28,14 @@
 
                 <p>{$help_message}</p>
 
-                <label>{l s='Use floating social buttons' mod='addshoppers'}</label>
+                <label>{l s='Use default social buttons' mod='addshoppers'}</label>
                 <div class="margin-form">
-                        <input type="checkbox" name="addshoppers_floating_buttons" value="1" {if $floating_buttons}checked="checked"{/if} />
+                        <input type="checkbox" name="addshoppers_buttons" value="1" {if $buttons}checked="checked"{/if} />
+                </div>
+
+                <label>{l s='Use Facebook Open Graph buttons' mod='addshoppers'}</label>
+                <div class="margin-form">
+                        <input type="checkbox" name="addshoppers_opengraph" value="1" {if $opengraph}checked="checked"{/if}  />
                 </div>
 
                 <center><input type="submit" name="addshoppers_settings" value="{l s='Save' mod='addshoppers'}" class="button" /></center>

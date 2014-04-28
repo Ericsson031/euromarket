@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-04-09 01:33:52
+<?php /* Smarty version Smarty-3.1.14, created on 2014-04-29 00:22:50
          compiled from "/home/eurobalk/testing/admin2013/themes/default/template/nav.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:7685639953446b403a0a92-34324510%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:971639477535eb89a7b33e6-24976069%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a556db218410415bb486a4ad1dbb558504d08c79' => 
     array (
       0 => '/home/eurobalk/testing/admin2013/themes/default/template/nav.tpl',
-      1 => 1396990889,
+      1 => 1398696458,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '7685639953446b403a0a92-34324510',
+  'nocache_hash' => '971639477535eb89a7b33e6-24976069',
   'function' => 
   array (
   ),
@@ -27,9 +27,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_53446b404ae423_52565146',
+  'unifunc' => 'content_535eb89a8cf2d4_55939027',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53446b404ae423_52565146')) {function content_53446b404ae423_52565146($_smarty_tpl) {?><div class="bootstrap">
+<?php if ($_valid && !is_callable('content_535eb89a8cf2d4_55939027')) {function content_535eb89a8cf2d4_55939027($_smarty_tpl) {?><div class="bootstrap">
 	<nav id="<?php if ($_smarty_tpl->tpl_vars['employee']->value->bo_menu){?>nav-sidebar<?php }else{ ?>nav-topbar<?php }?>" role="navigation">
 		<?php if (!$_smarty_tpl->tpl_vars['tab']->value){?>
 			<div class="mainsubtablist" style="display:none"></div>
@@ -140,7 +140,7 @@ $_smarty_tpl->tpl_vars['t']->_loop = true;
 				<li class="maintab <?php if ($_smarty_tpl->tpl_vars['t']->value['current']){?>active<?php }?> <?php if (count($_smarty_tpl->tpl_vars['t']->value['sub_tabs'])){?>has_submenu<?php }?>" id="maintab<?php echo $_smarty_tpl->tpl_vars['t']->value['id_tab'];?>
 " data-submenu="<?php echo $_smarty_tpl->tpl_vars['t']->value['id_tab'];?>
 ">
-					<a href="<?php if (count($_smarty_tpl->tpl_vars['t']->value['sub_tabs'])){?><?php echo $_smarty_tpl->tpl_vars['t']->value['sub_tabs'][0]['href'];?>
+					<a href="<?php if (count($_smarty_tpl->tpl_vars['t']->value['sub_tabs'])&&isset($_smarty_tpl->tpl_vars['t']->value['sub_tabs'][0]['href'])){?><?php echo $_smarty_tpl->tpl_vars['t']->value['sub_tabs'][0]['href'];?>
 <?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['t']->value['href'];?>
 <?php }?>" class="title" >
 						<i class="icon-<?php echo $_smarty_tpl->tpl_vars['t']->value['class_name'];?>

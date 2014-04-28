@@ -1,22 +1,26 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
-We noticed that during your last visit on {shop_name}, you did not
-complete the order you had started.
+Мы заметили что во время последнего
+посещения {shop_name}, вы не закончили
+начатое оформление заказа.
 
-Your cart has been saved, you can resume your order by visiting our
-shop: {shop_url} [{shop_url}]
+Ваша корзина была сохранена, можете
+продолжить оформление заказа, посетив
+наш магазин: {shop_url} [{shop_url}]
 
-As an incentive, we can give you a discount of {amount}% off your
-next order! This offer is valid for {days} days, so do not waste a
-moment! 		 
+В качестве стимула мы даем вам скидку
+в {amount}% на следующий заказ!
+Предложение действует {days} дней, так
+что не теряйте время! 		 
 
-HERE IS YOUR COUPON: {voucher_num}
+ВАШ КУПОН: {voucher_num}
 
-Enter this code in your shopping cart to get your discount. 		 
+Для получения скидки введите данный
+код в корзине. 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

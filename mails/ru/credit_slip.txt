@@ -1,16 +1,18 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
-We have generated a credit slip in your name for order with the
-reference {order_name}. 
+Мы сформировали приходный ордер на
+ваше имя для заказа со ссылкой {order_name}. 
 
-You can review this credit slip and download your invoice from the
-"My credit slips" [{history_url}] section of
-your account by clicking "My account"
-[{my_account_url}] on our shop. 
+Вы можете просмотреть этот
+приходный ордер и скачать вашу
+накладную в "Мои приходные ордера"
+[{history_url}] вашего аккаунта
+нажав "Мой аккаунт"
+[{my_account_url}] магазина. 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

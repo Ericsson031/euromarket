@@ -1,18 +1,21 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname},
+Здравствуйе, {firstname} {lastname},
 
-Thanks for your trust. 
+Спасибо за доверие. 
 
-As appreciation for your loyalty, we want to give you a discount of
-{amount}% valid on your next order! This offer is valid for {days}
-days, so do not waste a moment!
+В признательность за вашу верность,
+мы хотим дать вам скидку в размере
+{amount}% на следующий заказ! Она будет
+действовать {days} дней, не тратьте
+время!
 
-HERE IS YOUR COUPON: {voucher_num}
+ВАШ КУПОН: {voucher_num}
 
-Enter this code in your shopping cart to get your discount. 		 
+Для получения скидки введите данный
+код в корзине. 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

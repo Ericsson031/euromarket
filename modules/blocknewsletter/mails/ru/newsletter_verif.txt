@@ -1,13 +1,14 @@
 
 [{shop_url}] 
 
-Hi, 
+Здравствуйте, 
 
-Thank you for subscribing to our newsletter, please confirm your
-request by clicking the link below :
+Спасибо за подписку на нашу рассылку,
+пожалуйста, подтвердите свой запрос,
+нажав на ссылку ниже:
 
 {verif_url} [{verif_url}] 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

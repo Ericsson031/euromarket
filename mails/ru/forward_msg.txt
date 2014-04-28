@@ -1,14 +1,14 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
-{employee} wanted to forward this discussion to you. 
+{employee} хочет начать с вами разговор. 
 
-DISCUSSION HISTORY: {messages}
+ИСТОРИЯ СООБЩЕНИЙ: {messages}
 
-{employee} added "{comment}" 		 
+{employee} добавил "{comment}" 		 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

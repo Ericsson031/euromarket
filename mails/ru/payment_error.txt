@@ -1,13 +1,15 @@
 
 [{shop_url}] 
 
-Hi {firstname} {lastname}, 
+Здравствуйе, {firstname} {lastname}, 
 
-There is a problem with your payment for {shop_name} order with the
-reference {order_name}. Please contact us at your earliest
-convenience.
+Есть проблема с оплатой заказа со
+ссылкой {order_name} в {shop_name}. Пожалуйста,
+свяжитесь с нами при первой
+возможности.
 
-WE CANNOT SHIP YOUR ORDER UNTIL WE RECEIVE YOUR PAYMENT. 		 
+МЫ НЕ МОЖЕМ ОТПРАВИТЬ ЗАКАЗ, ПОКА МЫ
+НЕ ПОЛУЧИМ ПЛАТЕЖ. 		 
 
 Вы можете просмотреть ваш заказ и
 скачать вашу накладную из раздела
@@ -16,11 +18,12 @@ WE CANNOT SHIP YOUR ORDER UNTIL WE RECEIVE YOUR PAYMENT.
 запись" [{my_account_url}] в нашем
 магазине. 
 
-If you have a guest account, you can follow your order via the
-"Guest Tracking"
-[{guest_tracking_url}?id_order={order_name}]
-section on our shop. 
+Если у вас гостевая учетная запись,
+вы можете следить за заказом через
+"Гостевое отслеживание"
+[{guest_tracking_url}?id_order={order_name}] в
+нашем магазине. 
 
-{shop_name} [{shop_url}] powered by
-PrestaShop(tm) [http://www.prestashop.com/] 
+{shop_name} [{shop_url}] работает
+на PrestaShop(tm) [http://www.prestashop.com/] 
 

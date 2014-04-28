@@ -20,8 +20,12 @@ $_MODULE['<{newsletter}prestashop>newsletter_04e7c39a16e4d89fe9c3861af82ececa'] 
 $_MODULE['<{newsletter}prestashop>newsletter_48e3d5f66961b621c78f709afcd7d437'] = 'Загрузить файл';
 $_MODULE['<{newsletter}prestashop>newsletter_faa1115fbab933e7178ee43ce1590977'] = 'ВНИМАНИЕ:. Если это открыть CSV файл в Excel, не забудьте выбрать кодировку UTF-8, иначе вы можете увидеть странные символы.';
 $_MODULE['<{newsletter}prestashop>newsletter_81573e0ea79138f02fd2cee94786d7e9'] = 'Ошибка: не могу записать';
+$_MODULE['<{newsletter}prestashop>newsletter_b192ab83a19105bbf1e2d1fab548249a'] = 'Экспорт абонентов Подписки';
+$_MODULE['<{newsletter}prestashop>newsletter_c97b56b16c6fda0ef4e93f2135479647'] = 'Генерировать файл .CSV на основе BlockNewsletter subscribers data. Только подписчики, не зарегистрированные в магазине, будут экспортированы.';
 $_MODULE['<{newsletter}prestashop>newsletter_dbb392a2dc9b38722e69f6032faea73e'] = 'Экспорт файла .CSV';
 $_MODULE['<{newsletter}prestashop>newsletter_4713ef5f2d6fc1e8f088c850e696a04b'] = 'Экспорт покупателей';
+$_MODULE['<{newsletter}prestashop>newsletter_95d89a3450ec17ef12392b4441fe58f1'] = 'Страна покупателя:';
+$_MODULE['<{newsletter}prestashop>newsletter_b2ef4d7a86cf7c920a4a84088640eb06'] = 'Рассылка абонентам:';
 $_MODULE['<{newsletter}prestashop>newsletter_d80a80b815d24a91ccbf323e0d8de957'] = 'Исключенные подписчики';
 
 
