@@ -233,8 +233,8 @@ class BlockCart extends Module
 	
 	public function hookTop($params)
 	{
-		$params['blockcart_top'] = true;
-		return $this->hookRightColumn($params);
+		//$params['blockcart_top'] = true;
+		//return $this->hookRightColumn($params);
 	}
 	
 	public function hookDisplayNav($params)
