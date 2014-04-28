@@ -65,36 +65,77 @@
 		<div id="page">
 			<div class="header-container">
 				<header id="header">
-					<div class="banner">
-						<div class="container">
+					<!--
+                    <div class="banner">
 							<div class="row">
 								{hook h="displayBanner"}
 							</div>
-						</div>
-					</div>
-					<div class="nav">
-						<div class="container">
-							<div class="row">
-								<nav>{hook h="displayNav"}</nav>
-							</div>
-						</div>
-					</div>
-					<div>
-						<div class="container">
-							<div class="row">
-								<div id="header_logo">
-									<a href="{$base_dir}" title="{$shop_name|escape:'html':'UTF-8'}">
+                            
+                            
+					</div>  
+                    -->                  
+					<nav class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      			   <a class="navbar-brand" href="{$base_dir}" title="{$shop_name|escape:'html':'UTF-8'}">
 										<img class="logo img-responsive" src="{$logo_url}" alt="{$shop_name|escape:'html':'UTF-8'}"{if $logo_image_width} width="{$logo_image_width}"{/if}{if $logo_image_height} height="{$logo_image_height}"{/if}/>
 									</a>
-								</div>
-								{if isset($HOOK_TOP)}{$HOOK_TOP}{/if}
-							</div>
-						</div>
-					</div>
+                    	</div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                
+                              <ul class="nav navbar-nav">                                 
+                               {hook h="displayNav"}
+                                  
+                                <li class="active"><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                                
+                              <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Link</a></li>
+                                <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                  <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                                
+                                
+                                
+                            </div><!-- /.navbar-collapse -->                    
+                               
+                            
+                        </div>
+					</nav>
 				</header>
+                            
+                       {if isset($HOOK_TOP)}{$HOOK_TOP}{/if}           
+                
 			</div>
 			<div class="columns-container">
-				<div id="columns" class="container">
+				<div id="columns">
 					{if $page_name !='index' && $page_name !='pagenotfound'}
 						{include file="$tpl_dir./breadcrumb.tpl"}
 					{/if}
