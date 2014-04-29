@@ -24,7 +24,7 @@
 *}
 
 <li class="dropdown category_{$node.id}{if isset($last) && $last == 'true'} last{/if}">
-	<a class="dropdown-toggle" data-toggle="dropdown" href="{$node.link|escape:'html':'UTF-8'}" {if isset($currentCategoryId) && $node.id == $currentCategoryId}class="selected"{/if}
+	<a {if $node.children|@count > 0}class="dropdown-toggle" data-toggle="dropdown"{/if} href="{$node.link|escape:'html':'UTF-8'}" {if isset($currentCategoryId) && $node.id == $currentCategoryId}class="selected"{/if}
 		title="{$node.desc|strip_tags|trim|truncate:255:'...'|escape:'html':'UTF-8'}">{$node.name|escape:'html':'UTF-8'}</a>
 	{if $node.children|@count > 0}
             <ul class="dropdown-menu">

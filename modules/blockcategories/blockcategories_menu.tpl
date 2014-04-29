@@ -24,6 +24,7 @@
 *}
 {if $blockCategTree && $blockCategTree.children|@count}
 <!-- Block categories module -->
+<div id="menu2">
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -57,6 +58,7 @@
 		</script>
 	</div>
 </div>
-</nav>                
+</nav>       
+</div>
 <!-- /Block categories module -->
 {/if}
