@@ -27,6 +27,17 @@
 <div class="col-sm-4 clearfix{if $PS_CATALOG_MODE} header_user_catalog{/if}">
 {/if}
 	<div class="shopping_cart">
+            
+            <div clsaa="cart_head">
+            <h2>Total price</h2> 
+            <div class="cart-prices-line last-line">
+                    <span class="price cart_block_total ajax_block_cart_total">{$total}</span>
+            </div>            
+                    <a href="{$link->getPageLink($order_process, true)|escape:'html':'UTF-8'}" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">
+                    View Basket
+                    </a>                    
+            </div>
+                <!--    
 		<a href="{$link->getPageLink($order_process, true)|escape:'html':'UTF-8'}" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">
 			<b>{l s='Cart' mod='blockcart'}</b>
 			<span class="ajax_cart_quantity{if $cart_qties == 0} unvisible{/if}">{$cart_qties}</span>
@@ -48,7 +59,8 @@
 				<span class="block_cart_expand{if !isset($colapseExpandStatus) || (isset($colapseExpandStatus) && $colapseExpandStatus eq 'expanded')} unvisible{/if}">&nbsp;</span>
 				<span class="block_cart_collapse{if isset($colapseExpandStatus) && $colapseExpandStatus eq 'collapsed'} unvisible{/if}">&nbsp;</span>
 			{/if}
-		</a>
+		</a>-->
+                        
 		{if !$PS_CATALOG_MODE}
 			<div class="cart_block block exclusive">
 				<div class="block_content">
@@ -140,18 +152,6 @@
 							</table>
 						{/if}
 						<div class="cart-prices">
-							<div class="cart-prices-line first-line">
-								<span class="price cart_block_shipping_cost ajax_cart_shipping_cost">
-									{if $shipping_cost_float == 0}
-										{l s='Free shipping!' mod='blockcart'}
-									{else}
-										{$shipping_cost}
-									{/if}
-								</span>
-								<span>
-									{l s='Shipping' mod='blockcart'}
-								</span>
-							</div>
 							{if $show_wrapping}
 								<div class="cart-prices-line">
 									{assign var='cart_flag' value='Cart::ONLY_WRAPPING'|constant}
@@ -164,25 +164,6 @@
 										{l s='Wrapping' mod='blockcart'}
 									</span>
 							   </div>
-							{/if}
-							{if $show_tax && isset($tax_cost)}
-								<div class="cart-prices-line">
-									<span class="price cart_block_tax_cost ajax_cart_tax_cost">{$tax_cost}</span>
-									<span>{l s='Tax' mod='blockcart'}</span>
-								</div>
-							{/if}
-							<div class="cart-prices-line last-line">
-								<span class="price cart_block_total ajax_block_cart_total">{$total}</span>
-								<span>{l s='Total' mod='blockcart'}</span>
-							</div>
-							{if $use_taxes && $display_tax_label == 1 && $show_tax}
-								<p>
-								{if $priceDisplay == 0}
-									{l s='Prices are tax included' mod='blockcart'}
-								{elseif $priceDisplay == 1}
-									{l s='Prices are tax excluded' mod='blockcart'}
-								{/if}
-								</p>
 							{/if}
 						</div>
 						<p class="cart-buttons">

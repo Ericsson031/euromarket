@@ -89,11 +89,9 @@
 			</div>
 			<div class="columns-container">
 				<div id="columns">
-                                    <!--
-					{if $page_name !='index' && $page_name !='pagenotfound'}
+					{*if $page_name !='index' && $page_name !='pagenotfound'}
 						{include file="$tpl_dir./breadcrumb.tpl"}
-					{/if}
-                                    -->
+					{/if*}
 					<div class="row">
 						<div id="top_column" class="center_column col-xs-12 col-sm-12">{hook h="displayTopColumn"}</div>
 					</div>
