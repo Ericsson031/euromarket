@@ -65,15 +65,8 @@
 		<div id="page">
 			<div class="header-container">
 				<header id="header">
-					<!--
-                    <div class="banner">
-							<div class="row">
 								{hook h="displayBanner"}
-							</div>
-                            
-                            
-					</div>
-                    -->                  
+	               
                     <div class="row">
                         <div class="col-sm-2">
                       			   <a href="{$base_dir}" title="{$shop_name|escape:'html':'UTF-8'}">
