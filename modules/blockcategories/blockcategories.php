@@ -188,7 +188,9 @@ class BlockCategories extends Module
 		$phpself = $this->context->controller->php_self;
 		$current_allowed_controllers = array('category');
 
-		$from_category = Configuration::get('PS_HOME_CATEGORY');
+		//$from_category = Configuration::get('PS_HOME_CATEGORY');
+                $from_category = 124; // put the ID of the ethnicity category here!!
+                
 		if ($phpself != null && in_array($phpself, $current_allowed_controllers) && Configuration::get('BLOCK_CATEG_ROOT_CATEGORY') && isset($this->context->cookie->last_visited_category) && $this->context->cookie->last_visited_category)
 			$from_category = $this->context->cookie->last_visited_category;
 
@@ -339,6 +341,69 @@ class BlockCategories extends Module
 	public function hookRightColumn($params)
 	{
 		return $this->hookLeftColumn($params);
+	}
+        
+        public function hookTop($params)
+	{
+		$this->setLastVisitedCategory();
+		$phpself = $this->context->controller->php_self;
+		$current_allowed_controllers = array('category');
+                $from_category = 10; // put the ID of the type category here!!
+		if ($phpself != null && in_array($phpself, $current_allowed_controllers) && Configuration::get('BLOCK_CATEG_ROOT_CATEGORY') && isset($this->context->cookie->last_visited_category) && $this->context->cookie->last_visited_category)
+			$from_category = $this->context->cookie->last_visited_category;
+
+		$category = new Category($from_category, $this->context->language->id);
+
+		$cacheId = $this->getCacheId($category ? $category->id : null);
+
+		if (!$this->isCached('blockcategories.tpl', $cacheId))
+		{
+			$range = '';
+			$maxdepth = Configuration::get('BLOCK_CATEG_MAX_DEPTH');
+			if ($category)
+			{
+				if ($maxdepth > 0)
+					$maxdepth += $category->level_depth;
+				$range = 'AND nleft >= '.$category->nleft.' AND nright <= '.$category->nright;
+			}
+
+			$resultIds = array();
+			$resultParents = array();
+			$result = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
+			SELECT c.id_parent, c.id_category, cl.name, cl.description, cl.link_rewrite
+			FROM `'._DB_PREFIX_.'category` c
+			INNER JOIN `'._DB_PREFIX_.'category_lang` cl ON (c.`id_category` = cl.`id_category` AND cl.`id_lang` = '.(int)$this->context->language->id.Shop::addSqlRestrictionOnLang('cl').')
+			INNER JOIN `'._DB_PREFIX_.'category_shop` cs ON (cs.`id_category` = c.`id_category` AND cs.`id_shop` = '.(int)$this->context->shop->id.')
+			WHERE (c.`active` = 1 OR c.`id_category` = '.(int)Configuration::get('PS_HOME_CATEGORY').')
+			AND c.`id_category` != '.(int)Configuration::get('PS_ROOT_CATEGORY').'
+			'.((int)$maxdepth != 0 ? ' AND `level_depth` <= '.(int)$maxdepth : '').'
+			'.$range.'
+			AND c.id_category IN (
+				SELECT id_category
+				FROM `'._DB_PREFIX_.'category_group`
+				WHERE `id_group` IN ('.pSQL(implode(', ', Customer::getGroupsStatic((int)$this->context->customer->id))).')
+			)
+			ORDER BY `level_depth` ASC, '.(Configuration::get('BLOCK_CATEG_SORT') ? 'cl.`name`' : 'cs.`position`').' '.(Configuration::get('BLOCK_CATEG_SORT_WAY') ? 'DESC' : 'ASC'));
+			foreach ($result as &$row)
+			{
+				$resultParents[$row['id_parent']][] = &$row;
+				$resultIds[$row['id_category']] = &$row;
+			}
+
+			$blockCategTree = $this->getTree($resultParents, $resultIds, $maxdepth, ($category ? $category->id : null));
+			$this->smarty->assign('blockCategTree', $blockCategTree);
+
+			if ((Tools::getValue('id_product') || Tools::getValue('id_category')) && isset($this->context->cookie->last_visited_category) && $this->context->cookie->last_visited_category)
+			{
+				$category = new Category($this->context->cookie->last_visited_category, $this->context->language->id);
+				if (Validate::isLoadedObject($category))
+					$this->smarty->assign(array('currentCategory' => $category, 'currentCategoryId' => $category->id));
+			}
+
+			$this->smarty->assign('isDhtml', Configuration::get('BLOCK_CATEG_DHTML'));		
+			$this->smarty->assign('branche_tpl_path', _PS_MODULE_DIR_.'blockcategories/category-menu-branch.tpl');
+		}
+		return $this->display(__FILE__, 'blockcategories_menu.tpl', $cacheId);
 	}
 
 	public function hookHeader()

@@ -22,28 +22,19 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-{if $blockCategTree && $blockCategTree.children|@count}
-<!-- Block categories module -->
-<div id="categories_block_left" class="block">
-	<h4 class="title_block">{*if isset($currentCategory)}{$currentCategory->name|escape}{else}{l s='Categories' mod='blockcategories'}{/if*}</h4>
-	<div class="block_content">
-		<ul class="tree {if $isDhtml}dhtml{/if}">
-		{foreach from=$blockCategTree.children item=child name=blockCategTree}
-			{if $smarty.foreach.blockCategTree.last}
+
+<li class="dropdown category_{$node.id}{if isset($last) && $last == 'true'} last{/if}">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="{$node.link|escape:'html':'UTF-8'}" {if isset($currentCategoryId) && $node.id == $currentCategoryId}class="selected"{/if}
+		title="{$node.desc|strip_tags|trim|truncate:255:'...'|escape:'html':'UTF-8'}">{$node.name|escape:'html':'UTF-8'}</a>
+	{if $node.children|@count > 0}
+            <ul class="dropdown-menu">
+		{foreach from=$node.children item=child name=categoryTreeBranch}
+			{if $smarty.foreach.categoryTreeBranch.last}
 				{include file="$branche_tpl_path" node=$child last='true'}
 			{else}
-				{include file="$branche_tpl_path" node=$child}
+				{include file="$branche_tpl_path" node=$child last='false'}
 			{/if}
 		{/foreach}
 		</ul>
-		{* Javascript moved here to fix bug #PSCFI-151 *}
-		<script type="text/javascript">
-		// <![CDATA[
-			// we hide the tree only if JavaScript is activated
-			$('div#categories_block_left ul.dhtml').hide();
-		// ]]>
-		</script>
-	</div>
-</div>
-<!-- /Block categories module -->
-{/if}
+	{/if}
+</li>

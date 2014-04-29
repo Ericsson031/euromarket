@@ -26,11 +26,12 @@
 <!-- Block categories module -->
 <div id="categories_block_left" class="block">
 	<h2 class="title_block">
-		{if isset($currentCategory)}
+            Ethno food
+            {*if isset($currentCategory)}
 			{$currentCategory->name|escape}
 		{else}
 			{l s='Categories' mod='blockcategories'}
-		{/if}
+		{/if*}
 	</h2>
 	<div class="block_content">
 		<ul class="tree {if $isDhtml}dhtml{/if}">

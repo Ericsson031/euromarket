@@ -24,10 +24,22 @@
 *}
 {if $blockCategTree && $blockCategTree.children|@count}
 <!-- Block categories module -->
-<div id="categories_block_left" class="block">
-	<h4 class="title_block">{*if isset($currentCategory)}{$currentCategory->name|escape}{else}{l s='Categories' mod='blockcategories'}{/if*}</h4>
-	<div class="block_content">
-		<ul class="tree {if $isDhtml}dhtml{/if}">
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand visible-xs" href="#">Types</a>
+    </div>
+
+      
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
 		{foreach from=$blockCategTree.children item=child name=blockCategTree}
 			{if $smarty.foreach.blockCategTree.last}
 				{include file="$branche_tpl_path" node=$child last='true'}
@@ -45,5 +57,6 @@
 		</script>
 	</div>
 </div>
+</nav>                
 <!-- /Block categories module -->
 {/if}
