@@ -24,6 +24,7 @@
 *}
 
 <!-- Breadcrumb -->
+<!--
 {if isset($smarty.capture.path)}{assign var='path' value=$smarty.capture.path}{/if}
 <div class="breadcrumb clearfix">
 	<a class="home" href="{$base_dir}" title="{l s='Return to Home'}"><i class="icon-home"></i></a>
@@ -45,4 +46,5 @@
 	</strong>
 </div>
 {/if}
+-->
 <!-- /Breadcrumb -->
