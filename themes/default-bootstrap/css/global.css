@@ -8039,3 +8039,15 @@ div.star.star_hover:after {
   #top_column{
       display:none;
   }
+  
+  
+.grey_gradient{ 
+background: #f4f0e7; /* Old browsers */
+background: -moz-linear-gradient(top,  #f4f0e7 0%, #ffffff 100%, #fefefd 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f0e7), color-stop(100%,#ffffff), color-stop(100%,#fefefd)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f4f0e7 0%,#ffffff 100%,#fefefd 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f4f0e7 0%,#ffffff 100%,#fefefd 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f4f0e7 0%,#ffffff 100%,#fefefd 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #f4f0e7 0%,#ffffff 100%,#fefefd 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f0e7', endColorstr='#fefefd',GradientType=0 ); /* IE6-9 */
+}
