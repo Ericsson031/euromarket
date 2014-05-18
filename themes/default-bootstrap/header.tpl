@@ -67,17 +67,17 @@
 				<header id="header">
 								{hook h="displayBanner"}
 	               
-                    <div class="row">
+                    <div class="row nav_row">
                         <div class="col-sm-2">
                       			   <a href="{$base_dir}" title="{$shop_name|escape:'html':'UTF-8'}">
 										<img class="logo img-responsive" src="{$logo_url}" alt="{$shop_name|escape:'html':'UTF-8'}"{if $logo_image_width} width="{$logo_image_width}"{/if}{if $logo_image_height} height="{$logo_image_height}"{/if}/>
 									</a>     
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 displayNav">
                                {hook h="displayNav"}
                         </div>
                                 
-                               <div class="col-sm-2 pull-right">
+                               <div class="col-sm-2 pull-right displayNavRight">
                                   {hook h="displayNavRight"}
                                </div>
                               
