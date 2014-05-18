@@ -51,7 +51,8 @@
 		{/if}
 		{assign var='requestNb' value=$link->getPaginationLink(false, false, true, false, false, true)}
 	{/if}
-	<!-- Pagination -->
+	
+        
 	<div id="pagination{if isset($paginationId)}_{$paginationId}{/if}" class="pagination clearfix">
 	    {if $nb_products > $products_per_page && $start!=$stop}
 			<form
@@ -206,5 +207,5 @@
         	{l s='Showing %1$d - %2$d of 1 item' sprintf=[$productShowingStart, $productShowing]}
        	{/if}
     </div>
-	<!-- /Pagination -->
+	
 {/if}

@@ -6147,10 +6147,11 @@ table.table_block td {
 
 .page-heading {
   font: 600 18px/22px "Open Sans", sans-serif;
-  color: #555454;
+  color: #d82c3e;
   text-transform: uppercase;
-  padding: 0px 0px 17px 0px;
+  padding: 17px 10px 17px 10px;
   margin-bottom: 30px;
+  margin-top: 10px;
   border-bottom: 1px solid #d6d4d4;
   overflow: hidden; }
   .page-heading span.heading-counter {
