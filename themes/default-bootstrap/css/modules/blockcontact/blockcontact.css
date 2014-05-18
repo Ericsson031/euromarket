@@ -15,17 +15,17 @@
 
 #contact-link {
   float: right;
-  border-left: 1px solid #515151; }
+  /* border-left: 1px solid #515151; */ }
   @media (max-width: 479px) {
     #contact-link {
       width: 25%;
       text-align: center; } }
   #contact-link a {
     display: block;
-    color: white;
-    font-weight: bold;
+    /* color: white; */
+    /* font-weight: bold; */
     padding: 8px 10px 11px 10px;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+    /* text-shadow: 1px 1px rgba(0, 0, 0, 0.2); */
     cursor: pointer;
     line-height: 18px; }
     @media (max-width: 479px) {
