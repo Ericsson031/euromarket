@@ -56,7 +56,7 @@
 				</a>
 			</li>
 			{/if}
-			{if $add_permission eq '1' && !$host_mode}
+			{if $add_permission eq '1'}
 			<li>
 				<a id="desc-module-new" class="toolbar_btn" href="#module_install" onclick="$('#module_install').slideToggle();" title="{l s='Add a new module'}">
 					<i class="process-icon-new" ></i>

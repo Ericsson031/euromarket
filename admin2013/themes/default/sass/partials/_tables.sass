@@ -23,6 +23,7 @@
 			background-color: lighten(#CAE5F4,8%)
 			input[type="text"].filter, input[type="password"].filter, select.filter
 				font-size: 11px
+
 				padding: 0 4px
 				border-color: darken(#CAE5F4,10%)
 	input, select
@@ -52,7 +53,7 @@
 			text-align: center
 			position: relative
 			font-size: $icon-size-base
-			@include padding(4px, 4px, 4px, 20px)
+			padding: 4px 4px 4px 20px
 			@include border-radius(5px)
 			&:hover
 				color: white
@@ -64,9 +65,10 @@
 				height: 16px
 				width: 16px
 				position: absolute
-				top: 8px
-				@include left(6px)
+				top: 18px
+				left: 6px
 			.btn-group
+
 			.positions
 				display: inline-block
 				border: solid 1px #ccc
@@ -78,11 +80,8 @@
 				@include border-radius(3px)
 				@include box-shadow(rgba(0,0,0,0.2) 0 1px 3px inset)
 
-	tr.actions
-		@include text-align(right)
-	td.actions
-		@include text-align(right)
-		@include padding-right(5px)
+	.actions
+		text-align: right
 	th.actions .btn,
 		margin-bottom: 4px !important
 
@@ -104,7 +103,7 @@ tr.highlighted td
 	color: white !important
 
 .bulk-actions
-	@include margin(17px, 0, 0, 0)
+	margin: 17px 0 0 0
 	ul i
 		font-size: 14px
 
@@ -146,9 +145,9 @@ tr.highlighted td
 		width: 100%
 		margin-bottom: ($line-height-computed * 0.75)
 		overflow-y: hidden
-		overflow-x: auto
-		border: 1px solid $table-border-color
+		overflow-x: scroll
 		-ms-overflow-style: -ms-autohiding-scrollbar
+		border: 1px solid $table-border-color
 		-webkit-overflow-scrolling: touch
 		> .table 
 			margin-bottom: 0
@@ -167,10 +166,10 @@ tr.highlighted td
 				> tr
 					> th:first-child,
 					> td:first-child
-						@include border-left(0)
+						border-left: 0
 					> th:last-child,
 					> td:last-child
-						@include border-right(0)
+						border-right: 0
 			> tbody,
 			> tfoot
 				> tr:last-child 

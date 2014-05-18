@@ -1,5 +1,5 @@
 {*
-* 2007-2014 PrestaShop
+* 2007-2012 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,7 +18,7 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2012 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
@@ -26,9 +26,9 @@
 
 {block name="label"}
 	{if $input.name == 'zipcode' && isset($input.label)}
-		<label id="zipcode-label" class="control-label col-lg-3 ">{$input.label}</label>
+		<label id="zipcode-label">{$input.label}</label>
 	{elseif $input.name == 'states[]'}
-		<label id="states-label" class="control-label col-lg-3 ">{$input.label}</label>
+		<label id="states-label">{$input.label}</label>
 	{else}
 		{$smarty.block.parent}
 	{/if}
@@ -42,7 +42,7 @@
 
 		$('#tax_rule_form').hide();
 
-		$('#page-header-desc-tax_rule-new').click(function() {
+		$('#desc-tax_rules_group-new').click(function() {
 			initForm();
 			$('#tax_rule_form').slideToggle();
 			return false;
@@ -60,9 +60,9 @@
 			$("#states-label").hide();
 		} else {
 			$.ajax({
-				url: "index.php",
+				url: "ajax.php",
 				cache: false,
-				data: "ajax=1&tab=AdminStates&token={getAdminToken tab='AdminStates'}&action=states&id_country="+id_country+"&id_state="+id_state+"&empty_value={l s='All'}",
+				data: "ajaxStates=1&id_country="+id_country+"&id_state="+id_state+"&empty_value={l s='All'}",
 				success: function(html){
 					if (html == "false")
 					{
@@ -88,10 +88,10 @@
 	{
 		$.ajax({
 			type: 'POST',
-			url: 'index.php',
+			url: 'ajax.php',
 			async: true,
 			dataType: 'json',
-			data: 'ajax=1&tab=AdminTaxRulesGroup&token={getAdminToken tab='AdminTaxRulesGroup'}&ajaxStates=1&action=updateTaxRule&id_tax_rule='+id_tax_rule,
+			data: 'ajaxStates=1&ajaxUpdateTaxRule=1&id_tax_rule='+id_tax_rule,
 			success: function(data){
 				$('#tax_rule_form').show();
 				$('#id_tax_rule').val(data.id);

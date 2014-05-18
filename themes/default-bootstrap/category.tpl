@@ -97,7 +97,6 @@
 		</div>
 		{/if}
 		{if $products}
-                    {*
 			<div class="content_sortPagiBar clearfix">
             	<div class="sortPagiBar clearfix">
             		{include file="./product-sort.tpl"}
@@ -107,9 +106,7 @@
                 	{include file="./product-compare.tpl"}
 					{include file="$tpl_dir./pagination.tpl"}
                 </div>
-		</div>
-                *}
-                
+			</div>
 			{include file="./product-list.tpl" products=$products}
 			<div class="content_sortPagiBar">
 				<div class="bottom-pagination-content clearfix">

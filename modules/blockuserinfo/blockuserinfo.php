@@ -46,8 +46,7 @@ class BlockUserInfo extends Module
 
 	public function install()
 	{
-               
-		return (parent::install() && $this->registerHook('displayTop') && $this->registerHook('displayNav') && $this->registerHook('displayNavRight') && $this->registerHook('displayHeader'));
+		return (parent::install() && $this->registerHook('displayTop') && $this->registerHook('displayNav') && $this->registerHook('displayHeader'));
 	}
 
 	/**
@@ -81,10 +80,5 @@ class BlockUserInfo extends Module
 	public function hookDisplayNav($params)
 	{
 		return $this->display(__FILE__, 'nav.tpl');
-	}
-        
-        public function hookDisplayNavRight($params)
-	{
-		return $this->hookDisplayNav($params);
 	}
 }

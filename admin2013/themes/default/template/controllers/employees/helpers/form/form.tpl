@@ -1,5 +1,5 @@
 {*
-* 2007-2014 PrestaShop
+* 2007-2012 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,24 +18,35 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2012 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 {extends file="helpers/form/form.tpl"}
 
 {block name="input"}
-	{if $input.type == 'default_tab'}
-	<select id="{$input.name}" name="{$input.name}" class="chosen fixed-width-xxl">
+	{if $input.type == 'select_theme'}
+		<select name="{$input.name}" id="{$input.name}" {if isset($input.multiple)}multiple="multiple" {/if}{if isset($input.onchange)}onchange="{$input.onchange}"{/if}>
+			{foreach $input.options.query AS $option}
+				<option value="{$option}"
+					{if isset($input.multiple)}
+						{foreach $fields_value[$input.name] as $field_value}
+							{$field_value}
+							{if $field_value == $option}selected="selected"{/if}
+						{/foreach}
+					{else}
+						{if $fields_value[$input.name] == $option}selected="selected"{/if}
+					{/if}
+				>{$option|escape:'htmlall':'UTF-8'}</option>
+			{/foreach}
+		</select>
+	{elseif $input.type == 'default_tab'}
+	<select name="{$input.name}" id="{$input.name}">
 		{foreach $input.options AS $option}
-			{if isset($option.children) && $option.children|@count}
-				<optgroup label="{$option.name|escape:'html':'UTF-8'}"></optgroup>
-				{foreach $option.children AS $children}
-					<option value="{$children.id_tab}" {if $fields_value[$input.name] == $children.id_tab}selected="selected"{/if}>{$children.name|escape:'html':'UTF-8'}</option>
-				{/foreach}
-			{else}
-				<option value="{$option.id_tab}" {if $fields_value[$input.name] == $option.id_tab}selected="selected"{/if}>{$option.name|escape:'html':'UTF-8'}</option>
-			{/if}
+			<optgroup label="{$option.name|escape:'htmlall':'UTF-8'}"></optgroup>
+			{foreach $option.children AS $children}
+				<option value="{$children.id_tab}" {if $fields_value[$input.name] == $children.id_tab}selected="selected"{/if}>&nbsp;&nbsp;{$children.name|escape:'htmlall':'UTF-8'}</option>
+			{/foreach}
 		{/foreach}
 	</select>
 	{else}
@@ -49,7 +60,7 @@
 			ifSuperAdmin($(this));
 
 			$.ajax({
-				url: "{$link->getAdminLink('AdminEmployees')|addslashes}",
+				url: "{$link->getAdminLink('AdminEmployees')}",
 				cache: false,
 				data : {
 					ajax : '1',

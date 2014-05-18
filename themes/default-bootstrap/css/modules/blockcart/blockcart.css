@@ -16,7 +16,9 @@
   #header .shopping_cart > a:first-child:hover:after {
     content: "\f0d8";
     padding: 4px 0px 2px 0px; }
-  
+
+.shopping_cart {
+  width: 270px; }
   @media (max-width: 480px) {
     .shopping_cart {
       padding-top: 20px; } }
@@ -25,7 +27,6 @@
       margin: 0 auto;
       float: none;
       width: 100%; } }
-  
   .shopping_cart > a:first-child {
     padding: 7px 10px 14px 16px;
     background: #333333;
@@ -89,15 +90,14 @@
 .cart_block .cart-info {
   overflow: hidden;
   position: relative;
-  /* padding-right: 20px; */ }
+  padding-right: 20px; }
   .cart_block .cart-info .product-name {
     padding-bottom: 5px;
     margin-top: -4px; }
     .cart_block .cart-info .product-name a {
       font-size: 13px;
       line-height: 18px;
-      display: inline-block; 
-}
+      display: inline-block; }
   .cart_block .cart-info .quantity-formated {
     display: inline-block;
     color: #9c9b9b;
@@ -109,7 +109,7 @@
 .cart_block dt {
   font-weight: normal;
   overflow: hidden;
-  /* padding: 20px 10px 16px 20px; */
+  padding: 20px 10px 16px 20px;
   position: relative; }
 .cart_block dd {
   position: relative; }
@@ -123,6 +123,10 @@
 .cart_block .cart_block_no_products {
   margin: 0;
   padding: 10px 20px; }
+.cart_block .cart-prices {
+  border-top: 1px solid #d6d4d4;
+  font-weight: bold;
+  padding: 10px 20px 22px 20px; }
   .cart_block .cart-prices .cart-prices-line {
     overflow: hidden;
     border-bottom: 1px solid #515151;
@@ -130,13 +134,13 @@
     .cart_block .cart-prices .cart-prices-line.last-line {
       border: none; }
 .cart_block .cart-buttons {
+  overflow: hidden;
+  padding: 20px 20px 10px 20px;
   margin: 0;
-}
+  background: #f6f6f6; }
   .cart_block .cart-buttons a {
     width: 100%;
-    font-weight: initial;
     float: left;
-    font-size: 2.5em;
     text-align: center;
     margin-bottom: 10px;
     margin-right: 10px; }
@@ -144,14 +148,14 @@
       margin-right: 0;
       border: none; }
       .cart_block .cart-buttons a#button_order_cart span {
-        padding: 1em 0;
-        border: none;
-        font-weight: initial;
-        /* font-size: 2.5em; */
-        background: #e61f3b; }
+        padding: 7px 0;
+        font-size: 1.1em;
+        border: solid 1px #63c473;
+        background: #43b155; }
       .cart_block .cart-buttons a#button_order_cart:hover span {
-        border: none;
-        background: #2e7a3a; }
+        border: solid 1px #358c43;
+        background: #2e7a3a;
+        color: white; }
 
 /*******************************************************************
 					Cart Block(Header) Styles
@@ -445,17 +449,3 @@
       content: "\f138"; }
   #layer_cart .crossseling #blockcart_list .bx-controls {
     overflow: hidden; }
-  
-.shopping_cart{ 
-    padding: 1em;
-}
-
-.cart_head h2{color:#f79533;margin-top: 0;}
-
-.cart-info .price{text-align: right;}
-
-.products_head{font-weight: bold;padding-bottom: 5px;color: black;}
-.products_head .price{text-align: right;}
-.cart_head{text-align: right; margin-bottom: 1em; font-weight: bold;}
-.open_basket{margin-right: 1em;}
-.cart-prices-line{padding-bottom: 2em;}

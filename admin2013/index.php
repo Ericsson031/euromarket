@@ -1,6 +1,6 @@
 <?php
 /*
-* 2007-2014 PrestaShop
+* 2007-2012 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -19,20 +19,16 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2012 PrestaShop SA
 *  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
 $timer_start = microtime(true);
-if (!defined('_PS_ADMIN_DIR_'))
-	define('_PS_ADMIN_DIR_', getcwd());
+define('_PS_ADMIN_DIR_', getcwd());
 
-if (!defined('PS_ADMIN_DIR'))
-	define('PS_ADMIN_DIR', _PS_ADMIN_DIR_);
-
-require(_PS_ADMIN_DIR_.'/../config/config.inc.php');
-require(_PS_ADMIN_DIR_.'/functions.php');
+require(dirname(__FILE__).'/../config/config.inc.php');
+require(dirname(__FILE__).'/functions.php');
 
 //small test to clear cache after upgrade
 if (Configuration::get('PS_UPGRADE_CLEAR_CACHE'))

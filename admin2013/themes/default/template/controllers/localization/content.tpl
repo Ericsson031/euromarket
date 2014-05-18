@@ -1,5 +1,5 @@
 {*
-* 2007-2014 PrestaShop
+* 2007-2012 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,17 +18,11 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2012 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-{if isset($localization_form)}{$localization_form}{/if}
-{if isset($localization_options)}{$localization_options}{/if}
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('#PS_CURRENCY_DEFAULT').change(function(e) {
-			alert('Before changing the default currency, we strongly recommend that you enable maintenance mode because any change on default currency requires manual adjustment of the price of each product');
-		});
-	});
-</script>
+{$localization_form}
+<br />
+{$localization_options}

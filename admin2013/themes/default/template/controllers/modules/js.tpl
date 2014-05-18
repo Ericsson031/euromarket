@@ -1,5 +1,5 @@
 {*
-* 2007-2014 PrestaShop
+* 2007-2012 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,7 +18,7 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2012 PrestaShop SA
 
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
@@ -26,21 +26,16 @@
 
 <script type="text/javascript">{$autocompleteList}</script>
 <script type="text/javascript">
-    var header_confirm_reset = '{l s='Confirm reset'}';
-    var body_confirm_reset = '{l s='Would you like to delete the content related to this module ?'}';
-    var left_button_confirm_reset = '{l s='No - reset only the parameters'}';
-    var right_button_confirm_reset = '{l s='Yes - reset everything'}';
+	var token = '{$token}';
 	var currentIndex = '{$currentIndex}';
 	var currentIndexWithToken = '{$currentIndex}&token={$token}';
 	var dirNameCurrentIndex = '{$dirNameCurrentIndex}';
 	var ajaxCurrentIndex = '{$ajaxCurrentIndex}';
 	var installed_modules = {if isset($installed_modules) && count($installed_modules)}{$installed_modules}{else}false{/if};
 	var by = '{l s='by'}';
-	var errorLogin = '{l s='PrestaShop was unable to login to Addons. Please check your credentials and your internet connection.'}';
+	var errorLogin = '{l s='PrestaShop was unable to login to Addons, please check your credentials and your internet connection.'}';
 	var confirmPreferencesSaved = '{l s='Preferences saved'}';
 	{if isset($smarty.get.anchor) && !isset($error_module)}var anchor = '{$smarty.get.anchor|htmlentities|replace:'(':''|replace:')':''|replace:'{':''|replace:'}':''|replace:'\'':''|replace:'/':''}';{else}var anchor = '';{/if}
-
-	{if isset($smarty.get.module_name) && !isset($error_module)}var module_name = '{$smarty.get.module_name|htmlentities|replace:'(':''|replace:')':''|replace:'{':''|replace:'}':''|replace:'\'':''|replace:'/':''}';{else}var module_name = '';{/if}
 
 	{literal}
 
@@ -69,39 +64,30 @@
 	$('document').ready( function() {
 		// ScrollTo
 		if (anchor != '')
-			$.uiTableFilter($('#moduleContainer').find('table'), anchor);
+			$.scrollTo('#'+anchor, 1200, {offset: -100});
 
-		if (module_name != '')
-			$.uiTableFilter($('#moduleContainer').find('table'), module_name);
-		
-		$('#moduleQuicksearch').on('keyup', function(){
-			val = this.value;
-			if ($('#filter_all').hasClass('active'))
-				$.uiTableFilter($('#moduleContainer').find('table'), val);
-			else
-				$('#filter_all').trigger('click');
-				var interval = setInterval(function () {
-				if (!$('#loader_module_list').length)
-				{
-					$.uiTableFilter($('#moduleContainer').find('table'), val);
-					clearInterval(interval);
-					interval = null;
+		// AutoComplete Search
+		$('input[name="filtername"]').autocomplete(moduleList, {
+				minChars: 0,
+				width: 310,
+				matchContains: true,
+				highlightItem: true,
+				formatItem: function(row, i, max, term) {
+					var image = '../modules/'+row.name+'/logo.gif';
+					if (row.image != '')
+						image = row.image;
+					return '<img src="'+image+'" style="float:left;margin:5px;width:16px;height:16px"><strong>'+row.displayName+'</strong>'+((row.author != '') ? ' ' + by + ' ' + truncate_author(row.author) : '') + '<br /><span style="font-size: 80%;">'+ row.desc +'</span><br/><div style="height:15px;padding-top:5px">'+ row.option +'</div>';
+				},
+				formatResult: function(row) {
+					return row.displayName;
 				}
-			
-		}, 100);
-	
-			
-		}).on('keydown', function(e){
-			if (e.keyCode == 13)
-				return false;
 		});
-		
 		$('input[name="filtername"]').result(function(event, data, formatted) {
-			$('#filternameForm').submit();
+			 $('#filternameForm').submit();
 		});
 
 		// Method to check / uncheck all modules checkbox
-		$('#moduleContainer').on("click", "#checkme", function()
+		$('#checkme').click(function()
 		{
 			if ($(this).attr("rel") == 'false')
 			{
@@ -120,34 +106,33 @@
 		// Method to reload filter in ajax
 		$('.categoryModuleFilterLink').click(function()
 		{
-			if ($(this).hasClass('active'))
-				return false;
-			$('.categoryModuleFilterLink').removeClass('active');
-			$(this).addClass('active');
+			$('.categoryModuleFilterLink').css('background-color', 'white');
+			$(this).css('background-color', '#EBEDF4');
+			var ajaxReloadCurrentIndex = $(this).find('a').attr('href').replace('index.php', 'ajax-tab.php');
 			try
 			{
 				resAjax = $.ajax({
-					type:"POST",
-					url : $(this).attr('href')+'&rand=' + new Date().getTime(),
-					headers: {"cache-control": "no-cache"},
-					async: true,
-					cache: false,
-					data : {
-						ajax : "1",
-						token : token,
-						controller : "AdminModules",
-						action : "reloadModulesList"
-					},
-					beforeSend: function(xhr){
-						$('#moduleContainer').html('<img id="loader_module_list" src="../img/loader.gif" alt="" border="0" />');
-					},
-					success: function(data, status, request){
-						if (request.getResponseHeader('Login') === 'true')
-							return window.location.reload();
-
-						$('#moduleContainer').html(data);
-						$('.dropdown-toggle').dropdown();
-					}
+						type:"POST",
+						url : ajaxReloadCurrentIndex,
+						async: true,
+						data : {
+							ajax : "1",
+							token : token,
+							controller : "AdminModules",
+							action : "reloadModulesList"
+						},
+ 						beforeSend: function(xhr)
+						{
+							$('#moduleContainer').html('<img src="../img/loader.gif" alt="" border="0" />');
+						},
+						success : function(data)
+						{
+							$('#moduleContainer').html(data);
+						},
+						error: function(res,textStatus,jqXHR)
+						{
+							//jAlert("TECHNICAL ERROR"+res);
+						}
 				});
 			}
 			catch(e){}
@@ -158,21 +143,25 @@
 		try
 		{
 			resAjax = $.ajax({
-				type:"POST",
-				url: ajaxCurrentIndex,
-				headers: {"cache-control": "no-cache"},
-				async: true,
-				cache: false,
-				data: {
+					type:"POST",
+					url : ajaxCurrentIndex,
+					async: true,
+					data : {
 					ajaxMode : "1",
 					ajax : "1",
 					token : token,
 					controller : "AdminModules",
 					action : "refreshModuleList"
 				},
-				success: function(data){
+				success : function(data)
+				{
+					// res.status  = cache or refresh
 					if (data == '{"status":"refresh"}')
 						window.location.href = window.location.href;
+				},
+				error: function(res,textStatus,jqXHR)
+				{
+					//jAlert("TECHNICAL ERROR"+res);
 				}
 			});
 		}
@@ -186,30 +175,37 @@
 			try
 			{
 				resAjax = $.ajax({
-					type:"POST",
-					url : ajaxCurrentIndex,
-					async: true,
-					data : {
-						ajax : "1",
-						token : token,
-						controller : "AdminModules",
-						action : "logOnAddonsWebservices",
-						username_addons : username_addons,
-						password_addons : password_addons
-					},
-					beforeSend: function(xhr){
-						$('#addons_loading').html('<img src="../img/loader.gif" alt="" border="0" />');
-					},
-					success : function(data){
-						if (data == 'OK')
+						type:"POST",
+						url : ajaxCurrentIndex,
+						async: true,
+						data : {
+							ajax : "1",
+							token : token,
+							controller : "AdminModules",
+							action : "logOnAddonsWebservices",
+							username_addons : username_addons,
+							password_addons : password_addons
+						},
+ 						beforeSend: function(xhr)
 						{
-							$('#addons_loading').html('');
-							$('#addons_login_div').fadeOut();
-							window.location.href = currentIndexWithToken + '&conf=32';
+							$('#addons_loading').html('<img src="../img/loader.gif" alt="" border="0" />');
+						},
+						success : function(data)
+						{
+							// res.status  = cache or refresh
+							if (data == 'OK')
+							{
+								$('#addons_loading').html('');
+								$('#addons_login_div').fadeOut();
+								window.location.href = currentIndexWithToken;
+							}
+							else
+								$('#addons_loading').html(errorLogin);
+						},
+						error: function(res,textStatus,jqXHR)
+						{
+							//jAlert("TECHNICAL ERROR"+res);
 						}
-						else
-							$('#addons_loading').html(errorLogin);
-					}
 				});
 			}
 			catch(e){}
@@ -222,28 +218,35 @@
 			try
 			{
 				resAjax = $.ajax({
-					type:"POST",
-					url : ajaxCurrentIndex,
-					async: true,
-					data : {
-						ajax : "1",
-						token : token,
-						controller : "AdminModules",
-						action : "logOutAddonsWebservices"
-					},
-					beforeSend: function(xhr){
-						$('#addons_loading').html('<img src="../img/loader.gif" alt="" border="0" />');
-					},
-					success: function(data) {
-						if (data == 'OK')
+						type:"POST",
+						url : ajaxCurrentIndex,
+						async: true,
+						data : {
+							ajax : "1",
+							token : token,
+							controller : "AdminModules",
+							action : "logOutAddonsWebservices"
+						},
+ 						beforeSend: function(xhr)
 						{
-							$('#addons_loading').html('');
-							$('#addons_login_div').fadeOut();
-							window.location.href = currentIndexWithToken;
+							$('#addons_loading').html('<img src="../img/loader.gif" alt="" border="0" />');
+						},
+						success : function(data)
+						{
+							// res.status  = cache or refresh
+							if (data == 'OK')
+							{
+								$('#addons_loading').html('');
+								$('#addons_login_div').fadeOut();
+								window.location.href = currentIndexWithToken;
+							}
+							else
+								$('#addons_loading').html(errorLogin);
+						},
+						error: function(res,textStatus,jqXHR)
+						{
+							//jAlert("TECHNICAL ERROR"+res);
 						}
-						else
-							$('#addons_loading').html(errorLogin);
-					}
 				});
 			}
 			catch(e){}
@@ -260,59 +263,40 @@
 			try
 			{
 				resAjax = $.ajax({
-					type:"POST",
-					url : ajaxCurrentIndex,
-					async: true,
-					data : {
-						ajax : "1",
-						token : token,
-						controller : "AdminModules",
-						action : "setFilter",
-						module_type : module_type,
-						module_install : module_install,
-						module_status : module_status,
-						country_module_value : country_module_value,
-						filterModules : 'Filter'
-					},
-					success : function(data){
-						if (data == 'OK')
-							window.location.href = currentIndexWithToken;
-					}
+						type:"POST",
+						url : ajaxCurrentIndex,
+						async: true,
+						data : {
+							ajax : "1",
+							token : token,
+							controller : "AdminModules",
+							action : "setFilter",
+							module_type : module_type,
+							module_install : module_install,
+							module_status : module_status,
+							country_module_value : country_module_value,
+							filterModules : 'Filter'
+						},
+						success : function(data)
+						{
+							// res.status  = cache or refresh
+							if (data == 'OK')
+								window.location.href = currentIndexWithToken;
+						},
+						error: function(res,textStatus,jqXHR)
+						{
+							//jAlert("TECHNICAL ERROR"+res);
+						}
 				});
 			}
 			catch(e){}
 			return false;
 		}
+		$('#module_type_filter').change(function() { setFilter(); });
+		$('#module_install_filter').change(function() { setFilter(); });
+		$('#module_status_filter').change(function() { setFilter(); });
+		$('#country_module_value_filter').change(function() { setFilter(); });
 
-		$(document).on('change', '#module_type_filter, #module_install_filter, #module_status_filter, #country_module_value_filter', function() { 
-			setFilter(); 
-		});
-
-		$('.moduleTabPreferencesChoise').change(function()
-		{			
-			var value_pref = $(this).val();
-			var module_pref = $(this).attr('name');
-			module_pref = module_pref.substring(2, module_pref.length);
-
-			$.ajax({
-				type:"POST",
-				url : ajaxCurrentIndex,
-				async: true,
-				data : {
-					ajax : "1",
-					token : token,
-					controller : "AdminModules",
-					action : "saveTabModulePreferences",
-					module_pref : module_pref,
-					value_pref : value_pref
-				},
-				success : function(data){
-					if (data == 'OK')
-						showSuccessMessage(confirmPreferencesSaved);
-				}
-			});
-		});
-		
 		// Method to save favorites preferences
 		$('.moduleFavorite').change(function()
 		{
@@ -323,75 +307,33 @@
 			try
 			{
 				resAjax = $.ajax({
-					type:"POST",
-					url : ajaxCurrentIndex,
-					async: true,
-					data : {
-						ajax : "1",
-						token : token,
-						controller : "AdminModules",
-						action : "saveFavoritePreferences",
-						action_pref : action_pref,
-						module_pref : module_pref,
-						value_pref : value_pref
-					},
-					success : function(data){
-						if (data == 'OK')
-							showSuccessMessage(confirmPreferencesSaved);
-					}
+						type:"POST",
+						url : ajaxCurrentIndex,
+						async: true,
+						data : {
+							ajax : "1",
+							token : token,
+							controller : "AdminModules",
+							action : "saveFavoritePreferences",
+							action_pref : action_pref,
+							module_pref : module_pref,
+							value_pref : value_pref
+						},
+						success : function(data)
+						{
+							// res.status  = cache or refresh
+							if (data == 'OK')
+								$('#r_' + module_pref).html(confirmPreferencesSaved);
+						},
+						error: function(res,textStatus,jqXHR)
+						{
+							//jAlert("TECHNICAL ERROR"+res);
+						}
 				});
 			}
 			catch(e){}
 			return false;
 		});
-
-		$('#moduleContainer').on("click", ".toggle_favorite", function()
-	    {
-	      var el = $(this);
-	      var value_pref = el.data('value');
-	      var module_pref = el.data('module');
-	      var action_pref = 'f';
-	      var total_favorites = parseInt($('#favorite-count').html());
-
-	      try
-	      {
-	        resAjax = $.ajax({
-	            type:"POST",
-	            url : ajaxCurrentIndex,
-	            async: true,
-	            data : {
-	              ajax : "1",
-	              token : token,
-	              controller : "AdminModules",
-	              action : "saveFavoritePreferences",
-	              action_pref : action_pref,
-	              module_pref : module_pref,
-	              value_pref : value_pref
-	            },
-	            success : function(data)
-	            {
-	              // res.status  = cache or refresh
-	              if (data == 'OK')
-	              {
-	                el.toggle();
-	                el.parent('li').siblings().find('a.toggle_favorite').toggle();
-
-					if (value_pref)
-						$('#favorite-count').html(total_favorites+1);
-					else
-						$('#favorite-count').html(total_favorites-1);
-	              }
-	                
-	            },
-	            error: function(res,textStatus,jqXHR)
-	            {
-	              //jAlert("TECHNICAL ERROR"+res);
-	            }
-	        });
-	      }
-	      catch(e){}
-	      return false;
-	    });
 	});
 
 	{/literal}

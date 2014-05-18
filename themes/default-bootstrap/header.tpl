@@ -65,33 +65,39 @@
 		<div id="page">
 			<div class="header-container">
 				<header id="header">
+					<div class="banner">
+						<div class="container">
+							<div class="row">
 								{hook h="displayBanner"}
-	               
-                    <div class="row nav_row">
-                        <div class="col-sm-2">
-                      			   <a href="{$base_dir}" title="{$shop_name|escape:'html':'UTF-8'}">
+							</div>
+						</div>
+					</div>
+					<div class="nav">
+						<div class="container">
+							<div class="row">
+								<nav>{hook h="displayNav"}</nav>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="container">
+							<div class="row">
+								<div id="header_logo">
+									<a href="{$base_dir}" title="{$shop_name|escape:'html':'UTF-8'}">
 										<img class="logo img-responsive" src="{$logo_url}" alt="{$shop_name|escape:'html':'UTF-8'}"{if $logo_image_width} width="{$logo_image_width}"{/if}{if $logo_image_height} height="{$logo_image_height}"{/if}/>
-									</a>     
-                        </div>
-                        <div class="col-sm-6 displayNav">
-                               {hook h="displayNav"}
-                        </div>
-                                
-                               <div class="col-sm-2 pull-right displayNavRight">
-                                  {hook h="displayNavRight"}
-                               </div>
-                              
-                    </div>
+									</a>
+								</div>
+								{if isset($HOOK_TOP)}{$HOOK_TOP}{/if}
+							</div>
+						</div>
+					</div>
 				</header>
-                            
-                       {if isset($HOOK_TOP)}{$HOOK_TOP}{/if}           
-                
 			</div>
 			<div class="columns-container">
-				<div id="columns">
-					{*if $page_name !='index' && $page_name !='pagenotfound'}
+				<div id="columns" class="container">
+					{if $page_name !='index' && $page_name !='pagenotfound'}
 						{include file="$tpl_dir./breadcrumb.tpl"}
-					{/if*}
+					{/if}
 					<div class="row">
 						<div id="top_column" class="center_column col-xs-12 col-sm-12">{hook h="displayTopColumn"}</div>
 					</div>

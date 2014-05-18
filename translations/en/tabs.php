@@ -63,6 +63,7 @@ $_TABS['AdminGroups'] = 'Groups';
 $_TABS['AdminCarts'] = 'Shopping Carts';
 $_TABS['AdminCustomerThreads'] = 'Customer Service';
 $_TABS['AdminContacts'] = 'Contacts';
+$_TABS['AdminGenders'] = 'Titles';
 $_TABS['AdminOutstanding'] = 'Outstanding';
 $_TABS['AdminProducts'] = 'Products';
 $_TABS['AdminCategories'] = 'Categories';

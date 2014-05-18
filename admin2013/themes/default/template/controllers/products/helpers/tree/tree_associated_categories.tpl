@@ -79,10 +79,15 @@
 					{
 						$(this).prop("checked", true);
 						$(this).parent().addClass("tree-selected");
-						$(this).parents('ul.tree').each(function(){
-							$(this).show();
-							$(this).prev().find('.icon-folder-close').removeClass('icon-folder-close').addClass('icon-folder-open');	
-						});
+						$(this).parents("ul.tree").each(
+							function()
+							{
+								$(this).children().children().children(".icon-folder-close")
+									.removeClass("icon-folder-close")
+									.addClass("icon-folder-open");
+								$(this).show();
+							}
+						);
 					}
 				}
 			);
@@ -111,10 +116,15 @@
 					{
 						$(this).prop("checked", true);
 						$(this).parent().addClass("tree-selected");
-						$(this).parents('ul.tree').each(function(){
-							$(this).show();
-							$(this).prev().find('.icon-folder-close').removeClass('icon-folder-close').addClass('icon-folder-open');	
-						});
+						$(this).parents("ul.tree").each(
+							function()
+							{
+								$(this).children().children().children(".icon-folder-close")
+									.removeClass("icon-folder-close")
+									.addClass("icon-folder-open");
+								$(this).show();
+							}
+						);
 					}
 				}
 			);

@@ -1,5 +1,5 @@
 /*
-* 2007-2014 PrestaShop
+* 2007-2012 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -18,14 +18,13 @@
 * needs please refer to http://www.prestashop.com for more information.
 *
 *  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2014 PrestaShop SA
+*  @copyright  2007-2012 PrestaShop SA
 *  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
 function addProductRuleGroup()
 {
-	$('#product_rule_group_table').show();
 	product_rule_groups_counter += 1;
 	product_rule_counters[product_rule_groups_counter] = 0;
 
@@ -85,13 +84,6 @@ function addCartRuleOption(item)
 
 function updateProductRuleShortDescription(item)
 {
-	/******* For IE: put a product in condition on cart rules *******/
-	if(typeof String.prototype.trim !== 'function') {
-	  String.prototype.trim = function() {
-		return this.replace(/^\s+|\s+$/g, ''); 
-	  }
-	}
-
 	var id1 = $(item).attr('id').replace('_add', '').replace('_remove', '');
 	var id2 = id1.replace('_select', '');
 	var length = $('#' + id1 + '_2 option').length;
@@ -109,29 +101,8 @@ for (i in restrictions)
 	$('#' + restrictions[i] + '_select_remove').click(function() {removeCartRuleOption(this);});
 	$('#' + restrictions[i] + '_select_add').click(function() {addCartRuleOption(this);});
 }
-
 toggleCartRuleFilter($('#product_restriction'));
-
-$('#product_restriction').click(function() {
-	toggleCartRuleFilter(this);
-
-	if ($(this).prop('checked'))
-	{
-		$('#apply_discount_to_selection').removeAttr('disabled');
-		$('#apply_discount_to_selection_warning').hide();
-	}
-	else
-	{
-		$('#apply_discount_to_selection').attr('disabled', 'disabled');
-		$('#apply_discount_to_selection_warning').show();
-	}
-});
-
-$('#apply_discount_to_selection_shortcut').click(function() {
-	displayCartRuleTab('conditions');
-	$('#product_restriction').focus();
-	return false;
-});
+$('#product_restriction').click(function() {toggleCartRuleFilter(this);});
 
 function toggleApplyDiscount(percent, amount, apply_to)
 {
@@ -167,12 +138,6 @@ function toggleApplyDiscount(percent, amount, apply_to)
 	{
 		$('#apply_discount_amount_div').hide(200);
 		$('#reduction_amount').val('0');
-
-		if ($('#apply_discount_off').prop('checked'))
-		{
-			$('#apply_discount_to_product').removeProp('checked')
-			toggleApplyDiscountTo();
-		}
 	}
 		
 	if (apply_to)
@@ -330,16 +295,16 @@ $('#customerFilter')
 function displayCartRuleTab(tab)
 {
 	$('.cart_rule_tab').hide();
-	$('.tab-row.active').removeClass('active');
+	$('.tab-page').removeClass('selected');
 	$('#cart_rule_' + tab).show();
-	$('#cart_rule_link_' + tab).parent().addClass('active');
+	$('#cart_rule_link_' + tab).addClass('selected');
 	$('#currentFormTab').val(tab);
 }
 
 $('.cart_rule_tab').hide();
-$('.tab-row.active').removeClass('active');
+$('.tab-page').removeClass('selected');
 $('#cart_rule_' + currentFormTab).show();
-$('#cart_rule_link_' + currentFormTab).parent().addClass('active');
+$('#cart_rule_link_' + currentFormTab).addClass('selected');
 
 var date = new Date();
 var hours = date.getHours();
@@ -373,8 +338,7 @@ function searchProducts()
 	
 	$.ajax({
 		type: 'POST',
-		headers: { "cache-control": "no-cache" }, 		
-		url: 'ajax-tab.php' + '?rand=' + new Date().getTime(),
+		url: 'ajax-tab.php',
 		async: true,
 		dataType: 'json',
 		data: {
