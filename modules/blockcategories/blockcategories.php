@@ -189,7 +189,7 @@ class BlockCategories extends Module
 		$current_allowed_controllers = array('category');
 
 		//$from_category = Configuration::get('PS_HOME_CATEGORY');
-                $from_category = 124; // put the ID of the ethnicity category here!!
+                $from_category = 130; // put the ID of the ethnicity category here!!
                 
 		if ($phpself != null && in_array($phpself, $current_allowed_controllers) && Configuration::get('BLOCK_CATEG_ROOT_CATEGORY') && isset($this->context->cookie->last_visited_category) && $this->context->cookie->last_visited_category)
 			$from_category = $this->context->cookie->last_visited_category;
