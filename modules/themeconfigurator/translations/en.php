@@ -17,6 +17,7 @@ $_MODULE['<{themeconfigurator}prestashop>themeconfigurator_00d23a76e43b46dae9ec7
 $_MODULE['<{themeconfigurator}prestashop>themeconfigurator_b9f5c797ebbf55adccdd8539a65a0241'] = 'Disabled';
 $_MODULE['<{themeconfigurator}prestashop>themeconfigurator_f4f70727dc34561dfde1a3c529b6205c'] = 'Settings';
 $_MODULE['<{themeconfigurator}prestashop>themeconfigurator_c9cc8cce247e49bae79f15173ce97354'] = 'Save';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_4351cfebe4b61d8aa5efa1d020710005'] = 'View';
 $_MODULE['<{themeconfigurator}prestashop>themeconfigurator_058e1168dd26085fe8d317effdf70dc3'] = 'Only you can see this on your Front-Office - your visitors will not see this tool.';
 $_MODULE['<{themeconfigurator}prestashop>themeconfigurator_6e3670bb5e3826106c5243b242cc52d9'] = 'Display links to your store\'s social accounts (Twitter, Facebook, etc.)';
 $_MODULE['<{themeconfigurator}prestashop>themeconfigurator_4bae4cdd2d56a5a8b8c320288c5d3426'] = 'Display contact information';

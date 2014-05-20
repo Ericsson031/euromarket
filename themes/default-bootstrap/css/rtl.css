@@ -1,10 +1,10 @@
-/********************************************************
-			Right to Left Styles
-********************************************************/
-* {
-  direction: rtl !important; }
-
-#page {
-  text-align: right !important; }
-.bx-viewport {
-  direction: ltr !important;}
+/********************************************************
+			Right to Left Styles
+********************************************************/
+* {
+  direction: rtl !important; }
+
+#page {
+  text-align: right !important; }
+.bx-viewport {
+  direction: ltr !important;}

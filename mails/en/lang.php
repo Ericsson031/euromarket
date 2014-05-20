@@ -3,9 +3,9 @@
 global $_LANGMAIL;
 $_LANGMAIL = array();
 
-$_LANGMAIL['Your guest account has been transformed to customer account'] = 'Your guest account has been transformed to customer account';
-$_LANGMAIL['Virtual product to download'] = 'Virtual product to download';
-$_LANGMAIL['New voucher regarding your order %s'] = 'New voucher regarding your order %s';
+$_LANGMAIL['Your guest account has been transformed to customer account'] = 'Your guest account has been transformed into a customer account';
+$_LANGMAIL['Virtual product to download'] = 'Virtual product(s) available for download';
+$_LANGMAIL['New voucher regarding your order %s'] = 'New voucher for your order %s';
 $_LANGMAIL['Order confirmation'] = 'Order confirmation';
 $_LANGMAIL['Log: You have a new alert from your shop'] = 'Log: You have a new alert from your shop';
 $_LANGMAIL['Fwd: Customer message'] = 'Fwd: Customer message';
@@ -22,9 +22,9 @@ $_LANGMAIL['Your message has been correctly sent #ct%1$s #tc%2$s'] = 'Your messa
 $_LANGMAIL['Your message has been correctly sent'] = 'Your message has been correctly sent';
 $_LANGMAIL['Message from contact form'] = 'Message from contact form';
 $_LANGMAIL['Message from a customer'] = 'Message from a customer';
-$_LANGMAIL['Password query confirmation'] = 'Password query confirmation';
+$_LANGMAIL['Password query confirmation'] = 'Forgot password';
 $_LANGMAIL['Newsletter voucher'] = 'Newsletter voucher';
-$_LANGMAIL['Newsletter confirmation'] = 'Newsletter confirmation';
+$_LANGMAIL['Newsletter confirmation'] = 'Newsletter subscription confirmation';
 $_LANGMAIL['Email verification'] = 'Email verification';
 $_LANGMAIL['Your wishlist\'s link'] = 'Your wishlist\'s link';
 $_LANGMAIL['Message from %1$s %2$s'] = 'Message from %1$s %2$s';
