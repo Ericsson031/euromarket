@@ -6800,7 +6800,7 @@ div.star a:hover {
         color: white; }
     .footer-container #footer h4 {
       font: 600 18px/22px "Open Sans", sans-serif;
-      color: white;
+      color: #f59332;
       margin: 0 0 20px 0; }
       @media (max-width: 767px) {
         .footer-container #footer h4 {
@@ -6853,16 +6853,16 @@ div.star a:hover {
     .footer-container #footer .blockcategories_footer {
       clear: left; }
     .footer-container #footer #social_block {
-      float: left;
-      width: 50%;
-      padding: 22px 15px 0 15px; }
+      /* float: left; */
+      /* width: 50%; */
+      /* padding: 22px 15px 0 15px; */ }
       @media (max-width: 767px) {
         .footer-container #footer #social_block {
           width: 100%;
           float: left;
           padding-top: 5px; } }
       .footer-container #footer #social_block ul {
-        float: right; }
+        /* float: right; */ }
         @media (max-width: 767px) {
           .footer-container #footer #social_block ul {
             float: none; } }
@@ -6904,12 +6904,12 @@ div.star a:hover {
           .footer-container #footer #social_block ul li.pinterest a:before {
             content: "\f0d2"; }
       .footer-container #footer #social_block h4 {
-        float: right;
-        margin-bottom: 0;
-        font-size: 21px;
-        line-height: 25px;
-        text-transform: none;
-        padding: 0 10px 0 0; }
+        /* float: right; */
+        /* margin-bottom: 0; */
+        /* font-size: 21px; */
+        /* line-height: 25px; */
+        /* text-transform: none; */
+        /* padding: 0 10px 0 0; */ }
         @media (max-width: 767px) {
           .footer-container #footer #social_block h4 {
             display: none;
