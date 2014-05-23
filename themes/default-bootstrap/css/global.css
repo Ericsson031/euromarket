@@ -5276,7 +5276,9 @@ textarea {
 header {
   z-index: 1;
   position: relative;
-  /* padding-bottom: 15px; */ }
+  /* padding-bottom: 15px; */ 
+  color: #58585a;
+}
   header .banner {
     background: black;
     max-height: 100%; }
@@ -5996,7 +5998,8 @@ table.table_block td {
       width: auto; }
 
 .page-product-box {
-  padding-bottom: 10px; }
+  padding-bottom: 10px; 
+}
 
 .product-box {
   width: 178px;
