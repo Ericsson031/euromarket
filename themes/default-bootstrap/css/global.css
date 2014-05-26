@@ -2221,6 +2221,11 @@ input[type="button"].btn-block {
   .nav > li {
     position: relative;
     display: block; }
+    
+    #menu2 .nav > li{
+      background: url(../img/menu_separator.png) right 0 no-repeat;
+    }
+    
     .nav > li > a {
       position: relative;
       display: block;
