@@ -8080,3 +8080,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f0e7', end
 .displayNav, .displayNavRight{
     padding-top: 60px;
 }
+
+.menu li{
+  float:left;
+  margin-right:1em;
+}
