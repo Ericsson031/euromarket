@@ -1166,10 +1166,10 @@ th {
     padding: 9px 8px 11px 18px;
     line-height: 1.42857;
     vertical-align: top;
-    border-top: 1px solid #d6d4d4; }
+    /* border-top: 1px solid #d6d4d4; */ }
   .table thead > tr > th {
     vertical-align: bottom;
-    border-bottom: 2px solid #d6d4d4; }
+    /* border-bottom: 2px solid #d6d4d4; */ }
   .table caption + thead tr:first-child th, .table caption + thead tr:first-child td,
   .table colgroup + thead tr:first-child th,
   .table colgroup + thead tr:first-child td,
@@ -1190,14 +1190,14 @@ th {
   padding: 5px; }
 
 .table-bordered {
-  border: 1px solid #d6d4d4; }
+  /* border: 1px solid #d6d4d4; */ }
   .table-bordered > thead > tr > th,
   .table-bordered > thead > tr > td,
   .table-bordered > tbody > tr > th,
   .table-bordered > tbody > tr > td,
   .table-bordered > tfoot > tr > th,
   .table-bordered > tfoot > tr > td {
-    border: 1px solid #d6d4d4; }
+    /* border: 1px solid #d6d4d4; */ }
   .table-bordered > thead > tr > th,
   .table-bordered > thead > tr > td {
     border-bottom-width: 2px; }
@@ -5536,24 +5536,24 @@ span.exclusive {
   color: white;
   padding: 0;
   font-weight: bold;
-  background: #43b754;
+  background: #e61f3b;
   background: -moz-linear-gradient(top, #43b754 0%, #41b757 2%, #41b854 4%, #43b756 6%, #41b354 38%, #44b355 40%, #45af55 66%, #41ae53 74%, #42ac52 91%, #41ae55 94%, #43ab54 96%, #42ac52 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #43b754), color-stop(2%, #41b757), color-stop(4%, #41b854), color-stop(6%, #43b756), color-stop(38%, #41b354), color-stop(40%, #44b355), color-stop(66%, #45af55), color-stop(74%, #41ae53), color-stop(91%, #42ac52), color-stop(94%, #41ae55), color-stop(96%, #43ab54), color-stop(100%, #42ac52));
-  background: -webkit-linear-gradient(top, #43b754 0%, #41b757 2%, #41b854 4%, #43b756 6%, #41b354 38%, #44b355 40%, #45af55 66%, #41ae53 74%, #42ac52 91%, #41ae55 94%, #43ab54 96%, #42ac52 100%);
+  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #43b754), color-stop(2%, #41b757), color-stop(4%, #41b854), color-stop(6%, #43b756), color-stop(38%, #41b354), color-stop(40%, #44b355), color-stop(66%, #45af55), color-stop(74%, #41ae53), color-stop(91%, #42ac52), color-stop(94%, #41ae55), color-stop(96%, #43ab54), color-stop(100%, #42ac52)); */
+  /* background: -webkit-linear-gradient(top, #43b754 0%, #41b757 2%, #41b854 4%, #43b756 6%, #41b354 38%, #44b355 40%, #45af55 66%, #41ae53 74%, #42ac52 91%, #41ae55 94%, #43ab54 96%, #42ac52 100%); */
   background: -o-linear-gradient(top, #43b754 0%, #41b757 2%, #41b854 4%, #43b756 6%, #41b354 38%, #44b355 40%, #45af55 66%, #41ae53 74%, #42ac52 91%, #41ae55 94%, #43ab54 96%, #42ac52 100%);
   background: -ms-linear-gradient(top, #43b754 0%, #41b757 2%, #41b854 4%, #43b756 6%, #41b354 38%, #44b355 40%, #45af55 66%, #41ae53 74%, #42ac52 91%, #41ae55 94%, #43ab54 96%, #42ac52 100%);
-  background: linear-gradient(to bottom, #43b754 0%, #41b757 2%, #41b854 4%, #43b756 6%, #41b354 38%, #44b355 40%, #45af55 66%, #41ae53 74%, #42ac52 91%, #41ae55 94%, #43ab54 96%, #42ac52 100%);
+  /* background: linear-gradient(to bottom, #43b754 0%, #41b757 2%, #41b854 4%, #43b756 6%, #41b354 38%, #44b355 40%, #45af55 66%, #41ae53 74%, #42ac52 91%, #41ae55 94%, #43ab54 96%, #42ac52 100%); */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#43b754', endColorstr='#42ac52',GradientType=0 );
   border: 1px solid;
-  border-color: #399a49 #247f32 #1a6d27 #399a49;
+  /* border-color: #399a49 #247f32 #1a6d27 #399a49; */
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0; }
   .button.button-medium span {
     display: block;
     padding: 10px 10px 10px 14px;
-    border: 1px solid;
-    border-color: #74d578; }
+    /* border: 1px solid; */
+    /* border-color: #74d578; */ }
     @media (max-width: 480px) {
       .button.button-medium span {
         font-size: 15px;
@@ -5788,9 +5788,9 @@ table.table_block td {
 .table {
   margin-bottom: 30px; }
   .table > thead > tr > th {
-    background: #fbfbfb;
+    /* background: #fbfbfb; */
     border-bottom-width: 1px;
-    color: #333333;
+    color: #6b6c6d;
     vertical-align: middle; }
   .table td a.color-myaccount {
     color: #777777;
@@ -5809,7 +5809,7 @@ table.table_block td {
   .product-name a {
     font-size: 17px;
     line-height: 23px;
-    color: #3a3939; }
+    color: #6b6c6d; }
     .product-name a:hover {
       color: #515151; }
     @media (max-width: 768px) {
@@ -6165,7 +6165,7 @@ table.table_block td {
   padding: 17px 10px 17px 10px;
   margin-bottom: 30px;
   margin-top: 10px;
-  border-bottom: 1px solid #d6d4d4;
+  /* border-bottom: 1px solid #d6d4d4; */
   overflow: hidden; }
   .page-heading span.heading-counter {
     font: bold 13px/22px Arial, Helvetica, sans-serif;
@@ -6540,20 +6540,20 @@ ul.step {
           border-bottom-right-radius: 4px; } }
     ul.step li.step_current {
       font-weight: bold;
-      background: #42b856;
+      background: #d9832c;
       background: -moz-linear-gradient(top, #42b856 0%, #43ab54 100%);
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #42b856), color-stop(100%, #43ab54));
-      background: -webkit-linear-gradient(top, #42b856 0%, #43ab54 100%);
+      /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #42b856), color-stop(100%, #43ab54)); */
+      /* background: -webkit-linear-gradient(top, #42b856 0%, #43ab54 100%); */
       background: -o-linear-gradient(top, #42b856 0%, #43ab54 100%);
       background: -ms-linear-gradient(top, #42b856 0%, #43ab54 100%);
-      background: linear-gradient(to bottom, #42b856 0%, #43ab54 100%);
+      /* background: linear-gradient(to bottom, #42b856 0%, #43ab54 100%); */
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#42b856', endColorstr='#43ab54',GradientType=0);
-      border-color: #399b49 #51ae5c #208931 #369946; }
+      border-color: #d9832c; }
       ul.step li.step_current span {
         color: white;
         text-shadow: 1px 1px #208931;
         border: 1px solid;
-        border-color: #73ca77 #74c776 #74c175 #74c776;
+        border-color: #d9832c;
         position: relative; }
         @media (min-width: 992px) {
           ul.step li.step_current span {
@@ -7032,7 +7032,7 @@ a.price_discount_delete {
   padding: 19px;
   width: 137px; }
   #cart_summary tbody td.cart_product img {
-    border: 1px solid #d6d4d4; }
+    /* border: 1px solid #d6d4d4; */ }
 #cart_summary tbody td.cart_unit .price span {
   display: inline-block; }
   #cart_summary tbody td.cart_unit .price span.price-percent-reduction {
@@ -8079,9 +8079,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f0e7', end
 
 .displayNav, .displayNavRight{
     padding-top: 60px;
-}
-
-.menu li{
-  float:left;
-  margin-right:1em;
 }
