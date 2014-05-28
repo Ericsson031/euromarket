@@ -6824,14 +6824,16 @@ div.star a:hover {
       .footer-container #footer h4 a {
         color: #f59332; }
     .footer-container #footer ul li {
-      padding-bottom: 8px; }
+      padding-bottom: 8px; 
+      /* min-width: 13em; */
+}
       .footer-container #footer ul li a {
         font-weight: bold;
         /* text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4); */ 
         color: white;
 }
     .footer-container #footer #block_contact_infos {
-      border-left: 1px solid #515151; }
+      /* border-left: 1px solid #515151; */ }
       @media (max-width: 767px) {
         .footer-container #footer #block_contact_infos {
           border: none; } }
@@ -6843,7 +6845,7 @@ div.star a:hover {
         .footer-container #footer #block_contact_infos > div ul li {
           padding: 0 0 7px 4px;
           overflow: hidden;
-          line-height: 30px; }
+          line-height: 20px; }
           .footer-container #footer #block_contact_infos > div ul li > span,
           .footer-container #footer #block_contact_infos > div ul li > span a {
             color: white;
@@ -8089,4 +8091,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f0e7', end
 .menu li{
   float:left;
   margin-right:1em;
+}
+
+#block_various_links_footer li{
+float:left;
+min-width:13em;
+}
+
+li#address{
+  line-height:16px;
 }
