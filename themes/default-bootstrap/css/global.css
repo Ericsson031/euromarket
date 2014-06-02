@@ -2243,7 +2243,7 @@ input[type="button"].btn-block {
         background-color: transparent;
         cursor: not-allowed; }
   .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
     border-color: #777777; }
   .nav .nav-divider {
     height: 1px;
@@ -2567,7 +2567,7 @@ input[type="button"].btn-block {
     color: #777777; }
 
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-      color: #333333;
+      /* color: #333333; */
       background-color: transparent; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #555555;
@@ -2592,8 +2592,14 @@ input[type="button"].btn-block {
     border-top-color: #333333;
     border-bottom-color: #333333; }
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #ffffff;
-    color: #555555; }
+    /* background-color: #ffffff; */
+    /* color: #555555; */ 
+    background: url(../img/head_menu_selected.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: inset 0px 0px 38px 2px rgba(244,146,49,1); -moz-box-shadow: inset 0px 0px 38px 2px rgba(244,146,49,1); 
+    box-shadow: inset 0px 0px 20px 7px rgba(244,146,49,1);
+}
     .navbar-default .navbar-nav > .open > a .caret, .navbar-default .navbar-nav > .open > a:hover .caret, .navbar-default .navbar-nav > .open > a:focus .caret {
       border-top-color: #555555;
       border-bottom-color: #555555; }
