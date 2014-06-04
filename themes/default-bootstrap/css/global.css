@@ -318,8 +318,11 @@ p {
   font-weight: 200;
   line-height: 1.4; }
   @media (min-width: 768px) {
-    .lead {
-      font-size: 19.5px; } }
+    .lead {        
+      font-size: 19.5px; } 
+    
+    .logo{width: 150px;}
+  }
 
 small {
   font-size: 85%; }
@@ -2223,8 +2226,9 @@ input[type="button"].btn-block {
     display: block; }
     
     #menu2 .nav > li{
-      background: url(../img/menu_separator.png) right 0 no-repeat;
-    }
+      background: url(../img/menu_separator.png) right  no-repeat;
+    
+}
     
     .nav > li > a {
       position: relative;
@@ -7802,7 +7806,9 @@ form#sendComment h3 {
   overflow: hidden;
   cursor: pointer;
   font-size: 14px;
-  font-weight: normal; }
+  font-weight: normal; 
+  /* color: #000; */
+}
 
 .star {
   display: block; }
@@ -8068,6 +8074,7 @@ div.star.star_hover:after {
   .navbar-default .navbar-nav > li > a {
     color: white; 
     text-align: center;
+    margin-right: 1px;
 }
   
   #categories_block_left{
@@ -8106,4 +8113,8 @@ min-width:13em;
 
 li#address{
   line-height:16px;
+}
+
+.logo{
+    padding:10px;
 }
