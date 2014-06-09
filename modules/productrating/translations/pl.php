@@ -1,0 +1,30 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+$_MODULE['<{productrating}prestashop>productrating_5c64f6f998e4440ae6c1c1f8db892f1a'] = 'Wystaw ocenę';
+$_MODULE['<{productrating}prestashop>productrating_dda9c06f33071c9b6fc237ee164109d8'] = 'Ocena';
+$_MODULE['<{productrating}prestashop>productrating_54c280558263a67e0a84ba34f625c464'] = 'oddane';
+$_MODULE['<{productrating}prestashop>productrating_dfa5be7e620204da91e72a33294e9798'] = 'głosy';
+$_MODULE['<{productrating}prestashop>productrating_4ca5d171acaac2c5ca261c97b0d40383'] = 'głos';
+$_MODULE['<{productrating}prestashop>productrating_663fc7093256cda156e571631ddb295e'] = 'z';
+$_MODULE['<{productrating}prestashop>productrating_437866409d3a4a2ebdb33623a5b2a062'] = 'Dziękujemy za głosowanie!';
+$_MODULE['<{productrating}prestashop>productrating_b55d0491fb2a0383f1f8fac2a812c5d4'] = 'Ocen produktu';
+$_MODULE['<{productrating}prestashop>productrating_99b4e8eb9ab7ea9ef4d513b54fae54fb'] = 'Umożliwia wszystkim klientom ocenianie produktu';
+$_MODULE['<{productrating}prestashop>productrating_7ccf58c950043c9fbfed668df13ce608'] = 'Ustawienia są aktualizowane';
+$_MODULE['<{productrating}prestashop>productrating_f05fa8d6ca6f8e0681a61f9d09ac5b13'] = 'Błędny numer';
+$_MODULE['<{productrating}prestashop>productrating_f4f70727dc34561dfde1a3c529b6205c'] = 'Ustawienia';
+$_MODULE['<{productrating}prestashop>productrating_46a8838f72c11296e10688de85e0922c'] = 'Wyświetl w kategorii';
+$_MODULE['<{productrating}prestashop>productrating_00d23a76e43b46dae9ec7aa9dcbebb32'] = 'Włączone';
+$_MODULE['<{productrating}prestashop>productrating_b9f5c797ebbf55adccdd8539a65a0241'] = 'Wyłączone';
+$_MODULE['<{productrating}prestashop>productrating_264a9dde5dd585c620479d57b1e1404f'] = 'Wyświetl ocene produktu na liście produktów';
+$_MODULE['<{productrating}prestashop>productrating_b27e83d91e47f1f2316e1510d23cda00'] = 'Ilość gwiazdek';
+$_MODULE['<{productrating}prestashop>productrating_31f9e14644e973b5b47ad51e494f05ee'] = 'Liczba gwiazdek (domyślnie: 10)';
+$_MODULE['<{productrating}prestashop>productrating_a0ea2257944bcc34145c767cdaec2750'] = 'Tylko zalogowani';
+$_MODULE['<{productrating}prestashop>productrating_c92d35f8ce1fae5c8d064a138027d477'] = 'Tylko zalogowani użytkownicy mogą oceniać produkty';
+$_MODULE['<{productrating}prestashop>productrating_c9cc8cce247e49bae79f15173ce97354'] = 'Zachowaj';
+$_MODULE['<{productrating}prestashop>productrating_26f93e6e68e28a698377e941cb59f29a'] = 'Gwiazda';
+$_MODULE['<{productrating}prestashop>productrating_368d9ac76af05f714092bc808a426bfc'] = 'Kolor tła';
+$_MODULE['<{productrating}prestashop>productrating_32311c945d63e630fcda5d6b5a5b61e3'] = 'Szesnastkowy kod koloru (np. f1f2f4), lub 0 - przeźroczyste';
+$_MODULE['<{productrating}prestashop>productrating_d8404c62148d50f3388a992e47f9fbcf'] = 'Kolor obramowania';
+$_MODULE['<{productrating}prestashop>productrating_a7cae68155b96be775d81dbd43b00ba3'] = 'Szesnastkowy kod koloru (np. d0d3d8), lub 0 - bez obramowania';

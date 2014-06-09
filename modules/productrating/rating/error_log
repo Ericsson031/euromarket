@@ -1,0 +1,2 @@
+[10-Jun-2014 02:32:57 Asia/Dubai] PHP Notice:  Undefined index: HTTP_REFERER in /home/eurobalk/myeuromarket/modules/productrating/rating/db.php on line 30
+[10-Jun-2014 02:32:57 Asia/Dubai] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/eurobalk/myeuromarket/modules/productrating/rating/db.php:30) in /home/eurobalk/myeuromarket/modules/productrating/rating/db.php on line 60
