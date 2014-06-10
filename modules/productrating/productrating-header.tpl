@@ -10,12 +10,12 @@
 	{rdelim}
 	
 	.ratingblock {ldelim}
-	{if $bgcolor}
+	{*if $bgcolor}
 	background-color: #{$bgcolor};
 	{/if}
 	{if $bdcolor}
 	border: 1px #{$bdcolor} solid;
-	{/if}
+	{/if*}
 	{rdelim}
 	
 </style>

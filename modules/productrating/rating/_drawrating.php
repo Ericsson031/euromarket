@@ -74,6 +74,11 @@ if ($static == 'static') {
       $rater.='<div class="ratingblock">';
 
       $rater.='<div id="unit_long'.$id.'">';
+      $rater.='  <p class="rating_label"';
+      //if($voted){ $rater.=' class="voted"'; }
+      $rater.='>'.$productrating->traduz('Rating').':';
+        //$rater.='>'.$productrating->traduz('Rating').': <strong> '.$rating1.'</strong>/'.$units.' ('.$count.' '.$tense.' '.$productrating->traduz('cast').')';
+      $rater.='  </p>';
       $rater.='  <ul id="unit_ul'.$id.'" class="unit-rating" style="width:'.$rating_unitwidth*$units.'px;">';
       $rater.='     <li class="current-rating" style="width:'.$rating_width.'px;">Currently '.$rating2.'/'.$units.'</li>';
 
@@ -85,10 +90,7 @@ if ($static == 'static') {
       $ncount=0; // resets the count
 
       $rater.='  </ul>';
-      $rater.='  <p';
-      if($voted){ $rater.=' class="voted"'; }
-      $rater.='>'.$productrating->traduz('Rating').': <strong> '.$rating1.'</strong>/'.$units.' ('.$count.' '.$tense.' '.$productrating->traduz('cast').')';
-      $rater.='  </p>';
+
       $rater.='</div>';
       $rater.='</div>';
       return $rater;
