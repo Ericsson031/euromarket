@@ -5716,7 +5716,7 @@ span.exclusive {
   .button.ajax_add_to_cart_button span {
     border: 1px solid;
     border-color: #f59a40;
-    padding: 10px 14px;
+    padding: 3px 14px;
     display: block;
     background: #f69432;
     background: -moz-linear-gradient(top, #009ad0 0%, #007ab7 100%);
@@ -5820,7 +5820,10 @@ table.table_block td {
   line-height: 23px;
   color: #d82c3e;
   font-weight: bold;
-  margin-bottom: 0; }
+  margin-bottom: 0; 
+  /* float: left; */
+  text-align: left;
+}
   .product-name a {
     font-size: 17px;
     line-height: 23px;
@@ -6632,7 +6635,7 @@ ul.step {
 .rating {
   clear: both;
   display: block;
-  margin: 2em;
+  /* margin: 2em; */
   cursor: pointer; }
 
 .rating:after {
@@ -8117,4 +8120,29 @@ li#address{
 
 .logo{
     padding:10px;
+}
+
+.cms_content{
+    padding: 0em 1em;
+  
+}
+
+div.right-block
+{
+  text-align:left;
+}
+
+p.product-desc-short
+{
+  margin:0px;
+}
+
+.ethnicity{
+    color: #81c168;
+  color  
+}
+
+.ratingblock p.rating_label{
+    font-weight: bold;
+    margin-bottom: 2px!important;
 }
