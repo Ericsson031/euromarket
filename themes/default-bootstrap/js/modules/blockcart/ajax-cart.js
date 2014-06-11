@@ -541,13 +541,13 @@ var ajaxCart = {
 		$('dt[data-id=cart_block_product_' + product.id + '_' + (product.idCombination ? product.idCombination : '0')+ '_' + (product.idAddressDelivery ? product.idAddressDelivery : '0') + '] .quantity').fadeTo('fast', 0, function(){
 			$(this).text(quantity);
 			$(this).fadeTo('fast', 1, function(){
-				$(this).fadeTo('fast', 0, function(){
+				/*$(this).fadeTo('fast', 0, function(){
 					$(this).fadeTo('fast', 1, function(){
 						$(this).fadeTo('fast', 0, function(){
 							$(this).fadeTo('fast', 1);
 						});
 					});
-				});
+				});*/
 			});
 		});
 	},
@@ -576,18 +576,18 @@ var ajaxCart = {
 					var productAttributeId = (this.hasAttributes ? parseInt(this.attributes) : 0);
 					var content =  '<dt class="unvisible" data-id="cart_block_product_' + domIdProduct + '">';
 					var name = $.trim($('<span />').html(this.name).text());
-					name = (name.length > 12 ? name.substring(0, 10) + '...' : name);
-					content += '<a class="cart-images" href="' + this.link + '" title="' + name + '"><img  src="' + this.image_cart + '" alt="' + this.name +'"></a>';
-					content += '<div class="cart-info"><div class="product-name">' + '<span class="quantity-formated"><span class="quantity">' + this.quantity + '</span>&nbsp;x&nbsp;</span><a href="' + this.link + '" title="' + this.name + '" class="cart_block_product_name">' + name + '</a></div>';
+					name = (name.length > 30 ? name.substring(0, 10) + '...' : name);
+					//content += '<a class="cart-images" href="' + this.link + '" title="' + name + '"><img  src="' + this.image_cart + '" alt="' + this.name +'"></a>';
+					content += '<div class="cart-info row"><div class="product-name col-sm-9">' + '<span class="quantity-formated"><span class="quantity">' + this.quantity + '</span>&nbsp;x&nbsp;</span><a href="' + this.link + '" title="' + this.name + '" class="cart_block_product_name">' + name + '</a></div>';
 					if (this.hasAttributes)
 						  content += '<div class="product-atributes"><a href="' + this.link + '" title="' + this.name + '">' + this.attributes + '</a></div>';
 					if (typeof(freeProductTranslation) != 'undefined')
-						content += '<span class="price">' + (parseFloat(this.price_float) > 0 ? this.priceByLine : freeProductTranslation) + '</span></div>';
+						content += '<span class="price col-sm-3 pull-right">' + (parseFloat(this.price_float) > 0 ? this.priceByLine : freeProductTranslation) + '</span></div>';
 
-					if (typeof(this.is_gift) == 'undefined' || this.is_gift == 0)
-						content += '<span class="remove_link"><a rel="nofollow" class="ajax_cart_block_remove_link" href="' + baseUri + '?controller=cart&amp;delete=1&amp;id_product=' + productId + '&amp;token=' + static_token + (this.hasAttributes ? '&amp;ipa=' + parseInt(this.idCombination) : '') + '"> </a></span>';
-					else
-						content += '<span class="remove_link"></span>';
+					//if (typeof(this.is_gift) == 'undefined' || this.is_gift == 0)
+					//	content += '<span class="remove_link"><a rel="nofollow" class="ajax_cart_block_remove_link" href="' + baseUri + '?controller=cart&amp;delete=1&amp;id_product=' + productId + '&amp;token=' + static_token + (this.hasAttributes ? '&amp;ipa=' + parseInt(this.idCombination) : '') + '"> </a></span>';
+					//else
+					//	content += '<span class="remove_link"></span>';
 					content += '</dt>';
 					if (this.hasAttributes)
 						content += '<dd data-id="cart_block_combination_of_' + domIdProduct + '" class="unvisible">';
@@ -605,7 +605,7 @@ var ajaxCart = {
 					{
 						// Usual product
 						if (!this.is_gift)
-							$('dt[data-id="cart_block_product_' + domIdProduct + '"] .price').text(jsonProduct.priceByLine);
+							$('dt[data-id="cart_block_product_' + domIdProduct + '"] .price').text(jsonProduct.price_float);
 						else
 							$('dt[data-id="cart_block_product_' + domIdProduct + '"] .price').html(freeProductTranslation);
 						ajaxCart.updateProductQuantity(jsonProduct, jsonProduct.quantity);

@@ -92,14 +92,16 @@
   /* padding-right: 20px; */ }
   .cart_block .cart-info .product-name {
     padding-bottom: 5px;
-    margin-top: -4px; }
+    margin-top: -4px; 
+    display: in¸¸¸¸;
+}
     .cart_block .cart-info .product-name a {
       font-size: 13px;
       line-height: 18px;
-      display: inline-block; 
+      display: inline; 
 }
   .cart_block .cart-info .quantity-formated {
-    display: inline-block;
+    display: inline;
     color: #9c9b9b;
     text-transform: uppercase;
     font-size: 10px;
@@ -453,7 +455,7 @@
 
 .cart_head h2{color:#f79533;margin-top: 0;}
 
-.cart-info .price{text-align: right;}
+.cart-info .price{text-align: right;float: right;display: inline;}
 
 .products_head{font-weight: bold;padding-bottom: 5px;color: black;}
 .products_head .price{text-align: right;}
