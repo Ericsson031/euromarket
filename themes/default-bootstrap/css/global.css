@@ -5813,7 +5813,7 @@ table.table_block td {
     .table td a.color-myaccount:hover {
       text-decoration: none; }
   .table tfoot tr {
-    background: #fbfbfb; }
+    /* background: #fbfbfb; */ }
 
 .product-name {
   font-size: 20px;
@@ -8089,7 +8089,7 @@ div.star.star_hover:after {
   }
   
   
-.grey_gradient{ 
+.grey_gradient, .page-heading{ 
 background: #f4f0e7; /* Old browsers */
 background: -moz-linear-gradient(top,  #f4f0e7 0%, #ffffff 100%, #fefefd 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f0e7), color-stop(100%,#ffffff), color-stop(100%,#fefefd)); /* Chrome,Safari4+ */
