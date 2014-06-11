@@ -6558,7 +6558,7 @@ ul.step {
           border-bottom-right-radius: 4px; } }
     ul.step li.step_current {
       font-weight: bold;
-      background: #d9832c;
+      background: #f49231;
       background: -moz-linear-gradient(top, #42b856 0%, #43ab54 100%);
       /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #42b856), color-stop(100%, #43ab54)); */
       /* background: -webkit-linear-gradient(top, #42b856 0%, #43ab54 100%); */
