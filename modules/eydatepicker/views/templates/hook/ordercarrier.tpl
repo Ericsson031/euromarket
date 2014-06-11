@@ -1,10 +1,9 @@
 <div id="datepicker_container">
-    <h3>{l s='Pick your desired delivery date' mod='eydatepicker'}</h3>
 
 {if $show_calendar_inline}
     <div id="shipping_date"></div>
 {else}
-    <input type="text" value="" id="shipping_date" name="shipping_date_raw" value="" readonly="readonly" />
+    <input type="text" value="" id="shipping_date" name="shipping_date_raw" value="" placeholder="{l s='Pick your desired delivery date' mod='eydatepicker'}" readonly="readonly" />
 {/if}        
     <input type="hidden" value="" id="processed_shipping_date" name="shipping_date" value="" />
 
@@ -36,22 +35,24 @@ function restrictDays(date) {
 	return [true];
 }
 
-$('#shipping_date').datepicker({
-	dateFormat: '{/literal}{$dateFormat}{literal}',
-	minDate: {/literal}{$minDate}{literal},
-	maxDate: {/literal}{$maxDate}{literal},
-	constrainInput: true,
-	beforeShowDay: restrictDays,
-	showOn: "button",
-	buttonImage: "{/literal}{$basedir}modules/eydatepicker/assets/img/calendar.gif{literal}",
-	buttonImageOnly: true,
-	showOn: "both",
-	onSelect: function(dateText, inst) {
-		var theDate = new Date(Date.parse($(this).datepicker('getDate')));
-		var dateFormatted = $.datepicker.formatDate('yy-mm-dd', theDate);
-		$('#processed_shipping_date').val(dateFormatted);
-		loadPage(dateFormatted);
-	}
+jQuery(document).ready(function() {
+	jQuery('#shipping_date').datepicker({
+		dateFormat: '{/literal}{$dateFormat}{literal}',
+		minDate: {/literal}{$minDate}{literal},
+		maxDate: {/literal}{$maxDate}{literal},
+		constrainInput: true,
+		beforeShowDay: restrictDays,
+		showOn: "button",
+		buttonImage: "{/literal}{$basedir}modules/eydatepicker/assets/img/calendar.gif{literal}",
+		buttonImageOnly: true,
+		showOn: "both",
+		onSelect: function(dateText, inst) {
+			var theDate = new Date(Date.parse($(this).datepicker('getDate')));
+			var dateFormatted = $.datepicker.formatDate('yy-mm-dd', theDate);
+			$('#processed_shipping_date').val(dateFormatted);
+			loadPage(dateFormatted);
+		}
+	});
 });
 
 

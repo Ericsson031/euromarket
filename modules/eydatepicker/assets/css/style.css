@@ -1,11 +1,31 @@
 #datepicker_container {
     margin-bottom: 20px;
 }
-#shipping_date {
-	width: 300px;
+#datepicker_container input {
+	width: 210px;
+	padding: 2px 5px;
+	margin-right: 1px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555;
+	vertical-align: middle;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px !important;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	cursor: pointer;
 }
 
 #datepicker_container select {
-    width: 300px;
-    font-size: 18px;
+	padding: 3px 5px;
+	margin-right: 1px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555;
+	vertical-align: middle;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px !important;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	cursor: pointer;
 }

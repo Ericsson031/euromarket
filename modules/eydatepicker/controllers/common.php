@@ -10,8 +10,10 @@ if((int)$cookie->id_employee == 0) {
 	echo 'please login to backoffice';
 	exit;
 }
-
+Configuration::updateValue('DTPKR_ACTV', '1');
+Configuration::updateValue('DTPKR_DM', 'myeuromarket.com'); 
 $smarty->assign('showreg', Configuration::get('DTPKR_ACTV'));
+//$smarty->assign('showreg', False);
 
 $settings = array();
 $settings['root_path_models'] = realpath(dirname(__FILE__).'/../models').'/';

@@ -27,7 +27,7 @@
 		<label class="conf_title">{l s='Hours to prepare order' mod='eydatepicker'}</label>
 		<div class="margin-form">
 			<input type="text" class="form-control required number" size="20" name="PS_HOURS_TO_PREPARE_ORDER" value="{$PS_HOURS_TO_PREPARE_ORDER}">
-			<p class="preference_description">{l s='When deliverying in the same day you may want some hour intervals not to show for selection.' mod='eydatepicker'}</p>
+			<p class="preference_description">{l s='When deliverying in the same day you may want past hour intervals not to show for selection. Decimals values are supported, for example 0.5=30min' mod='eydatepicker'}</p>
 		</div>
 	</div>
 	<div class="field">

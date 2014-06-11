@@ -2,7 +2,7 @@
 <module>
 	<name>eydatepicker</name>
 	<displayName><![CDATA[Datepicker with hours by ecommy.com]]></displayName>
-	<version><![CDATA[4.0.0]]></version>
+	<version><![CDATA[4.1.0]]></version>
 	<description><![CDATA[Shows a date picker during checkout. Please press configure before using this plugin.]]></description>
 	<author><![CDATA[ecommy.com]]></author>
 	<tab><![CDATA[front_office_features]]></tab>

@@ -5,14 +5,9 @@ function check_shipping_date() {
         $('#shipping_date').trigger('click');
         return false;
     }
-	
-	if ($('#shipping_hour')){
-		alert('Please select the shipping hour for your order.');
-    	return false;
-	}
-		
+    else {
         return true;
-    
+    }
 }
 
 $(document).ready(function() {
