@@ -86,13 +86,13 @@
 			{/if}
 			{if $field_name eq 'address1'}
 				<div class="required form-group">
-					<label for="address1">{l s='Address'} <sup>*</sup></label>
+					<label for="address1">{l s='Building'} <sup>*</sup></label>
 					<input class="is_required validate form-control" data-validate="{$address_validation.$field_name.validate}" type="text" id="address1" name="address1" value="{if isset($smarty.post.address1)}{$smarty.post.address1}{else}{if isset($address->address1)}{$address->address1|escape:'html':'UTF-8'}{/if}{/if}" />
 				</div>
 			{/if}
 			{if $field_name eq 'address2'}
 				<div class="required form-group">
-					<label for="address2">{l s='Address (Line 2)'}</label>
+					<label for="address2">{l s='Flat number'}</label>
 					<input class="validate form-control" data-validate="{$address_validation.$field_name.validate}" type="text" id="address2" name="address2" value="{if isset($smarty.post.address2)}{$smarty.post.address2}{else}{if isset($address->address2)}{$address->address2|escape:'html':'UTF-8'}{/if}{/if}" />
 				</div>
 			{/if}
@@ -104,14 +104,14 @@
 				</div>
 			{/if}
 			{if $field_name eq 'city'}
-				<div class="required form-group">
+				<div class="required form-group hidden">
 					<label for="city">{l s='City'} <sup>*</sup></label>
-					<input class="is_required validate form-control" data-validate="{$address_validation.$field_name.validate}" type="text" name="city" id="city" value="{if isset($smarty.post.city)}{$smarty.post.city}{else}{if isset($address->city)}{$address->city|escape:'html':'UTF-8'}{/if}{/if}" maxlength="64" />
+					<input class="is_required validate form-control" data-validate="{$address_validation.$field_name.validate}" type="text" name="city" id="city" value="Dubai{*if isset($smarty.post.city)}{$smarty.post.city}{else}{if isset($address->city)}{$address->city|escape:'html':'UTF-8'}{/if}{/if*}" maxlength="64" />
 				</div>
 				{* if customer hasn't update his layout address, country has to be verified but it's deprecated *}
 			{/if}
 			{if $field_name eq 'Country:name' || $field_name eq 'country'}
-				<div class="required form-group">
+				<div class="required form-group" hidden>
 					<label for="id_country">{l s='Country'}<sup>*</sup></label>
 					<select id="id_country" class="form-control" name="id_country">{$countries_list}</select>
 				</div>
@@ -119,7 +119,7 @@
 			{if $field_name eq 'State:name'}
 				{assign var="stateExist" value=true}
 				<div class="required id_state form-group">
-					<label for="id_state">{l s='State'} <sup>*</sup></label>
+					<label for="id_state">{l s='Area'} <sup>*</sup></label>
 					<select name="id_state" id="id_state" class="form-control">
 						<option value="">-</option>
 					</select>
@@ -129,7 +129,17 @@
 				{assign var="homePhoneExist" value=true}
 				<div class="form-group phone-number">
 					<label for="phone">{l s='Home phone'}{if isset($one_phone_at_least) && $one_phone_at_least} <sup>**</sup>{/if}</label>
-					<input class="{if isset($one_phone_at_least) && $one_phone_at_least}is_required{/if} validate form-control" data-validate="{$address_validation.phone.validate}" type="tel" id="phone" name="phone" value="{if isset($smarty.post.phone)}{$smarty.post.phone}{else}{if isset($address->phone)}{$address->phone|escape:'html':'UTF-8'}{/if}{/if}"  />
+                                        <select id="phoneA" name="phoneA">
+                                            <option value="-">-</option>
+                                            {if isset($address->phone)}
+                                            <option selected="selected" value="{$address->phone|escape:'html':'UTF-8'|truncate:1:'':true}">{$address->phone|escape:'html':'UTF-8'|truncate:1:'':true}</option>
+                                            {/if}
+                                            
+                                            <option value="4">4</option>
+                                        </select>                                      
+                                        <input type="text" class="form-control" name="phoneB" id="phoneB" value="{if isset($address->phone)}{$address->phone|escape:'html':'UTF-8'|substr:1}{/if}" />
+
+                                        <input class="hidden {if isset($one_phone_at_least) && $one_phone_at_least}is_required{/if} validate form-control" data-validate="{$address_validation.phone.validate}" type="tel" id="phone" name="phone" value="{if isset($smarty.post.phone)}{$smarty.post.phone}{else}{if isset($address->phone)}{$address->phone|escape:'html':'UTF-8'}{/if}{/if}"  />
 				</div>
 				{if isset($one_phone_at_least) && $one_phone_at_least}
 					{assign var="atLeastOneExists" value=true}
@@ -141,7 +151,19 @@
 				{assign var="mobilePhoneExist" value=true}
 				<div class="{if isset($one_phone_at_least) && $one_phone_at_least}required {/if}form-group">
 					<label for="phone_mobile">{l s='Mobile phone'}{if isset($one_phone_at_least) && $one_phone_at_least} <sup>**</sup>{/if}</label>
-					<input class="validate form-control" data-validate="{$address_validation.phone_mobile.validate}" type="tel" id="phone_mobile" name="phone_mobile" value="{if isset($smarty.post.phone_mobile)}{$smarty.post.phone_mobile}{else}{if isset($address->phone_mobile)}{$address->phone_mobile|escape:'html':'UTF-8'}{/if}{/if}" />
+					
+                                        <select id="phone_mobileA" name="phone_first">
+                                            <option value="-">-</option>
+                                            {if isset($address->phone_mobile)}
+                                            <option selected="selected" value="{$address->phone_mobile|escape:'html':'UTF-8'|truncate:2:'':true}">{$address->phone_mobile|escape:'html':'UTF-8'|truncate:2:'':true}</option>
+                                            {/if}
+                                            <option value="50">50</option>
+                                            <option value="52">52</option>
+                                            <option value="55">55</option>
+                                            <option value="56">56</option>
+                                        </select>
+                                        <input type="text" class="form-control" name="phone_mobileB" id="phone_mobileB" value="{if isset($address->phone_mobile)}{$address->phone_mobile|escape:'html':'UTF-8'|substr:2}{/if}" />
+                                        <input class="validate form-control hidden" data-validate="{$address_validation.phone_mobile.validate}" type="tel" id="phone_mobile" name="phone_mobile" value="{if isset($smarty.post.phone_mobile)}{$smarty.post.phone_mobile}{else}{if isset($address->phone_mobile)}{$address->phone_mobile|escape:'html':'UTF-8'}{/if}{/if}" />
 				</div>
 			{/if}
 		{/foreach}
