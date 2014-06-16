@@ -35,20 +35,20 @@
 {assign var="postCodeExist" value=false}
 {assign var="dniExist" value=false}
 {if !isset($email_create)}
-	<!--{if isset($authentification_error)}
+	{if isset($authentification_error)}
 	<div class="alert alert-danger">
 		{if {$authentification_error|@count} == 1}
-			<p>{l s='There\'s at least one error'} :</p>
+			<p>{l s="There\'s at least one error"} :</p>
 			{else}
 			<p>{l s='There are %s errors' sprintf=[$account_error|@count]} :</p>
 		{/if}
 		<ol>
 			{foreach from=$authentification_error item=v}
-				<li>{$v}</li>
+				<li>{$v}}}</li>
 			{/foreach}
 		</ol>
 	</div>
-	{/if}-->
+	{/if}
 	<div class="row">
 		<div class="col-xs-12 col-sm-6">
 			<form action="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" method="post" id="create-account_form" class="box">
@@ -99,7 +99,7 @@
 			</form>
 		</div>
 	</div>
-	{if isset($inOrderProcess) && $inOrderProcess && $PS_GUEST_CHECKOUT_ENABLED}
+	{*if isset($inOrderProcess) && $inOrderProcess && $PS_GUEST_CHECKOUT_ENABLED}
 		<form action="{$link->getPageLink('authentication', true, NULL, "back=$back")|escape:'html':'UTF-8'}" method="post" id="new_account_form" class="std clearfix">
 			<div class="box">
 				<div id="opc_account_form" style="display: block; ">
@@ -140,7 +140,7 @@
 										<option value="{$day}" {if ($sl_day == $day)} selected="selected"{/if}>{$day}&nbsp;&nbsp;</option>
 									{/foreach}
 								</select>
-								{*
+								{
 									{l s='January'}
 									{l s='February'}
 									{l s='March'}
@@ -153,7 +153,7 @@
 									{l s='October'}
 									{l s='November'}
 									{l s='December'}
-								*}
+								}
 							</div>
 							<div class="col-xs-4">
 								<select id="months" name="months" class="form-control">
@@ -213,7 +213,7 @@
 							</div>
 						{elseif $field_name eq "address2"}
 							<div class="form-group is_customer_param">
-								<label for="address2">{l s='Address (Line 2)'} <sup>*</sup></label>
+								<label for="address2">{l s='Address (test)'} <sup>*</sup></label>
 								<input type="text" class="form-control" name="address2" id="address2" value="{if isset($smarty.post.address2)}{$smarty.post.address2}{/if}" />
 							</div>
 						{elseif $field_name eq "postcode"}
@@ -400,22 +400,22 @@
 				</button>
 			</p>
 		</form>
-	{/if}
+	{/if*}
 {else}
-	<!--{if isset($account_error)}
+	{*if isset($account_error)}
 	<div class="error">
 		{if {$account_error|@count} == 1}
-			<p>{l s='There\'s at least one error'} :</p>
+			<p>{l s="There\'s at least one error"} :</p>
 			{else}
 			<p>{l s='There are %s errors' sprintf=[$account_error|@count]} :</p>
 		{/if}
 		<ol>
 			{foreach from=$account_error item=v}
-				<li>{$v}</li>
+				<li>{$v|replace:'address1':'Building'|replace:'address2':'Flat number'|replace:'a State':'an Area'}</li>
 			{/foreach}
 		</ol>
 	</div>
-	{/if}-->
+	{/if*}
 	<form action="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" method="post" id="account-creation_form" class="std box">
 		{$HOOK_CREATE_ACCOUNT_TOP}
 		<div class="account_creation">
@@ -449,7 +449,7 @@
 				<input type="password" class="is_required validate form-control" data-validate="isPasswd" name="passwd" id="passwd" />
 				<span class="form_info">{l s='(Five characters minimum)'}</span>
 			</div> 
-			<div class="form-group">
+			<div class="form-group hidden">
 				<label>{l s='Date of Birth'}</label>
 				<div class="row">
 					<div class="col-xs-4">
@@ -459,7 +459,7 @@
 								<option value="{$day}" {if ($sl_day == $day)} selected="selected"{/if}>{$day}&nbsp;&nbsp;</option>
 							{/foreach}
 						</select>
-						{*
+						{
 							{l s='January'}
 							{l s='February'}
 							{l s='March'}
@@ -472,7 +472,7 @@
 							{l s='October'}
 							{l s='November'}
 							{l s='December'}
-						*}
+						}
 					</div>
 					<div class="col-xs-4">
 						<select id="months" name="months" class="form-control">
@@ -493,11 +493,11 @@
 				</div>
 			</div>
 			{if $newsletter}
-				<div class="checkbox">
+				<div class="checkbox hidden">
 					<input type="checkbox" name="newsletter" id="newsletter" value="1" {if isset($smarty.post.newsletter) AND $smarty.post.newsletter == 1} checked="checked"{/if} />
 					<label for="newsletter">{l s='Sign up for our newsletter!'}</label>
 				</div>
-				<div class="checkbox">
+				<div class="checkbox hidden">
 					<input type="checkbox"name="optin" id="optin" value="1" {if isset($smarty.post.optin) AND $smarty.post.optin == 1} checked="checked"{/if} />
 					<label for="optin">{l s='Receive special offers from our partners!'}</label>
 				</div>
@@ -554,15 +554,15 @@
 						</p>
 					{elseif $field_name eq "address1"}
 						<p class="required form-group">
-							<label for="address1">{l s='Address'} <sup>*</sup></label>
+							<label for="address1">{l s='Building'} <sup>*</sup></label>
 							<input type="text" class="form-control" name="address1" id="address1" value="{if isset($smarty.post.address1)}{$smarty.post.address1}{/if}" />
-							<span class="inline-infos">{l s='Street address, P.O. Box, Company name, etc.'}</span>
+							<!--<span class="inline-infos">{l s='Street address, P.O. Box, Company name, etc.'}</span>-->
 						</p>
 					{elseif $field_name eq "address2"}
-						<p class="form-group is_customer_param">
-							<label for="address2">{l s='Address (Line 2)'}</label>
+						<p class="form-group">
+							<label for="address2">{l s='Flat number'} <sup>*</sup></label>
 							<input type="text" class="form-control" name="address2" id="address2" value="{if isset($smarty.post.address2)}{$smarty.post.address2}{/if}" />
-							<span class="inline-infos">{l s='Apartment, suite, unit, building, floor, etc...'}</span>
+							<!--<span class="inline-infos">{l s='Apartment, suite, unit, building, floor, etc...'}</span>-->
 						</p>
 					{elseif $field_name eq "postcode"}
 						{assign var='postCodeExist' value=true}
@@ -571,13 +571,13 @@
 							<input type="text" class="form-control" name="postcode" id="postcode" value="{if isset($smarty.post.postcode)}{$smarty.post.postcode}{/if}" onkeyup="$('#postcode').val($('#postcode').val().toUpperCase());" />
 						</p>
 					{elseif $field_name eq "city"}
-						<p class="required form-group">
+						<p class="required form-group hidden">
 							<label for="city">{l s='City'} <sup>*</sup></label>
-							<input type="text" class="form-control" name="city" id="city" value="{if isset($smarty.post.city)}{$smarty.post.city}{/if}" />
+							<input type="text" class="form-control" name="city" id="city" value="Dubai{*if isset($smarty.post.city)}{$smarty.post.city}{/if*}" />
 						</p>
 						<!-- if customer hasn't update his layout address, country has to be verified but it's deprecated -->
 					{elseif $field_name eq "Country:name" || $field_name eq "country"}
-						<p class="required select form-group">
+						<p class="required select form-group hidden">
 							<label for="id_country">{l s='Country'} <sup>*</sup></label>
 							<select name="id_country" id="id_country" class="form-control">
 								<option value="">-</option>
@@ -589,7 +589,7 @@
 					{elseif $field_name eq "State:name" || $field_name eq 'state'}
 						{assign var='stateExist' value=true}
 						<p class="required id_state select form-group">
-							<label for="id_state">{l s='State'} <sup>*</sup></label>
+							<label for="id_state">{l s='Area'} <sup>*</sup></label>
 							<select name="id_state" id="id_state" class="form-control">
 								<option value="">-</option>
 							</select>
@@ -619,11 +619,32 @@
 				{/if}
 				<p class="form-group">
 					<label for="phone">{l s='Home phone'}</label>
-					<input type="text" class="form-control" name="phone" id="phone" value="{if isset($smarty.post.phone)}{$smarty.post.phone}{/if}" />
+                                        <select id="phoneA" name="phoneA">
+                                            <option value="-">-</option>
+                                            {if isset($smarty.post.phone)}
+                                            <option selected="selected" value="{$smarty.post.phone|truncate:1:'':true}">{$smarty.post.phone|truncate:1:'':true}</option>
+                                            {/if}
+                                            
+                                            <option value="4">4</option>
+                                        </select>                                      
+                                        <input type="text" class="form-control" name="phoneB" id="phoneB" value="{if isset($smarty.post.phone)}{$smarty.post.phone|substr:1}{/if}" />
+					<input type="hidden" class="form-control" name="phone" id="phone" value="{if isset($smarty.post.phone)}{$smarty.post.phone}{/if}" />
 				</p>
 				<p class="{if isset($one_phone_at_least) && $one_phone_at_least}required {/if}form-group">
+                                    
 					<label for="phone_mobile">{l s='Mobile phone'}{if isset($one_phone_at_least) && $one_phone_at_least} <sup>*</sup>{/if}</label>
-					<input type="text" class="form-control" name="phone_mobile" id="phone_mobile" value="{if isset($smarty.post.phone_mobile)}{$smarty.post.phone_mobile}{/if}" />
+					<select id="phone_mobileA" name="phone_first">
+                                            <option value="-">-</option>
+                                            {if isset($smarty.post.phone_mobile)}
+                                            <option selected="selected" value="{$smarty.post.phone_mobile|truncate:2:'':true}">{$smarty.post.phone_mobile|truncate:2:'':true}</option>
+                                            {/if}
+                                            <option value="50">50</option>
+                                            <option value="52">52</option>
+                                            <option value="55">55</option>
+                                            <option value="56">56</option>
+                                        </select>
+                                        <input type="text" class="form-control" name="phone_mobileB" id="phone_mobileB" value="{if isset($smarty.post.phone_mobile)}{$smarty.post.phone_mobile|substr:2}{/if}" />
+                                        <input type="hidden" class="form-control" name="phone_mobile" id="phone_mobile" value="{if isset($smarty.post.phone_mobile)}{$smarty.post.phone_mobile}{/if}" />
 				</p>
 				<p class="required form-group" id="address_alias">
 					<label for="alias">{l s='Assign an address alias for future reference.'} <sup>*</sup></label>
