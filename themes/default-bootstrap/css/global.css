@@ -7466,9 +7466,9 @@ p.cheque-indent {
     #new_account_form .form-group.phone-number,
     #opc_account_form .form-group.phone-number,
     #authentication .form-group.phone-number {
-      float: left;
+      /*float: left;
       width: 270px;
-      margin-right: 13px; } }
+      margin-right: 13px;*/ } }
   @media (min-width: 1200px) {
     #address .form-group.phone-number + p,
     #identity .form-group.phone-number + p,
@@ -7477,7 +7477,10 @@ p.cheque-indent {
     #opc_account_form .form-group.phone-number + p,
     #authentication .form-group.phone-number + p {
       padding: 23px 0 0 0px;
-      margin-bottom: 0; } }
+      margin-bottom: 0;
+      margin-left:350px;
+      display:inline;
+    } }
 #address .gender-line,
 #identity .gender-line,
 #account-creation_form .gender-line,
@@ -8145,4 +8148,12 @@ p.product-desc-short
 .ratingblock p.rating_label{
     font-weight: bold;
     margin-bottom: 2px!important;
+}
+
+label[for="phone_mobile"], label[for="phone"]{
+    display:block;
+}
+
+#phoneA, #phoneB, #phone_mobileA, #phone_mobileB{
+    display:inline-block;
 }
