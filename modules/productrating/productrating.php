@@ -24,7 +24,7 @@ class productrating extends Module
 	{
 		$this->name 	= 'productrating';
 		$this->tab 		= 'Products';
-		$this->version  =  0.91;
+		$this->version  =  0.95;
 		
 		/** Tradução **/
 		$this->l_rating	= $this->l('Give your rating now');
@@ -50,7 +50,7 @@ class productrating extends Module
 	function install()
 	{
 		
-		Configuration::updateValue('RATING_NUMBER', 10);
+		Configuration::updateValue('RATING_NUMBER', 5);
 		Configuration::updateValue('RATING_STAR', '0001.gif');
 		Configuration::updateValue('RATING_BGCL', 'f1f2f4');
 		Configuration::updateValue('RATING_BDCL', 'd0d3d8');
@@ -70,6 +70,8 @@ class productrating extends Module
 		if (!$this->registerHook('displayLeftColumnProduct'))
 			return false;
 		if (!$this->registerHook('displayHeader'))
+			return false;
+                if (!$this->registerHook('displayProductListReviews'))
 			return false;
 		return true;
 	}
@@ -267,7 +269,7 @@ class productrating extends Module
 	function hookDisplayLeftColumnProduct($params)
 	{
 		global $smarty, $cookie, $page_name, $logged;
-		$onllog		= Tools::getValue('onllog', 	Configuration::get('RATING_ONLG'));
+		$onllog		=        Tools::getValue('onllog', 	Configuration::get('RATING_ONLG'));
 
 		$number		=	Tools::getValue('nbr', Configuration::get('RATING_NUMBER'));
 
@@ -278,9 +280,34 @@ class productrating extends Module
 		$smarty->assign( 'onllog', $onllog );
 		$smarty->assign( 'rating', $rating );
 		$smarty->assign( 'result', $static );
+                return $this->display(__FILE__, 'productrating.tpl');
+	}
+        
+        function hookDisplayProductListReviews($params)
+        {
+                
+                $id_product = $params['product']['id_product'];
+                
+                global $smarty, $cookie, $page_name, $logged;
+                
+		$onllog		= Tools::getValue('onllog', 	Configuration::get('RATING_ONLG'));
 
-		return $this->display(__FILE__, 'productrating.tpl');
-	}  
+		$number		=	Tools::getValue('nbr', Configuration::get('RATING_NUMBER'));
+
+		$rating		=	rating_bar( $id_product,  $number);
+		
+		$static		=	rating_bar( $id_product, $number, 'static' );
+
+                //print_r($params['product']['id_product']);
+                $smarty->assign( 'id_prod', $id_product);
+		
+		$smarty->assign( 'onllog', $onllog );
+		$smarty->assign( 'rating', $rating );
+		$smarty->assign( 'result', $static );
+                
+                
+            return $this->display(__FILE__, 'productrating.tpl');
+        }
 }
 
 ?>

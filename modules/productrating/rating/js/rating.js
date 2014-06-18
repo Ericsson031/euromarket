@@ -116,7 +116,8 @@ var ratingAction = {
 			var theuserIP = parameterList['t'];
 			var theunits = parameterList['c'];
 			
-			//for testing	alert('sndReq('+theVote+','+theratingID+','+theuserIP+','+theunits+')'); return false;
+			//for testing	
+                        //alert('sndReq('+theVote+','+theratingID+','+theuserIP+','+theunits+')'); return false;
 			sndReq(theVote,theratingID,theuserIP,theunits); return false;		
 			}
 		}
