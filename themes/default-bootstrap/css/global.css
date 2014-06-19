@@ -359,9 +359,9 @@ cite {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Museo500Regular;
   font-weight: 500;
-  line-height: 1.1; }
+  line-height: 1.2; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
     font-weight: normal;
@@ -381,7 +381,7 @@ h6 {
   margin-bottom: 9px; }
 
 h1, .h1 {
-  font-size: 33px; }
+  font-size: 40px; }
 
 h2, .h2 {
   font-size: 27px; }
@@ -3839,6 +3839,17 @@ td.visible-print {
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+    font-family: 'Museo500Regular';
+    src: url('../font/Museo500-Regular-webfont.eot');
+    src: url('../font/Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Museo500-Regular-webfont.woff') format('woff'),
+         url('../font/Museo500-Regular-webfont.ttf') format('truetype'),
+         url('../font/Museo500-Regular-webfont.svg#Museo500Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* FONT AWESOME CORE
  * -------------------------- */
 [class^="icon-"],
@@ -5816,7 +5827,7 @@ table.table_block td {
     /* background: #fbfbfb; */ }
 
 .product-name {
-  font-size: 20px;
+  font-size: 27px;
   line-height: 23px;
   color: #d82c3e;
   font-weight: bold;
@@ -6077,7 +6088,7 @@ table.table_block td {
         margin: -9px 0; } }
 
 .block {
-  margin-bottom: 30px; }
+  padding-bottom: 20px; }
   @media (max-width: 767px) {
     .block {
       margin-bottom: 0px; } }
@@ -8142,7 +8153,6 @@ p.product-desc-short
 
 .ethnicity{
     color: #81c168;
-  color  
 }
 
 .ratingblock p.rating_label{
@@ -8156,4 +8166,12 @@ label[for="phone_mobile"], label[for="phone"]{
 
 #phoneA, #phoneB, #phone_mobileA, #phone_mobileB{
     display:inline-block;
+}
+
+#menu2 .navbar-nav a, #categories_block_left a{
+    font-family:Museo500Regular;
+}
+
+.administration{
+    display:none;
 }
