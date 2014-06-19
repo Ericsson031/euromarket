@@ -290,7 +290,7 @@ span.view_scroll_spacer {
   /* form */ }
   .pb-center-column h1 {
     padding-bottom: 16px;
-    font-size: 20px;
+    /* font-size: 20px; */
     color: #d82c3e; 
     margin-top: 0px;
     padding-top: 16px;
