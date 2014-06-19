@@ -80,9 +80,9 @@
 {if $discounts}{foreach from=$discounts item=discount name='discounts'}
 	{ldelim}
 		"id": {$discount.id_discount|intval},
-		"name": {$discount.name|trim|truncate:18:'...'|json_encode},
+		"name": {$discount.name|trim|truncate:30:'...'|json_encode},
 		"description": {$discount.description|json_encode},
-		"nameDescription": {$discount.name|cat:' : '|cat:$discount.description|trim|truncate:18:'...'|json_encode},
+		"nameDescription": {$discount.name|cat:' : '|cat:$discount.description|trim|truncate:30:'...'|json_encode},
 		"code": {$discount.code|json_encode},
 		"link": {$link->getPageLink("$order_process", true, NULL, "deleteDiscount={$discount.id_discount}")|json_encode},
 		"price": {if $priceDisplay == 1}{convertPrice|json_encode price=$discount.value_tax_exc}{else}{convertPrice|json_encode price=$discount.value_real}{/if},
