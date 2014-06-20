@@ -23,6 +23,7 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
+
 {capture name=path}{l s='Order confirmation'}{/capture}
 
 <h1 class="page-heading">{l s='Order confirmation'}</h1>
@@ -40,6 +41,18 @@
 	<a class="button-exclusive btn btn-default" href="{$link->getPageLink('guest-tracking', true, NULL, "id_order={$reference_order}&email={$email}")|escape:'html':'UTF-8'}" title="{l s='Follow my order'}"><i class="icon-chevron-left"></i>{l s='Follow my order'}</a>
     </p>
 {else}
+    <div class="box">
+        <p>
+        Thank you for shopping at Myeuromarket.com. 
+        The invoice for order with all the order details has been sent to your email.
+        You can also see your order status in <b><a href="/index.php?controller=history">your order history</a></b>.
+        </p>
+        </br>
+        <p>
+        Your Myeuromarket&reg; team.    
+        </p>        
+    </div>
+    
 <p class="cart_navigation exclusive">
 	<a class="button-exclusive btn btn-default" href="{$link->getPageLink('history', true)|escape:'html':'UTF-8'}" title="{l s='Back to orders'}"><i class="icon-chevron-left"></i>{l s='Back to orders'}</a>
 </p>
