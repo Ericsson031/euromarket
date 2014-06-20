@@ -5538,9 +5538,9 @@ span.exclusive {
   border-color: #666666 #5f5f5f #292929 #5f5f5f;
   padding: 0;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.24);
-  -webkit-border-radius: 0;
+  /* -webkit-border-radius: 0; */
   -moz-border-radius: 0;
-  border-radius: 0; }
+  /* border-radius: 0; */ }
   .button.button-small span {
     display: block;
     padding: 3px 8px 3px 8px;
@@ -6824,7 +6824,7 @@ div.star a:hover {
     .footer-container #footer .footer-block {
       margin-top: 15px; }
     .footer-container #footer a {
-      color: #777777; }
+      /* color: #777777; */ }
       .footer-container #footer a:hover {
         color: white; }
     .footer-container #footer h4 {
@@ -8179,4 +8179,17 @@ label[for="phone_mobile"], label[for="phone"]{
 .block-cms h2, .block-cms h2 a, .cms_content h2
 {
     color:#f59332;
+}
+
+
+.footer-container #contact_us_direct .button{
+border:none;
+font-size:22px;
+font-weight:normal;
+font-family:Museo500Regular;
+padding: 14px 0px;
+    
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
 }

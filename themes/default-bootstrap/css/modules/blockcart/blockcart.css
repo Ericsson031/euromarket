@@ -93,7 +93,7 @@
   .cart_block .cart-info .product-name {
     padding-bottom: 5px;
     margin-top: -4px; 
-    display: in¸¸¸¸;
+    display: in????;
 }
     .cart_block .cart-info .product-name a {
       font-size: 13px;
@@ -144,16 +144,24 @@
     margin-right: 10px; }
     .cart_block .cart-buttons a#button_order_cart {
       margin-right: 0;
-      border: none; }
+      border: none; 
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+      color: white;
+      background: #e61f3b;
+      padding: 20px 0;
+      font-family: Museo500Regular;
+}
       .cart_block .cart-buttons a#button_order_cart span {
-        padding: 1em 0;
+        /* padding: 1em 0; */
         border: none;
         font-weight: initial;
         /* font-size: 2.5em; */
-        background: #e61f3b; }
+        /* background: #e61f3b; */ }
       .cart_block .cart-buttons a#button_order_cart:hover span {
-        border: none;
-        background: #2e7a3a; }
+        /* border: none; */
+        /* background: #2e7a3a; */ }
 
 /*******************************************************************
 					Cart Block(Header) Styles

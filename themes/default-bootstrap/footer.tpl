@@ -33,7 +33,19 @@
 			<!-- Footer -->
 			<div class="footer-container">
 				<footer id="footer"  class="container">
-					<div class="row">{$HOOK_FOOTER}</div>
+					<div class="row">{$HOOK_FOOTER}
+                                        <section class="footer-block col-xs-12 col-sm-2" id="contact_us_direct">
+                                                <h4>Contact us</h4>
+                                                <p>Do you have questions about our website, our products or any of our services?</p>
+                                                <div class="button-container">	
+                                                    <a class="btn btn-default button button-medium" href="http://myeuromarket.com/index.php?controller=order" title="Proceed to checkout" rel="nofollow">
+                                                            <span>
+                                                                    Get in touch <i class="icon-chevron-right right"></i>
+                                                            </span>
+                                                    </a>	
+                                        </div>
+                                        </section>
+                                        </div>
 				</footer>
 			</div><!-- #footer -->
 		</div><!-- #page -->
