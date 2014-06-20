@@ -37,7 +37,7 @@
                 {assign var='oldBlock' value=$banner.block_id}
                 <tr name="banner_{$banner.id_banner_manager}" id="{$banner.id_banner_manager}" {if $irow++ % 2}class="alt_row"{/if}>
                 	<td class="positions" width="15">{$banner.order}<input type="checkbox" style="display:none" value="{$banner.id_banner_manager}" name="bannerManagerId[]" checked="checked"></td>
-                    <td><img src="{$path}banners/{$banner.image_name}" name="image_{$banner.id_banner_manager}"/><input type="hidden" name="image_name_{$banner.id_banner_manager}" value="{$banner.image_name}"/></td>
+                    <td><img src="{$path}banners/{$banner.image_name}" name="image_{$banner.id_banner_manager}" style="width:500px;"/><input type="hidden" name="image_name_{$banner.id_banner_manager}" value="{$banner.image_name}"/></td>
                     <td><input type="text" value="{$banner.description}" name="desc_{$banner.id_banner_manager}" size="30"/></td>
                     <td><textarea rows="3" name="link_{$banner.id_banner_manager}" cols="35">{$banner.image_link}</textarea></td>
                     <td {if $leftBanners >= 2}class="dragHandle"{/if} id="td_{$banner.id_banner_manager}">
