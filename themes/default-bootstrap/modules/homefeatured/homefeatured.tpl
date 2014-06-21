@@ -45,8 +45,12 @@
     <div class="weekly">
         <div class="inner grey_gradient row">
         <h1 >{$weekly_cat->name}</h1>
+        <div class="administration">
+            <a href="/admin2014/index.php?controller=AdminCategories&id_category={$weekly_cat->id}&updatecategory">Edit image/description</a>
+            <p> To add products to the promotion, simply categorize them in to "promotions-> weekly".</p>
+        </div>
         <div class="col-md-6">{$weekly_cat->description}</div>
-        <div class="col-md-6 ">
+        <div class="col-md-6">
             <img src="{$link->getCatImageLink('',$weekly_cat->id_image)}" class="img-responsive">
         </div>
         </div>
@@ -57,8 +61,12 @@
     <div class="monthly">
         <div class="inner grey_gradient row">
         <h1>{$monthly_cat->name}</h1>
+                <div class="administration">
+            <a href="/admin2014/index.php?controller=AdminCategories&id_category={$monthly_cat->id}&updatecategory">Edit image/description</a>
+            <p> To add products to the promotion, simply categorize them in to "promotions-> monthly".</p>
+        </div>
         <div class="col-md-6">{$monthly_cat->description}</div>
-        <div class="col-md-6 ">
+        <div class="col-md-6">
             <img src="{$link->getCatImageLink('',$monthly_cat->id_image)}" class="img-responsive">
         </div>
         </div>

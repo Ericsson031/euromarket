@@ -8174,6 +8174,7 @@ label[for="phone_mobile"], label[for="phone"]{
 
 .administration{
     display:none;
+    color:black;
 }
 
 .administration a
@@ -8183,6 +8184,7 @@ label[for="phone_mobile"], label[for="phone"]{
     color:blue!important;
     text-decoration: underline;
 }
+
 
 .block-cms h2, .block-cms h2 a, .cms_content h2
 {
