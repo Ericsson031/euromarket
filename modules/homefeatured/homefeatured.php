@@ -35,7 +35,7 @@ class HomeFeatured extends Module
 	{
 		$this->name = 'homefeatured';
 		$this->tab = 'front_office_features';
-		$this->version = '1.4';
+		$this->version = '1.5';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 0;
 
@@ -82,7 +82,10 @@ class HomeFeatured extends Module
 			if (!$nbr || $nbr <= 0 || !Validate::isInt($nbr))
 				$errors[] = $this->l('An invalid number of products has been specified.');
 			else
+			{
+				Tools::clearCache(Context::getContext()->smarty, $this->getTemplatePath('homefeatured.tpl'));
 				Configuration::updateValue('HOME_FEATURED_NBR', (int)$nbr);
+			}
 			if (isset($errors) && count($errors))
 				$output .= $this->displayError(implode('<br />', $errors));
 			else
@@ -108,10 +111,23 @@ class HomeFeatured extends Module
 	{
 		if (!isset(HomeFeatured::$cache_products))
 		{
-			$category = new Category(Context::getContext()->shop->getCategory(), (int)Context::getContext()->language->id);
-			$nb = (int)Configuration::get('HOME_FEATURED_NBR');
+			$category = new Category(/*Context::getContext()->shop->getCategory()*/ 134, (int)Context::getContext()->language->id);
+			$weekly_cat = new Category(135, (int)Context::getContext()->language->id);
+			$monthly_cat = new Category(136, (int)Context::getContext()->language->id);
+			
+                        $this->smarty->assign(
+				array(
+                                        
+                                        'daily_cat' => $category,
+                                        'weekly_cat' => $weekly_cat,
+                                        'monthly_cat' => $monthly_cat,
+				)
+			);
+                        
+                        $nb = (int)Configuration::get('HOME_FEATURED_NBR');
 			HomeFeatured::$cache_products = $category->getProducts((int)Context::getContext()->language->id, 1, ($nb ? $nb : 8), 'position');
-		}
+		                       
+                }
 
 		if (HomeFeatured::$cache_products === false || empty(HomeFeatured::$cache_products))
 			return false;

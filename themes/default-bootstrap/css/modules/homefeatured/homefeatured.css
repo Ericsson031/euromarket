@@ -1,0 +1,30 @@
+.promotions h1
+{
+    color:#d82c3e;
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+.daily, .weekly, .monthly{
+    margin: 0px;
+    padding-top:0px;
+    padding-left: 10px;
+    margin-top: 10px;
+    
+}
+
+.weekly, .monthly{
+    padding-right: 5px;
+}
+
+.inner{
+    padding:10px;
+}
+
+.promotions .product-container > div{
+    float: none;    
+}
+
+.promotions .product-container h5 .product-name{
+    color:#6b6c6d;
+}

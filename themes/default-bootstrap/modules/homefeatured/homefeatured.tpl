@@ -22,7 +22,15 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+
 {counter name=active_ul assign=active_ul}
+<div class="promotions row">
+<div class="daily col-md-7">
+    
+    <div class="inner grey_gradient row">
+    <h1 class="col-md-5">{$daily_cat->name}</h1>
+    <div class="description col-md-7">{$daily_cat->description}</div>
+    
 {if isset($products) && $products}
 	{include file="$tpl_dir./product-list.tpl" class='homefeatured tab-pane' id='homefeatured' active=$active_ul}
 {else}
@@ -30,3 +38,32 @@
 	<li class="alert alert-info">{l s='No featured products at this time.' mod='homefeatured'}</li>
 </ul>
 {/if}
+</div>
+</div>
+<div class="col-md-5">
+    <a href="{$link->getCategoryLink($weekly_cat->id)}">
+    <div class="weekly">
+        <div class="inner grey_gradient row">
+        <h1 >{$weekly_cat->name}</h1>
+        <div class="col-md-6">{$weekly_cat->description}</div>
+        <div class="col-md-6 ">
+            <img src="{$link->getCatImageLink('',$weekly_cat->id_image)}" class="img-responsive">
+        </div>
+        </div>
+    </div>
+    </a>
+    
+    <a href="{$link->getCategoryLink($monthly_cat->id)}">
+    <div class="monthly">
+        <div class="inner grey_gradient row">
+        <h1>{$monthly_cat->name}</h1>
+        <div class="col-md-6">{$monthly_cat->description}</div>
+        <div class="col-md-6 ">
+            <img src="{$link->getCatImageLink('',$monthly_cat->id_image)}" class="img-responsive">
+        </div>
+        </div>
+    </div>
+    </a>
+</div>
+</div>
+
