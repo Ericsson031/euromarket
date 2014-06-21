@@ -25,11 +25,11 @@
 
 {counter name=active_ul assign=active_ul}
 <div class="promotions row">
-<div class="daily col-md-7">
+<div class="daily col-md-12 col-lg-7">
     
     <div class="inner grey_gradient row">
-    <h1 class="col-md-5">{$daily_cat->name}</h1>
-    <div class="description col-md-7">{$daily_cat->description}</div>
+    <h1 class="col-lg-5">{$daily_cat->name}</h1>
+    <div class="description col-lg-7">{$daily_cat->description}</div>
     
 {if isset($products) && $products}
 	{include file="$tpl_dir./product-list.tpl" class='homefeatured tab-pane' id='homefeatured' active=$active_ul}
@@ -40,7 +40,7 @@
 {/if}
 </div>
 </div>
-<div class="col-md-5">
+<div class="col-md-12 col-lg-5">
     <a href="{$link->getCategoryLink($weekly_cat->id)}">
     <div class="weekly">
         <div class="inner grey_gradient row">
