@@ -1,7 +1,7 @@
 /* product desc */
 /* primary_block ***************************************************************************** */
 .primary_block {
-  margin-bottom: 40px; }
+  margin-bottom: 30px; }
 
 .top-hr {
   /* background: #c4c4c4; */
@@ -43,6 +43,7 @@ img {
   display: block;
   cursor: pointer;
   padding: 5px;
+  padding-top: 20px;
   /* border: 1px solid #dbdbdb; */
   /* background: white; */ }
   @media (max-width: 767px) {
@@ -286,9 +287,10 @@ span.view_scroll_spacer {
 
 /* pb-left-column ****************************************************************************** */
 .pb-center-column {
-  margin-bottom: 30px;
-  /* form */ }
-  .pb-center-column h1 {
+  margin-bottom: 40px;
+  /* form */ 
+}
+  .primary_block h1 {
     padding-bottom: 16px;
     /* font-size: 20px; */
     color: #d82c3e; 
@@ -1033,4 +1035,20 @@ Quick View Styles
 
 .ethnicity{
 color:#f59331;
+}
+
+.primary_block >.grey_gradient{
+ height: 80px;
+margin-bottom: -80px;
+/* position: initial; */
+margin-right: 10px;
+margin-left: 10px; 
+}
+
+.primary_block > h1{
+  text-align:center;
+}
+
+.pb-left-column{
+  margin-bottom:30px;
 }
