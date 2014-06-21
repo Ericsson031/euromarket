@@ -1,7 +1,7 @@
 <!-- MODULE Banner Mannager {$banner_class} -->
 <div id='bnrmanager-{$banner_class}' class="{$banner_class} row">
     <div class="administration">
-        <a href="/admin2014/index.php?controller=AdminModules&configure=bannermanager&conf=12">Edit banners<a>
+        <a href="/admin2014/index.php?controller=AdminModules&configure=bannermanager&conf=12">Edit banners</a>
     </div>
     
 {foreach from=$banners item=banner}
