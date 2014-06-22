@@ -1894,7 +1894,7 @@ input[type="button"].btn-block {
     margin: 8px 0;
     overflow: hidden;
     background-color: #e5e5e5; }
-  .dropdown-menu > li > a {
+  .dropdown-menu  li > a {
     display: block;
     padding: 3px 6px;
     clear: both;
@@ -1903,25 +1903,36 @@ input[type="button"].btn-block {
     color: #333333;
     white-space: nowrap; }
     
-     .dropdown-menu > li > a > span{
+  .dropdown-menu > img{
+      float:left;
+      padding: 10px 4px 4px 10px;
+      max-height: 300px;
+      max-width: 150
+  }
+  
+  .dropdown-menu > ul{
+      float: right;
+  }
+    
+     .dropdown-menu  li > a > span{
        padding: 5px 5px 5px 5px;
      }
 
-.dropdown-menu > li > a > span:hover, .dropdown-menu > li > a > span:focus,  .dropdown-menu > li > a.selected > span{
+.dropdown-menu  li > a > span:hover, .dropdown-menu  li > a > span:focus,  .dropdown-menu  li > a.selected > span{
   text-decoration: none;
   color: white;
   background-color: #e02f45; }
 
-.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+.dropdown-menu  .active > a, .dropdown-menu  .active > a:hover, .dropdown-menu  .active > a:focus {
   color: white;
   text-decoration: none;
   outline: 0;
   background-color: #428bca; }
 
-.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+.dropdown-menu  .disabled > a, .dropdown-menu  .disabled > a:hover, .dropdown-menu  .disabled > a:focus {
   color: #999999; }
 
-.dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+.dropdown-menu  .disabled > a:hover, .dropdown-menu  .disabled > a:focus {
   text-decoration: none;
   background-color: transparent;
   background-image: none;
@@ -6827,7 +6838,7 @@ div.star a:hover {
     width: 20px; }
 
 .footer-container {
-  background-color: #333333; }
+  background-color: #ded6d6; }
   @media (min-width: 768px) {
     .footer-container {
       background-color: #ded6d6; 
@@ -6911,7 +6922,10 @@ div.star a:hover {
         .footer-container #footer #social_block {
           width: 100%;
           float: left;
-          padding-top: 5px; } }
+          padding-top: 5px; 
+          /* height: 65px; */
+          /* clear: both; */
+} }
       .footer-container #footer #social_block ul {
         /* float: right; */ }
         @media (max-width: 767px) {
@@ -8253,7 +8267,12 @@ border-radius: 8px;
 
 @media screen and (min-width: 1000px){
 .dual-menu{
+    float: none!important;
     -moz-column-count:2; 
     -webkit-column-count:2;
     column-count:2;
+    
 }
+}
+
+.clear{clear:both;}

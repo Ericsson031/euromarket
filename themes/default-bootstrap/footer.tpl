@@ -35,7 +35,7 @@
 				<footer id="footer"  class="container">
 					<div class="row">{$HOOK_FOOTER}
                                         <section class="footer-block col-xs-12 col-sm-3" id="contact_us_direct">
-                                                <h4>Contact us</h4>
+                                                <h4 class="hidden-xs">Contact us</h4>
                                                 <p>Do you have questions about our website, our products or any of our services?</p>
                                                 <div class="button-container">	
                                                     <a class="btn btn-default button button-medium" href="/index.php?controller=contact" title="Proceed to checkout" rel="nofollow">
