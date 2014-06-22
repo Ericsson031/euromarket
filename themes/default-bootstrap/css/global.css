@@ -5821,9 +5821,12 @@ table.table_block td {
   margin-bottom: 30px; }
   .table > thead > tr > th {
     /* background: #fbfbfb; */
-    border-bottom-width: 1px;
+    /* border-bottom-width: 1px; */
     color: #6b6c6d;
-    vertical-align: middle; }
+    vertical-align: middle; 
+    font-size: 22px;
+    font-family: Museo500Regular;
+}
   .table td a.color-myaccount {
     color: #777777;
     text-decoration: underline; }
@@ -5844,7 +5847,8 @@ table.table_block td {
   .product-name a {
     font-size: 17px;
     line-height: 23px;
-    color: #6b6c6d; }
+    color: #6b6c6d; 
+}
     .product-name a:hover {
       color: #515151; }
     @media (max-width: 768px) {
@@ -6503,7 +6507,7 @@ ul.step {
       font-size: 17px;
       line-height: 21px;
       font-weight: bold;
-      text-shadow: 1px 1px white;
+      /* text-shadow: 1px 1px white; */
       position: relative; }
       @media (max-width: 992px) {
         ul.step li a,
@@ -6586,7 +6590,7 @@ ul.step {
       border-color: #d9832c; }
       ul.step li.step_current span {
         color: white;
-        text-shadow: 1px 1px #208931;
+        /* text-shadow: 1px 1px #208931; */
         border: 1px solid;
         border-color: #d9832c;
         position: relative; }
@@ -8235,4 +8239,10 @@ border-radius: 8px;
 
 #phoneA, #phone_mobileA{
     width: 50px;
+}
+
+#cart_summary, #cart_summary .product-name a{
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Museo500Regular;
 }
