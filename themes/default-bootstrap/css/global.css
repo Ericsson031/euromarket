@@ -5575,7 +5575,7 @@ span.exclusive {
   background: -o-linear-gradient(top, #43b754 0%, #41b757 2%, #41b854 4%, #43b756 6%, #41b354 38%, #44b355 40%, #45af55 66%, #41ae53 74%, #42ac52 91%, #41ae55 94%, #43ab54 96%, #42ac52 100%);
   background: -ms-linear-gradient(top, #43b754 0%, #41b757 2%, #41b854 4%, #43b756 6%, #41b354 38%, #44b355 40%, #45af55 66%, #41ae53 74%, #42ac52 91%, #41ae55 94%, #43ab54 96%, #42ac52 100%);
   /* background: linear-gradient(to bottom, #43b754 0%, #41b757 2%, #41b854 4%, #43b756 6%, #41b354 38%, #44b355 40%, #45af55 66%, #41ae53 74%, #42ac52 91%, #41ae55 94%, #43ab54 96%, #42ac52 100%); */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#43b754', endColorstr='#42ac52',GradientType=0 );
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#43b754', endColorstr='#42ac52',GradientType=0 );*/
   border: 1px solid;
   /* border-color: #399a49 #247f32 #1a6d27 #399a49; */
   -webkit-border-radius: 0;
@@ -5625,7 +5625,7 @@ span.exclusive {
   background: -o-linear-gradient(top, #fdaa02 0%, #fe9702 100%);
   background: -ms-linear-gradient(top, #fdaa02 0%, #fe9702 100%);
   background: linear-gradient(to bottom, #fdaa02 0%, #fe9702 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdaa02', endColorstr='#fe9702',GradientType=0 ); }
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdaa02', endColorstr='#fe9702',GradientType=0 );*/ }
   .button.button-medium.exclusive span {
     border-color: #fec133 #febc33 #feb233 #febc33; }
     .button.button-medium.exclusive span:hover {
@@ -5742,7 +5742,7 @@ span.exclusive {
     background: -o-linear-gradient(top, #009ad0 0%, #007ab7 100%);
     background: -ms-linear-gradient(top, #009ad0 0%, #007ab7 100%);
     /* background: linear-gradient(to bottom, #009ad0 0%, #007ab7 100%); */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009ad0', endColorstr='#007ab7',GradientType=0); }
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009ad0', endColorstr='#007ab7',GradientType=0);*/ }
   .button.ajax_add_to_cart_button:hover {
     border-color: #01314e #004b74 #0079b6 #004b74; }
     .button.ajax_add_to_cart_button:hover span {
