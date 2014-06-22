@@ -6902,11 +6902,13 @@ div.star a:hover {
         /* float: right; */ }
         @media (max-width: 767px) {
           .footer-container #footer #social_block ul {
-            float: none; } }
+            float: none; 
+            clear: both;
+} }
         .footer-container #footer #social_block ul li a {
           float: left;
           width: 40px;
-          margin-right: 10px;
+          /* margin-right: 10px; */
           height: 40px;
           text-align: center; 
           background-size: contain;
@@ -6914,10 +6916,13 @@ div.star a:hover {
           @media (min-width: 768px) and (max-width: 991px) {
             .footer-container #footer #social_block ul li {
               width: 30px; } }
-          .footer-container #footer #social_block ul li a {
+          .footer-container #footer #social_block ul li {
             display: inline-block;
             color: #908f8f;
-            font-size: 28px; }
+            font-size: 28px; 
+            margin-right: 10px;
+            background-size: contain;
+}
             @media (min-width: 768px) and (max-width: 991px) {
               .footer-container #footer #social_block ul li a {
                 font-size: 20px; } }

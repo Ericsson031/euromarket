@@ -8,14 +8,11 @@ and open the template in the editor.
     Author     : Erik
 */
 
-.footer-container #footer #social_block ul li{
-    padding-bottom: 0px;
-}
-
-.facebook a{ 
+.facebook{ 
 background: url(../../../img/icon/facebook.png) center no-repeat;
 }
 
-.twitter a{ 
+.twitter{ 
 background: url(../../../img/icon/twitter.png) center no-repeat;
 }
+
