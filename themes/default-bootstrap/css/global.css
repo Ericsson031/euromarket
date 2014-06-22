@@ -1896,7 +1896,7 @@ input[type="button"].btn-block {
     background-color: #e5e5e5; }
   .dropdown-menu > li > a {
     display: block;
-    padding: 3px 20px;
+    padding: 3px 6px;
     clear: both;
     font-weight: normal;
     line-height: 1.42857;
@@ -1904,7 +1904,7 @@ input[type="button"].btn-block {
     white-space: nowrap; }
     
      .dropdown-menu > li > a > span{
-       padding: 5px 30px 5px 5px;
+       padding: 5px 5px 5px 5px;
      }
 
 .dropdown-menu > li > a > span:hover, .dropdown-menu > li > a > span:focus,  .dropdown-menu > li > a.selected > span{
@@ -8249,4 +8249,11 @@ border-radius: 8px;
     font-size: 16px;
     font-weight: normal;
     font-family: Museo500Regular;
+}
+
+@media screen and (min-width: 1000px){
+.dual-menu{
+    -moz-column-count:2; 
+    -webkit-column-count:2;
+    column-count:2;
 }
