@@ -129,7 +129,7 @@
 				{assign var="homePhoneExist" value=true}
 				<div class="form-group phone-number">
 					<label for="phone">{l s='Home phone'}{if isset($one_phone_at_least) && $one_phone_at_least} <sup>**</sup>{/if}</label>
-                                        <select id="phoneA" name="phoneA">
+                                        <select id="phoneA" name="phoneA" class="form-control">
                                             <option value="-">-</option>
                                             {if isset($address->phone)}
                                             <option selected="selected" value="{$address->phone|escape:'html':'UTF-8'|truncate:1:'':true}">{$address->phone|escape:'html':'UTF-8'|truncate:1:'':true}</option>
@@ -152,7 +152,7 @@
 				<div class="{if isset($one_phone_at_least) && $one_phone_at_least}required {/if}form-group">
 					<label for="phone_mobile">{l s='Mobile phone'}{if isset($one_phone_at_least) && $one_phone_at_least} <sup>**</sup>{/if}</label>
 					
-                                        <select id="phone_mobileA" name="phone_first">
+                                        <select id="phone_mobileA" name="phone_first" class="form-control">
                                             <option value="-">-</option>
                                             {if isset($address->phone_mobile)}
                                             <option selected="selected" value="{$address->phone_mobile|escape:'html':'UTF-8'|truncate:2:'':true}">{$address->phone_mobile|escape:'html':'UTF-8'|truncate:2:'':true}</option>

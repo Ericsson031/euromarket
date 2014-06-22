@@ -1069,8 +1069,10 @@ Enjoy!
     };
 }(this, jQuery));
 
+        
+ 
 $(window).load(function () {
-	$("select.form-control,input[type='checkbox']:not(.comparator), input[type='radio'],input#id_carrier2, input[type='file']").uniform();
+	$("input[type='checkbox']:not(.comparator), input[type='radio'],input#id_carrier2, input[type='file']").uniform();
 });
 
 // refresh uniform selects on document width change

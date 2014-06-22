@@ -75,7 +75,7 @@ function bindCheckbox()
 
 function bindUniform()
 {
-	$("select.form-control,input[type='radio'],input[type='checkbox']").uniform(); 
+	//$("select.form-control,input[type='radio'],input[type='checkbox']").uniform(); 
 }
 
 function bindPostcode()
@@ -131,7 +131,7 @@ function updateState(suffix)
 		});
 
 		$('.id_state' + (typeof suffix !== 'undefined' ? '_' + suffix : '') + ':hidden').fadeIn('slow');
-		$('#id_state, #id_state_invoice').uniform();
+		//$('#id_state, #id_state_invoice').uniform();
 	}
 	else
 		$('.id_state' + (typeof suffix !== 'undefined' ? '_' + suffix : '')).fadeOut('fast');

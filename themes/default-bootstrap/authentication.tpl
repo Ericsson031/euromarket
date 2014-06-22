@@ -619,7 +619,7 @@
 				{/if}
 				<p class="form-group">
 					<label for="phone">{l s='Home phone'}</label>
-                                        <select id="phoneA" name="phoneA">
+                                        <select id="phoneA" name="phoneA" class="form-control">
                                             <option value="-">-</option>
                                             {if isset($smarty.post.phone)}
                                             <option selected="selected" value="{$smarty.post.phone|truncate:1:'':true}">{$smarty.post.phone|truncate:1:'':true}</option>
@@ -633,7 +633,7 @@
 				<p class="{if isset($one_phone_at_least) && $one_phone_at_least}required {/if}form-group">
                                     
 					<label for="phone_mobile">{l s='Mobile phone'}{if isset($one_phone_at_least) && $one_phone_at_least} <sup>*</sup>{/if}</label>
-					<select id="phone_mobileA" name="phone_first">
+					<select id="phone_mobileA" name="phone_first" class="form-control">
                                             <option value="-">-</option>
                                             {if isset($smarty.post.phone_mobile)}
                                             <option selected="selected" value="{$smarty.post.phone_mobile|truncate:2:'':true}">{$smarty.post.phone_mobile|truncate:2:'':true}</option>
