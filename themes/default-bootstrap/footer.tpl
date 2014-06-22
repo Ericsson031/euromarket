@@ -34,7 +34,7 @@
 			<div class="footer-container">
 				<footer id="footer"  class="container">
 					<div class="row">{$HOOK_FOOTER}
-                                        <section class="footer-block col-xs-12 col-sm-2" id="contact_us_direct">
+                                        <section class="footer-block col-xs-12 col-sm-3" id="contact_us_direct">
                                                 <h4>Contact us</h4>
                                                 <p>Do you have questions about our website, our products or any of our services?</p>
                                                 <div class="button-container">	

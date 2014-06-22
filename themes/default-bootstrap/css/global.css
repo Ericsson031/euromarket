@@ -6877,7 +6877,9 @@ div.star a:hover {
           .footer-container #footer #block_contact_infos > div ul li > span,
           .footer-container #footer #block_contact_infos > div ul li > span a {
             color: #58585a;
-            font-weight: normal; }
+            font-weight: normal; 
+            font-weight: bold;
+}
           .footer-container #footer #block_contact_infos > div ul li i {
             font-size: 25px;
             width: 32px;
