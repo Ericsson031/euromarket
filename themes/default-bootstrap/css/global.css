@@ -1902,11 +1902,15 @@ input[type="button"].btn-block {
     line-height: 1.42857;
     color: #333333;
     white-space: nowrap; }
+    
+     .dropdown-menu > li > a > span{
+       padding: 5px 30px 5px 5px;
+     }
 
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+.dropdown-menu > li > a > span:hover, .dropdown-menu > li > a > span:focus,  .dropdown-menu > li > a.selected > span{
   text-decoration: none;
   color: white;
-  background-color: #428bca; }
+  background-color: #e02f45; }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
   color: white;
