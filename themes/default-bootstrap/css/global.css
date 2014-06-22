@@ -6903,10 +6903,14 @@ div.star a:hover {
         @media (max-width: 767px) {
           .footer-container #footer #social_block ul {
             float: none; } }
-        .footer-container #footer #social_block ul li {
+        .footer-container #footer #social_block ul li a {
           float: left;
           width: 40px;
-          text-align: center; }
+          margin-right: 10px;
+          height: 40px;
+          text-align: center; 
+          background-size: contain;
+}
           @media (min-width: 768px) and (max-width: 991px) {
             .footer-container #footer #social_block ul li {
               width: 30px; } }
@@ -6928,7 +6932,7 @@ div.star a:hover {
               -moz-osx-font-smoothing: grayscale; }
             .footer-container #footer #social_block ul li a:hover {
               color: white; }
-          .footer-container #footer #social_block ul li.facebook a:before {
+          /*.footer-container #footer #social_block ul li.facebook a:before {
             content: "\f09a"; }
           .footer-container #footer #social_block ul li.twitter a:before {
             content: "\f099"; }
@@ -6939,7 +6943,7 @@ div.star a:hover {
           .footer-container #footer #social_block ul li.google-plus a:before {
             content: "\f0d5"; }
           .footer-container #footer #social_block ul li.pinterest a:before {
-            content: "\f0d2"; }
+            content: "\f0d2"; }*/
       .footer-container #footer #social_block h4 {
         /* float: right; */
         /* margin-bottom: 0; */
