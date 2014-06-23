@@ -8285,3 +8285,9 @@ border-radius: 8px;
 #right_column{
     padding-right: 0px;
 }
+
+@media screen and (min-width: 480px){
+    #footer .clear{
+        clear: none;
+    }/*clear both in footer only on small*/
+}
