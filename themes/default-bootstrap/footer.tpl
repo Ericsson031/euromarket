@@ -30,7 +30,8 @@
 					</div><!-- .row -->
 				</div><!-- #columns -->
 			</div><!-- .columns-container -->
-			<!-- Footer -->
+                        <div class="clear"></div>
+                        <!-- Footer -->
 			<div class="footer-container">
 				<footer id="footer"  class="container">
 					<div class="row">{$HOOK_FOOTER}

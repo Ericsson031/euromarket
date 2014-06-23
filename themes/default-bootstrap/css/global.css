@@ -8276,3 +8276,12 @@ border-radius: 8px;
 }
 
 .clear{clear:both;}
+
+#left_column{
+    padding-left: 0px;
+}
+
+
+#right_column{
+    padding-right: 0px;
+}
