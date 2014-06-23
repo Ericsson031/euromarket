@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `" . _DB_PREFIX_ . "availableweekdays` (
 	{
 		$shipping_date = Tools::getValue('shipping_date');
 		$shipping_hour = Tools::getValue('shipping_hour');
-
+                
 		$cartObject = $params['cart'];
 		if (!empty($shipping_date)) {
 			$delivery_info = $this->models['Deliveryinfo']->getDeliveryInfoByCartId((int) $cartObject->id);
