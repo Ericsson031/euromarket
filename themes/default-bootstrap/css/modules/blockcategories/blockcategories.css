@@ -120,7 +120,7 @@
 
     display: block;
 
-    background: #f6f6f6;
+    background: #f49634;
 
     position: absolute;
 
@@ -132,7 +132,17 @@
 
     font-family: "FontAwesome";
 
-    font-size: 14px; }
+    font-size: 14px; 
+
+    margin-right: 4px;
+    
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+    
+
+    border-radius: 6px;
+
+}
 
     #categories_block_left li span.grower.OPEN:before, #categories_block_left li span.grower.CLOSE:before {
 
@@ -146,7 +156,7 @@
 
       height: 30px;
 
-      color: #333333;
+      color: white;
 
       line-height: 30px;
 
@@ -156,7 +166,7 @@
 
       content: "\f067";
 
-      color: silver; }
+      color: white; }
 
   #categories_block_left li span.grower:hover + a,
 
