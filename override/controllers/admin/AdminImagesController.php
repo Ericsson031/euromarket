@@ -71,7 +71,7 @@ class AdminImagesController extends AdminImagesControllerCore
                         }
                         
                                                 
-                        
+                        /*
                         if (($return = $this->_regenerateNewImages($proc['dir'], $formats, ($proc['type'] == 'products' ? true : false))) === true)
 			{
 				if (!count($this->errors))
