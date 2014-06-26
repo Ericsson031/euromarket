@@ -46,11 +46,11 @@ class BlockSearch extends Module
 
 	public function install()
 	{
-		if (!parent::install() || !$this->registerHook('top') || !$this->registerHook('header') || !$this->registerHook('displayMobileTopSiteMap'))
+		if (!parent::install() || !$this->registerHook('top') || !$this->registerHook('header') || !$this->registerHook('displayMobileTopSiteMap')|| !$this->registerHook('displayNavRight'))
 			return false;
 		return true;
 	}
-	
+	/*
 	public function hookdisplayMobileTopSiteMap($params)
 	{
 		$this->smarty->assign(array('hook_mobile' => true, 'instantsearch' => false));
@@ -58,14 +58,13 @@ class BlockSearch extends Module
 		return $this->hookTop($params);
 	}
 	
-	/*
+	
 public function hookDisplayMobileHeader($params)
 	{
 		if (Configuration::get('PS_SEARCH_AJAX'))
 			$this->context->controller->addJqueryPlugin('autocomplete');
 		$this->context->controller->addCSS(_THEME_CSS_DIR_.'product_list.css');
-	}
-*/
+	}*/
 	
 	public function hookHeader($params)
 	{
@@ -117,6 +116,11 @@ public function hookDisplayMobileHeader($params)
 	}
 	
 	public function hookDisplayNav($params)
+	{
+		return $this->hookTop($params);
+	}
+        
+        public function hookDisplayNavRight($params)
 	{
 		return $this->hookTop($params);
 	}
