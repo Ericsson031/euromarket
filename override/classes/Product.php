@@ -6,6 +6,11 @@ class Product extends ProductCore
     public $ethnicity;
     
     //self::$definition['fields']['ethnicity'] = array('type' => self::TYPE_STRING, 'shop' => true, 'validate' => 'isString');
+        public function __construct($id_product = null, $full = false, $id_lang = null, $id_shop = null, Context $context = null)
+	{
+		parent::__construct($id_product, $id_lang, $id_shop, $context);
+                $this->reference = $this->ean13;
+        }
         
         public static function getProductProperties($id_lang, $row, Context $context = null)
         {   
