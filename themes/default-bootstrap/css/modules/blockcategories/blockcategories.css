@@ -224,6 +224,12 @@
         display: block;
     }
     
+ .dropdown a.menu2 img{
+        /* display: none; */
+ 
+        padding: 5px;
+}
+    
 
 @media (min-width: 768px) {
 
