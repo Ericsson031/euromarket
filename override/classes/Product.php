@@ -12,6 +12,18 @@ class Product extends ProductCore
                 $this->reference = $this->ean13;
         }
         
+        public function add($autodate = true, $null_values = false)
+	{                
+                $this->reference = $this->ean13;
+                return parent::add($autodate, $null_values);                
+        }
+        
+        public function update($null_values = false)
+	{
+                $this->reference = $this->ean13;
+                return parent::update($null_values);
+        }
+        
         public static function getProductProperties($id_lang, $row, Context $context = null)
         {   
             $row['ethnicity'] = self::getDefaultProductEthnicity($row['id_product']);
