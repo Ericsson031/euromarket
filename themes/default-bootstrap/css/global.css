@@ -8273,7 +8273,7 @@ border-radius: 8px;
     font-family: Museo500Regular;
 }
 
-@media screen and (min-width: 1000px){
+@media (min-width: 1000px){
 .dual-menu{
     /* float: none!important; */
     -moz-column-count:2; 
@@ -8294,7 +8294,7 @@ border-radius: 8px;
     padding-right: 0px;
 }
 
-@media screen and (min-width: 480px){
+@media (min-width: 768px){
     #footer .clear{
         clear: none;
     }/*clear both in footer only on small*/
