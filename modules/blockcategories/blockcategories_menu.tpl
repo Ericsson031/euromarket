@@ -35,7 +35,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand visible-xs" href="#">Types</a>
+        
+      <a type="button" class="navbar-brand visible-xs" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">        
+          Types
+      </a>
+        
     </div>
 
       
