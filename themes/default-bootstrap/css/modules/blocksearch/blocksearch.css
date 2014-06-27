@@ -1,14 +1,12 @@
 #search_block_top {
-  /* margin-bottom: 13px; */ 
-  margin: 12px 0px;
-  float: right;
-  width: 100%;
-  max-width: 250px;
+  padding-bottom: 36px; 
+  margin: 12px;
 }
   #search_block_top #searchbox {
     float: left;
     width: 100%; 
     color: white;
+    float: right;    width: 100%;    max-width: 250px;
 }
   #search_block_top .btn.button-search {
     background: none;
