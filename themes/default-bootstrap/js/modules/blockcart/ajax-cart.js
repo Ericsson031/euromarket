@@ -705,11 +705,15 @@ var ajaxCart = {
 		$('.layer_cart_img').html('<img class="layer_cart_img img-responsive" src="' + product.image + '" alt="' + product.name + '" title="' + product.name + '" />');
 
 		var n = parseInt($(window).scrollTop()) + 'px';
-
+                
+                if($(window).width()<1000)
+                {
 		$('.layer_cart_overlay').css('width','100%');
 		$('.layer_cart_overlay').css('height','100%');
 		$('.layer_cart_overlay').show();
-		$('#layer_cart').css({'top': n}).fadeIn('fast');
+                }
+		
+                $('#layer_cart').css({'top': n}).fadeIn('fast');
 		crossselling_serialScroll();
 	},
 

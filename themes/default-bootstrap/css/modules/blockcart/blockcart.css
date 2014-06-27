@@ -470,3 +470,10 @@
 .cart_head{text-align: right; margin-bottom: 1em; font-weight: bold;}
 .open_basket{margin-right: 1em;}
 .cart-prices-line{padding-bottom: 2em;}
+
+
+@media(min-width:990px){
+#layer_cart .clearfix,#layer_cart .layer_cart_overlay{
+    display: none;
+}
+}
