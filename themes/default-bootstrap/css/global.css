@@ -7129,7 +7129,7 @@ a.price_discount_delete {
   font-weight: bold;
   color: #333333; }
 #cart_summary tfoot td.price {
-  text-align: right; }
+  text-align: left; }
 #cart_summary tfoot td.total_price_container span {
   font: 600 18px/22px "Open Sans", sans-serif;
   color: #555454;
