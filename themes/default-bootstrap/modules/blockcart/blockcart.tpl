@@ -312,7 +312,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="crossseling"></div>
+		<div class="crossseling hidden"></div>
 	</div> <!-- #layer_cart -->
 	<div class="layer_cart_overlay"></div>
 {/if}
