@@ -6603,13 +6603,13 @@ ul.step {
     ul.step li.step_current {
       font-weight: bold;
       background: #f49231;
-      background: -moz-linear-gradient(top, #42b856 0%, #43ab54 100%);
+      /*background: -moz-linear-gradient(top, #42b856 0%, #43ab54 100%);*/
       /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #42b856), color-stop(100%, #43ab54)); */
       /* background: -webkit-linear-gradient(top, #42b856 0%, #43ab54 100%); */
-      background: -o-linear-gradient(top, #42b856 0%, #43ab54 100%);
-      background: -ms-linear-gradient(top, #42b856 0%, #43ab54 100%);
+      /*background: -o-linear-gradient(top, #42b856 0%, #43ab54 100%);*/
+      /*background: -ms-linear-gradient(top, #42b856 0%, #43ab54 100%);
       /* background: linear-gradient(to bottom, #42b856 0%, #43ab54 100%); */
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#42b856', endColorstr='#43ab54',GradientType=0);
+      /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#42b856', endColorstr='#43ab54',GradientType=0);*/
       border-color: #d9832c; }
       ul.step li.step_current span {
         color: white;
