@@ -1,6 +1,7 @@
 <div id="datepicker_container">
 
 {if $show_calendar_inline}
+    <h3>Chose your delivery date</h3>
     <div id="shipping_date"></div>
 {else}
     <input type="text" value="" id="shipping_date" name="shipping_date_raw" value="" placeholder="{l s='Pick your desired delivery date' mod='eydatepicker'}" readonly="readonly" />
